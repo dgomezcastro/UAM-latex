@@ -1,0 +1,133 @@
+
+
+\section{Referencias a elementos del texto}
+
+
+\subsection{Etiquetas} 
+\begin{frame}[fragile]
+\frametitle{Referencias}
+Para establecer una etiqueta a la que poder llamar se emplea
+\begin{Verbatim}
+\label{<label>}
+\end{Verbatim}
+Es habitual emplear etiquetas de la forma
+\begin{Verbatim}
+<label>=thm:euclides, fig:gauss, eq:divergencia
+\end{Verbatim}
+No se pueden emplear acentos. 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Referencias}
+\framesubtitle{Ejemplo}
+\begin{columns}
+\column{.4\textwidth}
+\begin{block}{Código}
+	\scriptsize
+	\begin{Verbatim}
+\begin{<thm>} \label{<label>}
+
+\end{<thm>}    
+	\end{Verbatim}
+\end{block}
+\column{.4\textwidth}
+\begin{block}{Código}
+	\scriptsize
+	\begin{Verbatim}
+\begin{figure}
+
+\includegraphics{<path>}
+\caption{<caption>}
+\label{<label>}
+
+\end{figure}   
+	\end{Verbatim}
+\end{block}
+\end{columns}
+\end{frame}
+
+\subsection{Referencias básicas de \LaTeX}
+
+\begin{frame}[fragile]
+\frametitle{Referencias: El comando \showvrb{\ref}}
+	\small
+	Podemos llamar al número de una etiqueta mediante  \showvrb{\ref{<label>}}. \\
+
+\begin{columns}
+\column{.45\textwidth}
+\visible<2>{
+\begin{block}{Solución}
+	\tiny
+	\verbatiminput{codigos/ref2.tex}
+\end{block}}
+\column{.5\textwidth}
+	\textbf{Ejercicio:} Escribir el código correspondiente a la siguiente salida: 
+\fbox{
+\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ref2.pdf}
+}
+\end{columns}
+\end{frame}
+
+\subsection{El paquete \texttt{cleveref}}
+\begin{frame}
+\frametitle{Referencias avanzadas: el paquete \showvrb{\cleveref}}
+	Introduciendo este paquete tenemos acceso al comando \showvrb{\Cref}. \\ [2ex]
+	
+	Esta función actúa como \showvrb{\ref}, pero incluye automáticamente el tipo de objeto referenciado: Teorema, Figura... \\[-1ex]
+	\pause 
+	\begin{columns}
+		\column{.45\textwidth}
+			\begin{block}{Código}
+				\tiny
+				\verbatiminput{codigos/ref3.tex}
+		\end{block}
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ref3.pdf}
+			}
+	\end{columns}
+	
+	
+\end{frame}
+\section{Referencias a bibliografía} 
+
+\begin{frame}
+	\frametitle{Bibliografía nativa}
+	
+		\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código}
+			\tiny
+			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-cite.tex}
+		\end{block}
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ejemplo-cite.pdf}
+		}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bibtex: formato automático} 
+	
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código [ejemplo-bibtex.tex]}
+			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-bibtex.tex}
+		\end{block}
+		\begin{block}{Código [ejemplo-bibliografia.bib]}
+			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-bibliografia.bib}
+		\end{block}
+	
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ejemplo-bibtex.pdf}
+		}
+	
+	\vspace{.5cm} 
+	{\small 
+		\textbf{Observación.}
+		Bibtex, al compilar, genera un archivo \texttt{.bbl} que contiene una bibliografía nativa.
+	}
+	\end{columns}
+\end{frame}

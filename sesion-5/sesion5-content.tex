@@ -1,0 +1,75 @@
+%
+%\part{Referencias y presentaciones}
+%\begin{frame}
+%	\renewcommand{\partname}{Sesión}
+%	\partpage
+%\end{frame}
+%
+%\label{sesion:4}
+
+
+\section{Presentaciones en Beamer}
+
+\begin{frame}[fragile]
+    \frametitle{El paquete \texttt{beamer}}
+    El paquete \texttt{beamer} nos permite hacer presentaciones en \LaTeX \ como esta.
+   
+\end{frame}
+
+%\subsection{La cabecera}
+\begin{frame}[fragile]
+    \frametitle{La cabecera}
+    \framesubtitle{Una cabecera elemental}
+\begin{block}{Código}
+    \footnotesize
+        \VerbatimInput[lastline=11]{codigos/beamer1.tex}
+    \end{block}
+	
+	\vspace{3ex}
+
+	Para ver diferentes estilos y colores visitar \url{https://hartwork.org/beamer-theme-matrix/}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{La cabecera}
+    \framesubtitle{Una cabecera completa}
+    \begin{block}{Código}
+        \scriptsize
+        \VerbatimInput[lastline=15]{codigos/beamer2.tex}
+    \end{block}
+\end{frame}
+
+%\subsection{Las diapositivas}
+
+\begin{frame}[fragile]
+    \frametitle{Las diapositivas}
+    Las diapositivas se introducen en un entorno \texttt{frame}. \only<1->{Algunas cosas que se pueden añadir (editando la cabecera acordemente)}
+    \only<1>{
+        \begin{block}{Código}
+         \footnotesize
+        \VerbatimInput[firstline=13]{codigos/beamer1.tex}
+        \end{block}}
+    \only<2->{
+    \begin{columns}
+        \column{0.3\textwidth}
+            \begin{enumerate}
+                \item<2-> Título
+                \item<3-> Imágenes
+                \item<4-> Teoremas
+            \end{enumerate}
+        \column{0.7\textwidth}
+        \footnotesize
+        \only<2>{
+            \begin{block}{Código}
+                 \VerbatimInput[firstline=21,lastline=23]{codigos/beamer2.tex}
+            \end{block}}
+        \only<3>{
+            \begin{block}{Código}
+                \VerbatimInput[firstline=25,lastline=32]{codigos/beamer2.tex}
+            \end{block}}
+        \only<4>{
+            \begin{block}{Código}
+                \VerbatimInput[firstline=34,lastline=41]{codigos/beamer2.tex}
+            \end{block}}
+    \end{columns}}
+\end{frame}
