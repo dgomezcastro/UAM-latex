@@ -1,0 +1,43 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\newtheorem{thm}{Teorema}
+
+\mode<presentation>    
+\usetheme{Warsaw}
+\usecolortheme{seahorse}
+
+\title{Mi presentacion}
+\author{Yo}
+\date{\today}
+
+\begin{document}
+    
+\maketitle
+    
+\begin{frame}{Título}
+    
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.5]
+            {gauss.pdf}
+        \caption{Gauss}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{thm}
+        Un teorema...
+    \end{thm}
+    \begin{proof}
+        Y su prueba ...
+    \end{proof}
+\end{frame}
+
+\end{document}

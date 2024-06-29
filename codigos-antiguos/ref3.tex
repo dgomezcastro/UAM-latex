@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{cleveref}
+\newtheorem{thm}{Teorema}
+\begin{document}  
+
+\begin{thm} \label{thm:euclides}
+No hay primo mayor que el resto
+\end{thm}    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{euclides.pdf}
+    \caption{Euclides}
+    \label{fig:euclides}
+\end{figure}
+Euclides, al que podemos ver en la
+\Cref{fig:euclides}, propuso
+y demostró el \Cref{thm:euclides}.
+
+\end{document}

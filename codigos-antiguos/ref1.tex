@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newtheorem{thm}{Teorema}
+
+\begin{document}  
+
+\begin{thm} \label{thm:divergencia}
+Sean $H$ y $U$ dos subconjuntos abiertos en $\mathbb R^3$  donde $U \subset H$ es simplemente conexo y $\partial U$ es una superficie regular o regular a trozos y cerrada.
+Sea $F:H \rightarrow \mathbb R^3$ , un campo vectorial de clase $\mathbb C^1$. Entonces:
+$$        \iint_{\partial U} F \cdot n dS = \iiint \nabla \cdot F dV$$
+\end{thm}    
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]
+        {gauss.pdf}
+    \caption{Gauss}
+    \label{fig:gauss}
+\end{figure}
+
+\end{document}

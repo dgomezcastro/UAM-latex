@@ -1,0 +1,85 @@
+\documentclass[spanish]{beamer}
+
+\usepackage[spanish]{babel}
+\addto\captionsspanish{\renewcommand{\partname}{Sesión}}
+
+\newcommand{\firstslide}{
+    \frame{\partpage}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage[all]{xy}
+
+\usepackage{tikz}
+
+\mode<presentation>    
+
+% Estilo de diapositiva
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+% Change base colour beamer@blendedblue (originally RGB: 0.2,0.2,0.7)
+\colorlet{beamer@blendedblue}{green!40!black} % UAM
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle~(\partname~\thepart)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\beamertemplatenavigationsymbolsempty
+
+% Para la parte de los teoremas
+\usepackage{amsmath,amsthm}
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
+
+\usepackage[]{hyperref}
+
+\setbeamerfont{section in toc}{size=\normalsize }
+\setbeamerfont{subsection in toc}{size=\small }
+\useinnertheme{circles}
+
+% \usepackage{verbatim}
+\usepackage{minted}
+\newminted[latexsource]{latex}{linenos=false}
+\newmintinline[latexinline]{latex}{}
+\newmintedfile[latexfile]{latex}{}
+
+\newcommand{\latexinputandcompile}[1]
+{
+  \begin{columns}
+    \column{0.4\textwidth}
+    \begin{block}{Código}
+        \latexfile{#1}
+    \end{block}
+    \column{0.4\textwidth}
+    \centering
+    \fbox{
+    \begin{minipage}{\textwidth}
+        \input{#1}
+    \end{minipage}
+    }
+  \end{columns}
+}
+
+\title{Curso de \LaTeX}
+\author{David Gómez-Castro}
+\institute[UAM]{Universidad Autónoma de Madrid}
+\date{2024-2025}
+
