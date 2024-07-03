@@ -1,19 +1,25 @@
+% LTeX: language=es-ES
+
+\setcounter{part}{3}
+\part{Referencias a elementos del texto}
+\frame{\partpage}
+\label{sesion:4}
 
 
-\section{Referencias a elementos del texto}
+\frame{\tableofcontents}
 
 
-\subsection{Etiquetas} 
+\section{Etiquetas} 
 \begin{frame}[fragile]
 \frametitle{Referencias}
 Para establecer una etiqueta a la que poder llamar se emplea
-\begin{Verbatim}
+\begin{latexsource}
 \label{<label>}
-\end{Verbatim}
+\end{latexsource}
 Es habitual emplear etiquetas de la forma
-\begin{Verbatim}
+\begin{latexsource}
 <label>=thm:euclides, fig:gauss, eq:divergencia
-\end{Verbatim}
+\end{latexsource}
 No se pueden emplear acentos. 
 \end{frame}
 
@@ -24,16 +30,16 @@ No se pueden emplear acentos.
 \column{.4\textwidth}
 \begin{block}{Código}
 	\scriptsize
-	\begin{Verbatim}
+	\begin{latexsource}
 \begin{<thm>} \label{<label>}
 
 \end{<thm>}    
-	\end{Verbatim}
+	\end{latexsource}
 \end{block}
 \column{.4\textwidth}
 \begin{block}{Código}
 	\scriptsize
-	\begin{Verbatim}
+	\begin{latexsource}
 \begin{figure}
 
 \includegraphics{<path>}
@@ -41,24 +47,24 @@ No se pueden emplear acentos.
 \label{<label>}
 
 \end{figure}   
-	\end{Verbatim}
+	\end{latexsource}
 \end{block}
 \end{columns}
 \end{frame}
 
-\subsection{Referencias básicas de \LaTeX}
+\section{Referencias básicas de \LaTeX}
 
 \begin{frame}[fragile]
-\frametitle{Referencias: El comando \showvrb{\ref}}
+\frametitle{Referencias: El comando \latexinline{\ref}}
 	\small
-	Podemos llamar al número de una etiqueta mediante  \showvrb{\ref{<label>}}. \\
+	Podemos llamar al número de una etiqueta mediante  \latexinline{\ref{<label>}}. \\
 
 \begin{columns}
 \column{.45\textwidth}
 \visible<2>{
 \begin{block}{Solución}
 	\tiny
-	\verbatiminput{codigos/ref2.tex}
+	\latexfile{codigos/ref2.tex}
 \end{block}}
 \column{.5\textwidth}
 	\textbf{Ejercicio:} Escribir el código correspondiente a la siguiente salida: 
@@ -68,18 +74,18 @@ No se pueden emplear acentos.
 \end{columns}
 \end{frame}
 
-\subsection{El paquete \texttt{cleveref}}
+\section{El paquete \texttt{cleveref}}
 \begin{frame}
-\frametitle{Referencias avanzadas: el paquete \showvrb{\cleveref}}
-	Introduciendo este paquete tenemos acceso al comando \showvrb{\Cref}. \\ [2ex]
+\frametitle{Referencias avanzadas: el paquete \latexinline{\cleveref}}
+	Introduciendo este paquete tenemos acceso al comando \latexinline{\Cref}. \\ 
 	
-	Esta función actúa como \showvrb{\ref}, pero incluye automáticamente el tipo de objeto referenciado: Teorema, Figura... \\[-1ex]
+	Esta función actúa como \latexinline{\ref}, pero incluye automáticamente el tipo de objeto referenciado: Teorema, Figura... \\[-2ex]
 	\pause 
 	\begin{columns}
 		\column{.45\textwidth}
 			\begin{block}{Código}
 				\tiny
-				\verbatiminput{codigos/ref3.tex}
+				\latexfile{codigos/ref3.tex}
 		\end{block}
 		\column{.5\textwidth}
 		\fbox{
@@ -89,6 +95,8 @@ No se pueden emplear acentos.
 	
 	
 \end{frame}
+
+
 \section{Referencias a bibliografía} 
 
 \begin{frame}
@@ -98,7 +106,7 @@ No se pueden emplear acentos.
 		\column{.5\textwidth}
 		\begin{block}{Código}
 			\tiny
-			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-cite.tex}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-cite.tex}
 		\end{block}
 		\column{.5\textwidth}
 		\fbox{
@@ -113,10 +121,10 @@ No se pueden emplear acentos.
 	\begin{columns}
 		\column{.5\textwidth}
 		\begin{block}{Código [ejemplo-bibtex.tex]}
-			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-bibtex.tex}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibtex.tex}
 		\end{block}
 		\begin{block}{Código [ejemplo-bibliografia.bib]}
-			\VerbatimInput[fontsize=\tiny]{codigos/ejemplo-bibliografia.bib}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibliografia.bib}
 		\end{block}
 	
 		\column{.5\textwidth}

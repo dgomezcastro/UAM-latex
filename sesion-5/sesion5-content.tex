@@ -1,14 +1,12 @@
-%
-%\part{Referencias y presentaciones}
-%\begin{frame}
-%	\renewcommand{\partname}{Sesión}
-%	\partpage
-%\end{frame}
-%
-%\label{sesion:4}
+\setcounter{part}{4}
+\part{Presentaciones en Beamer}
+\label{sesion:5}
+\firstslide
 
+% \frame{\tableofcontents}
 
-\section{Presentaciones en Beamer}
+% \section{Presentaciones en Beamer}
+% \frame{\sectionpage}
 
 \begin{frame}[fragile]
     \frametitle{El paquete \texttt{beamer}}
@@ -21,8 +19,7 @@
     \frametitle{La cabecera}
     \framesubtitle{Una cabecera elemental}
 \begin{block}{Código}
-    \footnotesize
-        \VerbatimInput[lastline=11]{codigos/beamer1.tex}
+        \latexfile[lastline=11]{codigos/beamer1.tex}
     \end{block}
 	
 	\vspace{3ex}
@@ -34,8 +31,7 @@
     \frametitle{La cabecera}
     \framesubtitle{Una cabecera completa}
     \begin{block}{Código}
-        \scriptsize
-        \VerbatimInput[lastline=15]{codigos/beamer2.tex}
+        \latexfile[lastline=15]{codigos/beamer2.tex}
     \end{block}
 \end{frame}
 
@@ -46,8 +42,7 @@
     Las diapositivas se introducen en un entorno \texttt{frame}. \only<1->{Algunas cosas que se pueden añadir (editando la cabecera acordemente)}
     \only<1>{
         \begin{block}{Código}
-         \footnotesize
-        \VerbatimInput[firstline=13]{codigos/beamer1.tex}
+        \latexfile[firstline=13]{codigos/beamer1.tex}
         \end{block}}
     \only<2->{
     \begin{columns}
@@ -61,15 +56,15 @@
         \footnotesize
         \only<2>{
             \begin{block}{Código}
-                 \VerbatimInput[firstline=21,lastline=23]{codigos/beamer2.tex}
+                 \latexfile[firstline=21,lastline=23]{codigos/beamer2.tex}
             \end{block}}
         \only<3>{
             \begin{block}{Código}
-                \VerbatimInput[firstline=25,lastline=32]{codigos/beamer2.tex}
+                \latexfile[firstline=25,lastline=32]{codigos/beamer2.tex}
             \end{block}}
         \only<4>{
             \begin{block}{Código}
-                \VerbatimInput[firstline=34,lastline=41]{codigos/beamer2.tex}
+                \latexfile[firstline=34,lastline=41]{codigos/beamer2.tex}
             \end{block}}
     \end{columns}}
 \end{frame}
