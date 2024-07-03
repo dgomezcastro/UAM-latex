@@ -2,9 +2,9 @@
 
 for i in {0..6}
 do
-    cd sesion-$i
-    pdflatex -shell-escape sesion$i.tex
-    pdflatex -shell-escape sesion$i.tex
+    cd 0$i*
+    pdflatex -shell-escape sesion.tex
+    pdflatex -shell-escape sesion.tex
     rm *.aux
     rm *.log
     rm *.nav
@@ -12,6 +12,9 @@ do
     rm *.snm
     rm *.toc
     rm *.vrb
+    rm *.fdb_latexmk
+    rm *.synctex.gz
+    rm *.fls
     rm -R _minted-*
     cd ..
 done

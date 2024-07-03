@@ -1,0 +1,117 @@
+% LTeX: language=es-ES
+
+\section{\LaTeX\ en local}
+\frame{\sectionpage}
+
+\begin{frame}[fragile]{Descargar e instalar \LaTeX} 
+	Esta experiencia depende del sistema utilices: visita \href{https://www.latex-project.org/get/}{Latex project}
+	\begin{itemize}
+		\item Windows: \href{https://miktex.org/download}{MikTeX}
+		\item Mac: \href{http://www.tug.org/mactex/}{MacTeX} (o via \texttt{homebrew})
+		\item Linux: a través del gestor software nativo de terminal
+		\begin{itemize}
+			\item Debian/Ubuntu: \texttt{sudo apt-get install texlive-full} 
+			\item RedHat/Fedora: \mintinline{bash}|yum install texlive-scheme-full|
+			\item Suse: \texttt{zypper install texlive-latex}
+			\item Arch: \texttt{pacman -S texlive-most}
+			\item Otros: ¿en serio? ¿ninguno de los anteriores?. Te buscas la vida.
+		\end{itemize}
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}[fragile]{Compilando en terminal}
+	
+	Navegar hasta la carpeta y escribir en terminal 
+	\begin{minted}{bash} 
+$ pdflatex hola-mundo.tex
+	\end{minted} 
+	En archivos más complicados hay que ejecutar el código varias veces 
+	
+\end{frame}
+
+\begin{frame}{Diferentes compiladores}
+	Hay diferentes opciones
+
+	\begin{enumerate}
+		\item \texttt{pdflatex}. El más habitual. Genera un archivo \texttt{.pdf}
+		\item \texttt{latex}. El más tradicional. Genera un archivo \texttt{.dvi}
+		\item \texttt{XeLaTeX} y \texttt{LuaLaTeX} soportan tipografías Truetype and OpenType. 
+		
+		Se usan a veces para documentos muy visuales. 
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Editores locales}
+	Un archivo \texttt{.tex} es archivo de texto ``plano''. Se puede editar con cualquier editor. 
+
+	Algunos editores tienen funcionalidades avanzadas (compilación integrada, \texttt{synctex}, visor de pdf...), que simplifican el trabajo
+	\begin{enumerate}
+		\item Visual Studio Code. Con la extensión Latex-workshop.
+	
+		\item Latex Workshop
+		
+		\item Texstudio
+	\end{enumerate}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Descargar el editor}
+% 	\framesubtitle{TeXstudio} 
+	
+% 	Para utilizar en local, recomiendo TeXstudio \href{https://www.texstudio.org}{TeXstudio}. 
+% 	Es libre y gratuito\footnote{Los usuarios de Linux lo pueden descargar por terminal}. \\[3ex]
+	
+	
+% 	Hay más opciones:
+% 	\begin{enumerate}
+% 		\item TeXShop
+% 		\item TexMaker
+% 		\item Gummy
+% 		\item Atom (requiere alguna configuración)
+% 		\item Emacs, Vim, etc... + compilación por terminal
+% 	\end{enumerate}
+	
+
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{TeXstudio}
+	
+% 		\begin{figure}
+% 		\centering
+% 		\includegraphics[width=.9\textwidth]{imagenes/texstudio}
+% 		\caption{Interfaz de TeXstudio}
+% 	\end{figure}
+	
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Compilando con TeXstudio}
+
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=.9\textwidth]{imagenes/texstudio-compilar}
+% 	\caption{Compilar con TeXstudio}
+% \end{figure}
+
+% \end{frame}
+
+\begin{frame}
+	\frametitle{El fichero y compatibilidades}
+	\small 
+	Los ficheros de texto plano en principio soportan muy pocos caracteres (\href{https://en.wikipedia.org/wiki/ASCII}{ASCII}). \\
+
+	Para aumentar el número de caracteres soportados (por ejemplos añadir letras con acentos) hay diferentes codificaciones: 
+	
+	UTF-8 (por defecto en Linux y Mac), ISO (por defecto en Windows), ... \\
+
+	Para aprovechar esto usamos el paquete \texttt{inputenc} con la codificación correcta.
+	\begin{figure}
+		\includegraphics[width=.5\textwidth]{imagenes/texstudio-utf8}
+	\end{figure}
+
+	\textbf{Curiosidades sobre texto plano}: \href{https://www.youtube.com/watch?v=4mRxIgu9R70}{\emph{Plain Text} by Dylan Beattie en Youtube}
+\end{frame}

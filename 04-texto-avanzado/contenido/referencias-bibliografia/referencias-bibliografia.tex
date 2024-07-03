@@ -1,0 +1,42 @@
+\section{Referencias a bibliografía} 
+
+\begin{frame}
+	\frametitle{Bibliografía nativa}
+	
+		\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código}
+			\tiny
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-cite.tex}
+		\end{block}
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ejemplo-cite.pdf}
+		}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bibtex: formato automático} 
+	
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código [ejemplo-bibtex.tex]}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibtex.tex}
+		\end{block}
+		\begin{block}{Código [ejemplo-bibliografia.bib]}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibliografia.bib}
+		\end{block}
+	
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ejemplo-bibtex.pdf}
+		}
+	
+	\vspace{.5cm} 
+	{\small 
+		\textbf{Observación.}
+		Bibtex, al compilar, genera un archivo \texttt{.bbl} que contiene una bibliografía nativa.
+	}
+	\end{columns}
+\end{frame}

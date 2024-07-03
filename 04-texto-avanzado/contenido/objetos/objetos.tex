@@ -1,0 +1,193 @@
+
+\section{Insertando objetos}
+\frame{\sectionpage}
+
+\begin{frame}
+	\frametitle{Flotantes y su localización} 
+	\small 
+	Los objetos con los que vamos a trabajar: figuras, tablas, etc... se conocen como flotantes. \\ [2ex] 
+	
+	Por defecto \LaTeX\  los coloca donde menos moleste: en el lugar del texto donde hemos colocado el código, al principio de la página o al final de la página.  \\ [2ex]
+	
+	\pause 
+	
+	Podemos especificar dónde colocarlos mediante parámetros optativos:
+	
+	\latexinline{\begin{figure}[placement specifier]}. \\ [2ex]
+		
+	Las opciones son las siguientes
+	\begin{table}
+		\tiny 
+	\begin{tabular}{l|l}
+	Specifier	& Permission \\
+	h&	Place the float here (approximately at the same point it occurs in the source text)\\
+	t&	Position at the top of the page.\\
+	b&	Position at the bottom of the page. \\
+	p&	Put on a special page for floats only. \\
+	!&	Override internal parameters LaTeX uses for determining ``good'' float positions. \\
+	H&	Places the float at precisely the location in the LaTeX code. Requires the \latexinline{float} package.
+	\end{tabular}
+	\end{table} 
+	También se admiten cadena \latexinline{htb} significa: inténtalo en su sitio, si no ponlo arriba y, si no, abajo.
+\end{frame}
+
+\subsection{Figuras}
+
+\begin{frame}[fragile]
+\frametitle{Figuras}
+Para incluir imágenes empleamos el paquete \texttt{graphicx}. Si empleamos el compilador \texttt{pdflatex}. Podemos emplear imágenes \texttt{.pdf, .png}. \\[2ex]
+
+\begin{columns}
+\column{0.5\textwidth}
+Tiene los siguientes parámetros:
+\begin{enumerate}
+	\item<1-> \alert<1>{\latexinline{<path>}} \only<1>{Es la dirección del archivo a incluir. Lo mejor es escribirla relativa al directorio esto es 
+	\footnotesize
+	\texttt{<path>=archivo.pdf}}
+	\item<2-> \alert<2>{\latexinline{<scale>}} \only<2>{Valor entre 0 y 1 al que escalar la figura.}
+	\item<3-> \alert<3>{\latexinline{<caption>}} \only<3>{El contenido de \texttt{<caption>} será el pie de foto, es decir, aparecerá
+	Figura x: caption}	
+\end{enumerate}
+\column{0.4\textwidth}
+\begin{block}{Código}
+	\tiny
+	\verb|\begin{figure}[h!]|
+	
+	\hspace{1ex} \latexinline{\includegraphics[scale=}~\alert<2>{\latexinline{<scale>]}}~\alert<1>{\latexinline{{<path>}}}
+	
+	\hspace{1ex} \latexinline{\caption}~\alert<3>{\latexinline{{<caption>}}}
+	
+	\latexinline{\end{figure}}
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Figura}
+    \framesubtitle{Ejemplo}
+    \begin{columns}
+        \column{.5\textwidth}
+        \begin{block}{Código [figura.tex]}
+            \latexfile[fontsize=\small]{codigos/figure1.tex}
+        \end{block}
+        \column{.4\textwidth}
+        \centering
+        \fbox{
+        \includegraphics[trim=7cm 10cm 7cm 10cm,clip,   scale=.5]{codigos/figure1.pdf}
+        }
+	
+	\begin{flushleft}
+		Si añadimos el paquete babel, el texto ``Figure'' cambia a ``Figura''
+	\end{flushleft}
+    \end{columns}
+\end{frame}
+
+\subsection{Tablas}
+\begin{frame}[fragile]
+\frametitle{Tablas}
+
+Las el entorno \latexinline{table} es equivalente a figura, pero al generar el \latexinline{caption} obtendremos Cuadro (como recomienda la RAE). \\ [2ex]
+
+En contenido de la tabla se introduce de manera similar a una matriz
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{enumerate}
+		\item<1-> \texttt{<align>}: 
+		\only<1>{
+			\begin{enumerate}[a)]
+				\item \texttt{l}: izquierda 
+				\item \texttt{c}: centrado 
+				\item \texttt{r}: derecha
+		\end{enumerate}}
+		\item<2-> \latexinline{&} \only<2>{Separación entre cuadros en la misma fila}
+		\item <3-> \texttt{|} \only<3>{Si se desea línea vertical entre dos columnas}
+		\item <4-> \latexinline{\hline} \only<4>{Si se desea una línea horizontal.}
+	\end{enumerate}
+	
+	
+	\column{0.5\textwidth}
+	\begin{block}{Código}
+		\begin{latexsource*}{fontsize=\footnotesize}
+\begin{tabular}{<align>| ... }
+	cuadro1 & cuadro2 & ... \\
+	\hline\\
+ 	...
+\end{tabular}
+		\end{latexsource*}
+	\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tablas}
+\framesubtitle{Ejemplo}
+	\latexinputandcompile{codigos/table1.tex}
+\end{frame}
+
+\begin{frame}{Uso avanzado de tablas}
+	\url{https://www.overleaf.com/learn/latex/Tables}
+\end{frame}
+
+\begin{frame}{Ejercicio de tablas}
+
+\end{frame}
+
+\begin{frame}{Tablas para vagos}
+	Hay múltiples páginas que permiten convertir tablas de excel en latex
+	\begin{itemize}
+		\item \url{https://www.tablesgenerator.com/}
+		\item \url{https://www.latex-tables.com/}
+		\item \url{https://tableconvert.com/latex-generator} 
+	\end{itemize}
+\end{frame}
+
+\subsection{Códigos} 
+
+\begin{frame}{Código}
+	Hay diferentes paquetes para incluir código fuente:
+	\begin{itemize}
+		\item \texttt{verbatim}
+		\item \texttt{listings}
+		
+		MathWorks ofrece un paquete (a descargar \href{https://es.mathworks.com/matlabcentral/fileexchange/8015-m-code-latex-package}{aquí}) para incluir código con formato de matlab
+
+		\item \texttt{minted}. En mi opinión, el más completo. Será el que usemos.
+		
+		Un tutorial más completo en la \href{https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted}{web de Overleaf}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Añadir código} 
+El paquete \texttt{listing} nos permite introducir código de diferentes lenguajes
+\begin{columns} 
+	\column{.3\textwidth}
+	\begin{block}{Código} 
+		\latexfile[fontsize=\footnotesize, firstline=3]{codigos/ejemplo-c.tex}
+	\end{block} 
+	\column{.6\textwidth}
+	\begin{figure} 
+		\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-c.pdf}}
+		\caption{Resultado de compilar}
+	\end{figure} 
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Añadir código} 
+También se puede cargar de un fichero externo
+\begin{columns} 
+	\column{.4\textwidth}
+	\begin{block}{Código [ejemplo-c-2.tex]} %[\texttt{ejemplo-c-2.tex}]
+		\latexfile[fontsize=\footnotesize, firstline=3]{codigos/ejemplo-c-2.tex}
+	\end{block} 
+	\begin{block}{Código [codigo2.cpp]}
+		\inputminted[fontsize=\footnotesize]{c++}{codigos/codigo2.cpp}
+	\end{block}
+	\column{.6\textwidth}
+	\begin{figure} 
+		\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-c-2.pdf}}
+		\caption{Resultado de compilar \texttt{ejemplo-c-2.tex}}
+	\end{figure} 
+\end{columns}
+\end{frame}

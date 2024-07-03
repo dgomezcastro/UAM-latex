@@ -76,6 +76,32 @@
   \end{columns}
 }
 
+\usepackage{import}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The following is patch to make import and minted behave together
+%% https://github.com/gpoore/minted/issues/251
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xpatch}
+
+\makeatletter
+% fix for first kind
+\xpatchcmd\inputminted
+  {#3}
+  {\import@path #3}
+  {}{\fail}
+
+% fix for second kind
+\xpretocmd\minted@pygmentize
+  {\restore@IfFileExists} % direct \let\IfFileExists\im@@IfFileExists works too
+  {}{\fail}
+\def\restore@IfFileExists{%
+  \ifx\IfFileExists\@iffileonpath
+    \let\IfFileExists\im@@IfFileExists
+  \fi
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \title{Curso de \LaTeX}
 \author{David Gómez-Castro}
 \institute[UAM]{Universidad Autónoma de Madrid}

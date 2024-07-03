@@ -1,0 +1,78 @@
+% LTeX: language=es-ES
+
+\section{Primer contacto}
+\frame{\sectionpage}
+
+\begin{frame}
+	\frametitle{Overleaf}
+	Una opción sencilla es usar \href{https://www.overleaf.com/}{Overleaf}
+		\includegraphics[height=.05\textheight]{imagenes/overleaf} 
+	\begin{figure}
+		\centering
+		\includegraphics[width=.9\textwidth]{imagenes/overleaf-screenshot}
+		\caption{Interfaz de Overleaf}
+	\end{figure}
+	
+\end{frame}
+
+\section{¡Hola, Mundo! e ingredientes básicos}
+\frame{\sectionpage}
+
+\begin{frame}{El archivo mínimo}
+    Los archivos de \LaTeX\ son archivos de texto (plano) con extension \texttt{.tex}. 
+
+	La estructura es
+    
+\begin{block}{Código}
+	\latexfile[highlightlines={}]{codigos/vacio.tex}
+\end{block}
+
+	Estos documentos se ``compilan'' para conseguir un documento ``con formato''.
+\end{frame}
+
+\begin{frame}
+    \frametitle{El archivo ¡Hola, Mundo!}
+    Creemos un archivo básico
+    \begin{block}{Código [hola-mundo.tex]}
+        \latexfile{codigos/hola-mundo.tex}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Comentarios}
+	Lo que venga después de \latexinline|%| no se procesará como comandos o contenido, 
+
+	si no como comentarios.
+	\begin{block}{Código [hola-mundo-con-comentario.tex]}
+        \latexfile{codigos/hola-mundo-con-comentario.tex}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Errores y avisos}
+	¿Qué pasa si comentemos un error? 
+
+	\begin{block}{Código}
+        \begin{latexsource*}{highlightlines={3}}
+\documentclass{article}
+
+\begin{documet}
+		
+Hola, Mundo.
+		
+\end{document}
+		\end{latexsource*}
+    \end{block}
+
+	Al compilar
+	\begin{minted}{bash}
+! LaTeX Error: Missing \begin{document}.
+	\end{minted}
+
+	Hay tres tipos de mensajes:
+	\begin{itemize}
+		\item {\color{red}\texttt{Error}} normalmente no permitirá la compilación total o parcial. 
+
+		\item {\color{yellow}\texttt{Warning}} que solo avisan de un posible mal funcionamiento.
+	
+		\item {\color{blue}Info} son cuestiones menores, que conviene revisar.
+	\end{itemize}
+\end{frame}

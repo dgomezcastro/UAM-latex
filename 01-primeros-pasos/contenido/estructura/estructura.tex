@@ -1,0 +1,196 @@
+% LTeX: language=es-ES
+
+\section{Estructura del documento y principales elementos}
+\frame{\sectionpage}
+
+\begin{frame}
+\frametitle{Cabecera y tipo de documento}
+En la cabecera introduciremos todo lo relativo a configuración
+\begin{block}{Código}
+	\latexfile[highlightlines={1-3}]{codigos/vacio.tex}
+\end{block}
+\end{frame}
+
+\begin{frame}{Tipo de documento}
+Aquí es donde decidimos que tipo de archivo latex queremos escribir, hay diferentes tipos de documentos
+\begin{columns}
+	\column{.4\textwidth}
+	\texttt{<style>}:
+	\begin{enumerate}
+		\item<1> \texttt{article} \only<1>{Para artículos cortos. Acepta partes, secciones y subsecciones}
+		\item<2> \texttt{book} \only<2>{Para archivos más extensos. Acepta partes, capítulos, secciones, subsecciones}
+	\end{enumerate}
+	\column{.5\textwidth}
+	\begin{block}{Código}
+		\latexfile[highlightlines={1}]{codigos/vacio.tex}
+	\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{El cuerpo}
+    A partir de aquí escribiremos el texto
+    \begin{columns}
+        \column{.4\textwidth}
+        Todo lo que queramos escribir.
+        \column{.5\textwidth}
+        \begin{block}{Código}
+			\latexfile[highlightlines={5,9}]{codigos/vacio.tex}
+        \end{block}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Comandos y variables}
+    Una herramienta fundamental en la escritura con \LaTeX
+    \begin{columns}
+        \column{.4\textwidth}
+        \begin{itemize}
+             \item \texttt{<command>} Nombre del comando
+             \item \texttt{<opt>} Argumento optativo.
+             \item \texttt{<arg\#>} Argumento obligatorio
+        \end{itemize}
+        \column{.6\textwidth}
+        \begin{block}{Código (llamada a comando)}
+            \begin{latexsource}
+\<command>[<opt>]{<arg1>}{<arg2>}
+            \end{latexsource}
+
+        \end{block}
+    \end{columns}
+
+	\bigskip 
+	Por ejemplo,
+	\begin{block}{Código}
+	\begin{latexsource}
+Hola, \textbf{Mundo}.
+	\end{latexsource}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Entornos}
+Los entornos funcionan como comandos, pero nos permiten introducir cantidades más largas de texto.
+\begin{columns}
+    \column{.4\textwidth}
+    Algunos ejemplos son
+    \begin{itemize}
+        \item \texttt{document}: Es donde introducimos el documento
+        \item \texttt{equation}: Para introducir ecuaciones numeradas
+        \item \texttt{emph}: Para conseguir textos en cursiva.
+    \end{itemize}
+    \column{.5\textwidth}
+    \begin{block}{Código}
+        \begin{latexsource}
+\begin{<env>}[<opt>]
+
+
+\end{<env>}
+        \end{latexsource}
+    \end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Los paquetes} 
+
+Por defecto \LaTeX\ no incluye demasiados comandos ni entornos. Podemos añadir nuevas funcionalidades (comandos y entornos) incluyendo \textbf{paquetes}. 
+
+Uno de los paquetes más usuales es el paquete matemático de la American Mathematical Society (AMS): \texttt{amsmath}.
+\begin{columns} 
+	\column{.4\textwidth}
+\begin{block}{Código}
+	\latexfile[highlightlines={3,6,8}]{codigos/ejemplo-amsmath.tex}
+\end{block}
+
+	\column{.5\textwidth} 
+	\fbox{ 
+		\includegraphics[width=\textwidth]{codigos/ejemplo-amsmath-preview.pdf}
+	}
+\end{columns}
+\end{frame} 
+
+
+        
+
+\begin{frame}[fragile]
+    \frametitle{El fichero y compatibilidades}
+    \framesubtitle{El paquete \texttt{inputenc}}
+    Para mayor compatibilidad, especialmente entre sistemas operativos es recomendable guardar los archivos de \texttt{.tex} en formato UTF8. Esto nos permitirá poner acentos de manera sencilla.
+    \begin{columns}
+        \column{.4\textwidth}
+        Para indicarle al compilar que hemos hecho eso escribimos.
+        \column{.5\textwidth}
+        \begin{block}{Código}
+            \begin{latexsource*}{highlightlines=3}
+\documentclass{<style>}   
+            
+\usepackage[utf8]{inputenc}
+            
+\begin{document}
+            \end{latexsource*}
+        \end{block}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{El paquete \texttt{babel}}
+    Para que \LaTeX\ ponga todos los textos automáticos en castellano deberemos añadir el paquete \texttt{babel}
+     \begin{columns}
+         \column{.45\textwidth}
+         Para indicarle al compilar que hemos hecho eso escribimos.
+         \column{.45\textwidth}
+         \begin{block}{Código}
+             \small
+             \begin{latexsource*}{highlightlines={3}}
+\documentclass{<style>}   
+
+\usepackage[spanish]{babel}
+
+\begin{document}
+             \end{latexsource*}
+            \end{block}
+        \end{columns}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+    \frametitle{Aspecto de un primer documento}
+    \begin{columns}
+        \column{.5\textwidth}
+        \begin{block}{Código [\texttt{basico.tex}]}
+        \scriptsize
+        \latexfile{codigos/basico.tex}
+        \end{block}
+        \column{.5\textwidth}
+        \fbox{
+        \includegraphics[scale=.25]{codigos/basico.pdf}
+    }
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Ficheros modulares: \texttt{input}}
+	Escribir un libro completo en un único archivo no es cómodo. Por eso \LaTeX\ permite escribir modularmente. 
+	
+	Podemos escribir en diferentes archivos \texttt{.tex}, y luego juntarlos en un principal.
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código [\texttt{modular.tex}]}
+			\latexfile[highlightlines={3-4}]{codigos/modular.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{modulo1.tex}]}
+			\latexfile{codigos/modulo1.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{modulo2.tex}]}
+			\latexfile{codigos/modulo2.tex}
+		\end{block}
+		\column{.4\textwidth}
+		\begin{figure}
+			\centering 
+			\fbox{\includegraphics[]{codigos/modular.pdf}}
+			\caption{Resultado de compilar \texttt{modular.tex}}
+		\end{figure} 
+	\end{columns}
+\end{frame}

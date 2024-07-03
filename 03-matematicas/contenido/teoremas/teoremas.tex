@@ -1,0 +1,111 @@
+
+
+\section{Teoremas}
+
+\begin{frame}[fragile]
+    \frametitle{Teoremas}
+    \framesubtitle{El paquete \texttt{amsthm}}
+%Existen más paquetes como \texttt{ntheorem}.
+A la hora definir un teorema debemos tener en cuenta tres cosas
+\begin{columns}
+\column{0.5\textwidth}
+\begin{enumerate}
+	\item <1-> \alert<1>{El estilo}\only<1>{: Los teoremas se escriben en cursiva, mientras que las definiciones se escriben con fuente normal.}
+	\item <2-> \alert<2>{El nombre}\only<2>{: Debemos poner un nombre de entorno \latexinline{<env>}, ya sea teorema (por ejemplo \latexinline{<env>=teorema}) un nombre para mostrar en el documento (por ejemplo \latexinline{<name>=Teorema})}
+	\item <3-> \alert<3>{La numeración}\only<3>{: Podemos numerar los teoremas de diferentes maneras}
+	\only<4->{\begin{enumerate}[a)]
+		\item <4-> Con su propio contador: \only<4>{El contador se crea por defecto si no decimos nada más, y se nombra automáticamente como \latexinline{<env>}}
+		\item <5-> Siguiendo la numeración de otro teorema ya definido
+		\item <6->Supeditada a otro contador, por ejemplo la sección. \only<6>{En este caso el contador de tipo a) lleva como predecesor el otro contador, y se resetea al cambiar el contador al que supedita}
+		\end{enumerate}}
+\end{enumerate}
+	\column{0.5\textwidth}
+\begin{block}{Código}
+\small
+\latexinline{\documentclass}\\
+
+(...)\\
+
+\alert<1>{ \latexinline{\theoremstyle{<style>}} }\\
+
+\latexinline{\newtheorem}\alert<2>{\latexinline{{<env>}}}\only<5>{\alert{ \texttt{[<counter>]}}}\alert<2>{\latexinline{{<name>}}}\only<6>{\alert{\texttt{[<counter>]}}}\\
+
+(...)\\
+
+\latexinline{\begin{document}}\\
+
+\end{block}
+\end{columns}
+\only<1>{
+Hay tres estilos predefinidos:\\
+
+\hspace{1cm}~
+		\begin{tabular}{r|l}
+		\texttt{plain} & \textbf{Theorem 1.}\textit{Theorem text.} \\
+		\texttt{definition} & \textbf{Definition 1.} {Definition text.} \\
+		\texttt{remark} & \textit{Remark 1.}{Remark text.} \\
+		\end{tabular}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Teoremas}
+    \framesubtitle{Ejemplo}
+Este es el aspecto de un teorema normal definido con el paquete \texttt{amsthm}.
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Código (\texttt{thm1.tex})}
+		\scriptsize
+		\latexfile{codigos/thm1.tex}
+	\end{block}
+	\column{0.4\textwidth}
+	\fbox{\begin{minipage}{\textwidth}
+		\textbf{Teorema 1} (Euclides)~\textbf{.} \textit{No existe un primo mayor que el resto.}
+		\end{minipage}
+	}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Operadores matemáticos} 
+	
+	Con el paquete \texttt{amsmath} se pueden definir operadores matemáticos, como $\mathrm{div}$ o $\mathrm{rot}$:
+	
+	\begin{center} 
+		\latexinline{\DeclareMathOperator{\rot}{rot}}
+	\end{center} 
+
+    Si queremos que el operador tenga sub-índice debajo entonces
+    \begin{center} 
+		\latexinline{\DeclareMathOperator*{\argmin}{arg\,min}}
+	\end{center} 
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Ejercicio}
+    Escribir el siguiente documento \LaTeX \\
+    
+    \centering
+    \fbox{
+            \includegraphics[trim=3cm 13cm 3cm 5cm,clip,scale=.5]{codigos/thm2.pdf}
+    }
+
+\end{frame}
+\begin{frame}
+    \frametitle{Solución}
+    \begin{columns}
+    \column{0.4\textwidth}
+    \centering
+    \begin{block}{Código (\texttt{ejercicio1.tex})}
+    \tiny
+    \latexfile[lastline=17]{codigos/thm2.tex}
+    \end{block}
+    \column{0.4\textwidth}
+    \centering
+    \begin{block}{Código}
+        \tiny
+        \latexfile[firstline=18]{codigos/thm2.tex}
+    \end{block}
+    \end{columns}
+\end{frame}
