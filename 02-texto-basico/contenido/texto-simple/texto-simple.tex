@@ -7,27 +7,88 @@
     % TODO
 \end{frame}
 
-\begin{frame}{Negrita, cursiva, ... }
-    % TODO
+\begin{frame}[fragile]{Negrita, cursiva, ... }
+    \begin{table} 
+		\centering
+	\begin{tabular}{l|l}
+        \latexinline{Hola} & Hola \\
+        \latexinline{\textbf{Hola}} & \textbf{Hola} \\
+        \latexinline{\textit{Hola}} & \textit{Hola} \\
+        \latexinline{\texttt{Hola}} & \texttt{Hola} \\
+        \latexinline{\textsc{Hola}} & \textsc{Hola} \\
+        \latexinline{\underline{Hola}} & \underline{Hola} \\
+	\end{tabular}
+	\end{table} 
+    Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... 
 \end{frame}
 
-\begin{frame}{Tamaño de letra}
-    % TODO
+\begin{frame}[fragile]{Tamaño de letra}
+    \small 
+    El tamaño de letra para todo el documento puede ponerse como parámetro opcional de \texttt{documentclass}, p.e.
+    \begin{latexsource}
+\documentclass[8pt]{article}    
+    \end{latexsource}
+    El tamaño del texto puede cambiar localmente
+    \begin{table} 
+    \centering
+    \begin{tabular}{l|l}
+        \latexinline{\Huge Hola} & {\Huge Hola} \\
+        \latexinline{\huge Hola} & {\huge Hola} \\
+        \latexinline{\LARGE Hola} & {\LARGE Hola} \\
+        \latexinline{\Large Hola} & {\Large Hola} \\
+        \latexinline{\large Hola} & {\large Hola} \\
+        \latexinline{\normalsize Hola} & {\normalsize Hola} \\
+        \latexinline{\small Hola} & {\small Hola} \\
+        \latexinline{\footnotesize Hola} & {\footnotesize Hola} \\
+        \latexinline{\scriptsize Hola} & {\footnotesize Hola} \\
+        \latexinline{\tiny Hola} & {\footnotesize Hola} \\
+	\end{tabular}
+    \end{table}
+    Más sobre fuentes:
+
+    \url{https://en.wikibooks.org/wiki/LaTeX/Fonts}
+\end{frame}
+
+\begin{frame}[fragile]{Fuente}
+    El documentos \texttt{article} y \texttt{book} latex utiliza la fuente \texttt{Computer Modern}. Otras fuentes están disponibles
+    \begin{table} 
+        \centering
+        \begin{tabular}{l|l}
+            \latexinline{\usepackage{lmodern}} & \includegraphics{codigos/lmodern.pdf} \\
+            \latexinline{\usepackage{mathptmx}} & \includegraphics{codigos/times.pdf} \\
+            \latexinline{\usepackage{helvet}} & \includegraphics{codigos/helvetica.pdf} \\
+        \end{tabular}
+        \end{table}
+
+    Añadir codificación de fuente tiene algunas ventajas. Es habitual añadir
+    \begin{latexsource}
+\usepackage[T1]{fontenc}
+    \end{latexsource}
+
+    Listas más extensas en 
+
+    \url{https://www.overleaf.com/learn/latex/Font_typefaces}
+
+    \url{https://tug.org/FontCatalogue/}\\
+
+    Si utilizamos \texttt{XeLaTeX} o \texttt{LuaTeX} como compiladores, podemos usar el paquete \texttt{fontspec}
+    
 \end{frame}
 
 \begin{frame}{Colores}
-    % TODO
+    El paquete \texttt{xcolor} nos permite utilizar diferentes colores, p.e.
+    \begin{table} 
+        \centering
+        \begin{tabular}{l|l}
+            \latexinline{\color{blue} Hola} & {\color{blue} Hola} \\
+        \end{tabular}
+        \end{table}
+    Hay una extensa familia de espacios de nombres, y comando asociados. 
+
+    \url{https://en.wikibooks.org/wiki/LaTeX/Colors}
 \end{frame}
 
-\begin{frame}{Interlineado y saltos de líneas}
-    % TODO
-\end{frame}
-
-\begin{frame}{Fuente}
-    % TODO
-
-    \texttt{fontenc}
-
-    \texttt{latinmodern}
-    
+\begin{frame}[fragile]{Saltos de líneas}
+    \tiny
+    \latexinputandpdf{codigos/skip}    
 \end{frame}
