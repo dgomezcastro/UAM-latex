@@ -2,7 +2,7 @@
 *_aux*
 *.DS_Store*
 
-*sesion.pdf
+sesion.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
