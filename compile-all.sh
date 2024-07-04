@@ -8,14 +8,4 @@ do
     cd ..
 done
 
-rm ./**/*.aux
-rm ./**/*.log
-rm ./**/*.nav
-rm ./**/*.out
-rm ./**/*.snm
-rm ./**/*.toc
-rm ./**/*.vrb
-rm ./**/*.fdb_latexmk
-rm ./**/*.synctex.gz
-rm ./**/*.fls
-rm -R ./**/_minted-*
+./clean-up.sh

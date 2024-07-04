@@ -11,12 +11,12 @@
     \begin{table} 
 		\centering
 	\begin{tabular}{l|l}
-        \latexinline{Hola} & Hola \\
-        \latexinline{\textbf{Hola}} & \textbf{Hola} \\
-        \latexinline{\textit{Hola}} & \textit{Hola} \\
-        \latexinline{\texttt{Hola}} & \texttt{Hola} \\
-        \latexinline{\textsc{Hola}} & \textsc{Hola} \\
-        \latexinline{\underline{Hola}} & \underline{Hola} \\
+        \latexrowinlineandcompile{Hola}
+        \latexrowinlineandcompile{\textbf{Hola}} 
+        \latexrowinlineandcompile{\textit{Hola}} 
+        \latexrowinlineandcompile{\texttt{Hola}} 
+        \latexrowinlineandcompile{\textsc{Hola}} 
+        \latexrowinlineandcompile{\underline{Hola}}
 	\end{tabular}
 	\end{table} 
     Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... 
@@ -32,16 +32,16 @@
     \begin{table} 
     \centering
     \begin{tabular}{l|l}
-        \latexinline{\Huge Hola} & {\Huge Hola} \\
-        \latexinline{\huge Hola} & {\huge Hola} \\
-        \latexinline{\LARGE Hola} & {\LARGE Hola} \\
-        \latexinline{\Large Hola} & {\Large Hola} \\
-        \latexinline{\large Hola} & {\large Hola} \\
-        \latexinline{\normalsize Hola} & {\normalsize Hola} \\
-        \latexinline{\small Hola} & {\small Hola} \\
-        \latexinline{\footnotesize Hola} & {\footnotesize Hola} \\
-        \latexinline{\scriptsize Hola} & {\footnotesize Hola} \\
-        \latexinline{\tiny Hola} & {\footnotesize Hola} \\
+        \latexrowinlineandcompile{\Huge Hola}
+        \latexrowinlineandcompile{\huge Hola} 
+        \latexrowinlineandcompile{\LARGE Hola}
+        \latexrowinlineandcompile{\Large Hola}
+        \latexrowinlineandcompile{\large Hola}
+        \latexrowinlineandcompile{\normalsize Hola}
+        \latexrowinlineandcompile{\small Hola} 
+        \latexrowinlineandcompile{\footnotesize Hola}
+        \latexrowinlineandcompile{\scriptsize Hola} 
+        \latexrowinlineandcompile{\tiny Hola} 
 	\end{tabular}
     \end{table}
     Más sobre fuentes:
@@ -92,3 +92,9 @@
     \tiny
     \latexinputandpdf{codigos/skip}    
 \end{frame}
+
+\begin{frame}[fragile]{Listas}
+
+\latexinputandpdf{codigos/enumerate}
+
+\end{frame} 

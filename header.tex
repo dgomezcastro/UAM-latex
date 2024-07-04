@@ -95,6 +95,13 @@
 \newcommand{\latexinputandpdf}[1]{\latexinputandpdfdifferentdimensions{0.45}{0.45}{#1}}
 \newcommand{\latexinputandcompile}[1]{\latexinputandcompiledifferentdimensions{0.45}{0.45}{#1}}
 
+\newcommand{\latexrowinlineandcompile}[1]
+{
+      \latexinline{#1}
+      &  
+      {#1}
+      \\
+}
 
 \usepackage{import}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

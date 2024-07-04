@@ -9,8 +9,8 @@
     \begin{columns}
     \column{0.4\textwidth}
     \begin{enumerate}
-        \item<1-> \alert<1>{En línea}
-        \item<2-> \alert<2>{Presentada \\(con \latexinline{\[...\]} o \latexinline{$$...$$} )}
+        \item<1-> \alert<1>{En línea \\(\latexinline{\(...\)} o \latexinline{$...$})}
+        \item<2-> \alert<2>{Presentada \\(\latexinline{\[...\]} o \latexinline{$$...$$})}
         \item<3-> \alert<3>{\latexinline{equation} }
         \item<4-> \alert<4>{\latexinline{align}}
     \end{enumerate}
@@ -86,7 +86,7 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
     \frametitle{La ecuación más bella del mundo}
     La ecuación de Euler, popular por contener algunas de las más importantes constantes matemáticas puede escribirse
     \begin{columns}
-        \column{.5\textwidth}
+        \column{.4\textwidth}
         \begin{block}{Código}
             \normalfont
         \begin{latexsource}
@@ -124,11 +124,10 @@ para que quede mejor
     
 \end{frame}
 
-\begin{frame}
-	\frametitle{Subíndices y superíndices}
+\begin{frame}{Subíndices y superíndices}
 	Los subíndices de sumarios e integrales cambian de formato presentado a en línea
     \begin{columns} 
-		\column{.5\textwidth}
+		\column{.45\textwidth}
 		\begin{block}{Código} 
 			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-subindices.tex}
 		\end{block} 
@@ -143,14 +142,14 @@ para que quede mejor
 	\end{columns}
 	\vspace{.5cm}
 
-	\pause 
-	
+\end{frame} 
+
+\begin{frame}[fragile]{Subíndices y superíndices}
 	Además la función \latexinline{\substack} es muy útil
-	\vspace{-.5cm}
-			\begin{columns} 
-		\column{.5\textwidth}
+	\begin{columns} 
+		\column{.45\textwidth}
 		\begin{block}{Código} 
-			\latexfile[fontsize=\tiny]
+			\latexfile[fontsize=\footnotesize]
 			{codigos/ejemplo-subindices-2.tex}
 		\end{block} 
 		\column{.4\textwidth}
@@ -195,8 +194,10 @@ para que quede mejor
 
 \subsection{Diagramas}
 
-\begin{frame}[fragile]
-\frametitle{El paquete \texttt{xy-pic}}
+\begin{frame}[fragile]{Diagramas}
+    \textbf{El paquete \texttt{tikzcd}} Que depende de la librería \texttt{tikz}. Hablaremos de ella más adelante 
+
+    \textbf{El paquete \texttt{xy-pic}}
     Este paquete se emplea para hacer todo tipo de gráficos, por ejemplo el diagrama
     \[ 
         \xymatrix{
@@ -205,10 +206,10 @@ para que quede mejor
         }
     \] 
     Tiene infinidad de opciones.
+    Será el que cubramos en esta sesión.
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{\texttt{xymatrix}} 
+\begin{frame}[fragile]{\texttt{xymatrix}} 
     Es la manera más sencilla de introducir diagramas. Los elementos que se conectarán por flechas se introducen en las posiciones de una matriz, de tipo \texttt{xymatrix}
 
     \latexinputandcompile{codigos/xy-empty.tex}
@@ -216,8 +217,7 @@ para que quede mejor
     Se puede introducir una \texttt{xymatrix} dentro o fuera de fórmulas, pero deberemos tener cuidado con el contenido.
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{Las flechas}
+\begin{frame}[fragile]{Las flechas}
     Dentro de una \texttt{xymatrix} podemos introducir flechas con el comando \latexinline{\ar}
 
     Admite varios modificadores
