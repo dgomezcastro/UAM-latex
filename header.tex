@@ -76,6 +76,23 @@
   \end{columns}
 }
 
+\newcommand{\latexinputandpdf}[1]
+{
+  \begin{columns}
+    \column{0.4\textwidth}
+    \begin{block}{Código}
+        \latexfile{#1.tex}
+    \end{block}
+    \column{0.4\textwidth}
+    \centering
+    \fbox{
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\texwidth]{#1.pdf}
+    \end{minipage}
+    }
+  \end{columns}
+}
+
 \usepackage{import}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The following is patch to make import and minted behave together

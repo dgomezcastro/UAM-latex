@@ -1,0 +1,33 @@
+\section{Secciones e índice}
+\frame{\sectionpage}
+
+\begin{frame}[fragile]
+	\frametitle{Secciones e índices} 
+	
+	Naturalmente \LaTeX\ permite estructurar el documento en secciones. \\ 
+	
+	\pause 
+	
+	Para empezar una nueva sección con título basta con indicarlo y dar un título utilizando los siguientes comandos:
+	
+	\begin{table} 
+		\centering
+	\begin{tabular}{c|l}
+	-1 & \latexinline{\part{titulo}} \\
+	0 &	\latexinline{\chapter{titulo}} \\
+		1	& \latexinline{\section{titulo}} \\
+		2	& \latexinline{\subsection{titulo}} \\
+		3	& \latexinline{\subsubsection{titulo}} \\
+		4	& \latexinline{\paragraph{titulo}} \\
+		5	& \latexinline{\subparagraph{titulo}}
+	\end{tabular}
+	\end{table} 
+
+	\pause 
+
+	Se puede generar el índice introduciendo \latexinline{\tableofcontents}. Este comando admite parámetros optativos.  \\ 
+	
+	\pause 
+	
+	También se pueden hacer otras tablas de contenidos: \latexinline{\listoffigures}, \latexinline {\listoftables}.
+\end{frame}

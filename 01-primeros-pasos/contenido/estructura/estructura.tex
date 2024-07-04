@@ -110,51 +110,6 @@ Uno de los paquetes más usuales es el paquete matemático de la American Mathem
 \end{columns}
 \end{frame} 
 
-
-        
-
-\begin{frame}[fragile]
-    \frametitle{El fichero y compatibilidades}
-    \framesubtitle{El paquete \texttt{inputenc}}
-    Para mayor compatibilidad, especialmente entre sistemas operativos es recomendable guardar los archivos de \texttt{.tex} en formato UTF8. Esto nos permitirá poner acentos de manera sencilla.
-    \begin{columns}
-        \column{.4\textwidth}
-        Para indicarle al compilar que hemos hecho eso escribimos.
-        \column{.5\textwidth}
-        \begin{block}{Código}
-            \begin{latexsource*}{highlightlines=3}
-\documentclass{<style>}   
-            
-\usepackage[utf8]{inputenc}
-            
-\begin{document}
-            \end{latexsource*}
-        \end{block}
-    \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{El paquete \texttt{babel}}
-    Para que \LaTeX\ ponga todos los textos automáticos en castellano deberemos añadir el paquete \texttt{babel}
-     \begin{columns}
-         \column{.45\textwidth}
-         Para indicarle al compilar que hemos hecho eso escribimos.
-         \column{.45\textwidth}
-         \begin{block}{Código}
-             \small
-             \begin{latexsource*}{highlightlines={3}}
-\documentclass{<style>}   
-
-\usepackage[spanish]{babel}
-
-\begin{document}
-             \end{latexsource*}
-            \end{block}
-        \end{columns}
-\end{frame}
-
-
-
 \begin{frame}[fragile]
     \frametitle{Aspecto de un primer documento}
     \begin{columns}
@@ -168,29 +123,4 @@ Uno de los paquetes más usuales es el paquete matemático de la American Mathem
         \includegraphics[scale=.25]{codigos/basico.pdf}
     }
     \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Ficheros modulares: \texttt{input}}
-	Escribir un libro completo en un único archivo no es cómodo. Por eso \LaTeX\ permite escribir modularmente. 
-	
-	Podemos escribir en diferentes archivos \texttt{.tex}, y luego juntarlos en un principal.
-	\begin{columns}
-		\column{.5\textwidth}
-		\begin{block}{Código [\texttt{modular.tex}]}
-			\latexfile[highlightlines={3-4}]{codigos/modular.tex}
-		\end{block}
-		\begin{block}{Código [\texttt{modulo1.tex}]}
-			\latexfile{codigos/modulo1.tex}
-		\end{block}
-		\begin{block}{Código [\texttt{modulo2.tex}]}
-			\latexfile{codigos/modulo2.tex}
-		\end{block}
-		\column{.4\textwidth}
-		\begin{figure}
-			\centering 
-			\fbox{\includegraphics[]{codigos/modular.pdf}}
-			\caption{Resultado de compilar \texttt{modular.tex}}
-		\end{figure} 
-	\end{columns}
 \end{frame}

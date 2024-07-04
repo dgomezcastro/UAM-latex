@@ -1,0 +1,49 @@
+% LTeX: language=es-ES
+
+\section{Uso de caracteres especiales}
+\frame{\sectionpage}
+
+\begin{frame}[fragile]{Caracteres especiales}
+    Los documentos de texto ``sencillo'' son aquellos con caracteres \href{https://en.wikipedia.org/wiki/ASCII}{ASCII}. 
+
+    Para aumentar el número de caracteres soportados (por ejemplos añadir letras con acentos, o "¡") hay diferentes codificaciones: 
+	
+	UTF-8 (por defecto en Linux y Mac), ISO (habitual en Windows), ... \\
+
+    \href{https://en.wikipedia.org/wiki/UTF-8}{UTF8} es el formato por defecto para LaTeX desde 2018 (\href{https://tug.org/TUGboat/tb39-1/tb121ltnews28.pdf}{link}). \\
+
+    \textbf{Curiosidades sobre texto plano}: \href{https://www.youtube.com/watch?v=4mRxIgu9R70}{\emph{Plain Text} by Dylan Beattie en Youtube}
+\end{frame}
+
+\begin{frame}{El fichero y compatibilidades}
+	\small 
+
+	\begin{figure}
+		\includegraphics[width=.75\textwidth]{imagenes/texstudio-utf8}
+	\end{figure}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{El paquete \texttt{inputenc}}
+    En caso de duda (p.e. compiladores o archivos de LaTeX anteriores a 2018), 
+    
+    puede llamarse al paquete \texttt{inputenc}, con la codificación del archivo
+
+    \begin{block}{Código}
+        \begin{latexsource*}{highlightlines=3}
+\documentclass{<style>}   
+            
+\usepackage[utf8]{inputenc}
+            
+\begin{document}
+        \end{latexsource*}
+    \end{block}
+
+    En archivos modernos esta línea no es necesaria. \\
+
+    Existe una codificación extendida \latexinline{[utf8x]} que es preferible evitar (al menos, al principio).\\
+
+    Debemos evitar el uso de caracteres más complejos (p.e. \latexinline{µ}), que conviene incluir con los paquete de matemáticas.
+\end{frame}
+
