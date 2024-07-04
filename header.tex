@@ -59,39 +59,42 @@
 \newmintinline[latexinline]{latex}{}
 \newmintedfile[latexfile]{latex}{}
 
-\newcommand{\latexinputandcompile}[1]
+\newcommand{\latexinputandcompiledifferentdimensions}[3]
 {
   \begin{columns}
-    \column{0.4\textwidth}
+    \column{#1\textwidth}
     \begin{block}{Código}
-        \latexfile{#1}
+        \latexfile{#3}
     \end{block}
-    \column{0.4\textwidth}
+    \column{#2\textwidth}
     \centering
     \fbox{
     \begin{minipage}{\textwidth}
-        \input{#1}
+        \input{#3}
     \end{minipage}
     }
   \end{columns}
 }
 
-\newcommand{\latexinputandpdf}[1]
+\newcommand{\latexinputandpdfdifferentdimensions}[3]
 {
   \begin{columns}
-    \column{0.4\textwidth}
+    \column{#1\textwidth}
     \begin{block}{Código}
-        \latexfile{#1.tex}
+        \latexfile{#3.tex}
     \end{block}
-    \column{0.4\textwidth}
+    \column{#2\textwidth}
     \centering
     \fbox{
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{#1.pdf}
+        \includegraphics[width=\textwidth]{#3.pdf}
     \end{minipage}
     }
   \end{columns}
 }
+\newcommand{\latexinputandpdf}[1]{\latexinputandpdfdifferentdimensions{0.4}{0.4}{#1}}
+\newcommand{\latexinputandcompile}[1]{\latexinputandcompiledifferentdimensions{0.4}{0.4}{#1}}
+
 
 \usepackage{import}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
