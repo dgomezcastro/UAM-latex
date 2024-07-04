@@ -2,6 +2,8 @@
 *_aux*
 *.DS_Store*
 
+*sesion.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
