@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
 
 rm ./**/*.aux
+rm ./**/*.dvi
 rm ./**/*.log
 rm ./**/*.nav
 rm ./**/*.out
@@ -10,4 +11,4 @@ rm ./**/*.vrb
 rm ./**/*.fdb_latexmk
 rm ./**/*.synctex.gz
 rm ./**/*.fls
-rm -R ./**/_minted-*
+# rm -R ./**/_minted-*
