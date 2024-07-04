@@ -1,24 +1,26 @@
 % LTeX: language=es-ES
-\section{Formatos locales: el paquete \texttt{babel}}
-\frame{\sectionpage}
+\subsection{Formatos locales: el paquete \texttt{babel}}
 \begin{frame}[fragile]
     \frametitle{El paquete \texttt{babel}}
     Para que \LaTeX\ ponga todos los textos automáticos (nombre como ``Capítulo'', ...) 
     
     en castellano deberemos añadir el paquete \texttt{babel}
-     \begin{columns}
-         \column{.45\textwidth}
-         Para indicarle al compilar que hemos hecho eso escribimos.
-         \column{.45\textwidth}
-         \begin{block}{Código}
-             \small
-             \begin{latexsource*}{highlightlines={3}}
+    \begin{block}{Código}
+        \begin{latexsource*}{highlightlines={3}}
 \documentclass{<style>}   
 
 \usepackage[spanish]{babel}
 
 \begin{document}
-             \end{latexsource*}
-            \end{block}
-        \end{columns}
+        \end{latexsource*}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Secciones e índice}
+    \footnotesize
+	\latexinputandpdf{codigos/ejemplo-secciones-babel}
+\end{frame}
+
+\begin{frame}{Textos multi-lingües}
+
 \end{frame}
