@@ -1,9 +1,9 @@
 % LTeX: language=es-ES
 
-\section{Fórmulas}
+
+\section{Distintos tipos de fórmulas}
 \frame{\sectionpage}
 
-\subsection{Distintos tipos de fórmulas}
 
 \begin{frame}[fragile]
     \frametitle{Escribiendo fórmulas}
@@ -66,7 +66,16 @@
     Añadir \latexinline{*} al final de estos comandos (\latexinline{equation*,align*},...) elimina la numeración.
 \end{frame}
 
-\subsection{Símbolos}
+\begin{frame}[fragile]
+    \frametitle{La ecuación más bella del mundo}
+    La ecuación de Euler, popular por contener algunas de las más importantes constantes matemáticas puede escribirse
+    % \latexinlineandcompile{$ e^{i\pi} + 1 = 0 $}
+    \latexinputandcompile{codigos/euler.tex}
+\end{frame}
+
+\section{Símbolos}
+\frame{\sectionpage}
+
 \begin{frame}[fragile]
 \frametitle{Símbolos útiles}
 \begin{tabular}{cl  cl cl}
@@ -75,28 +84,26 @@
     \latexrowcompileandinline{$\frac a b$} \\
 	\latexrowcompileandinline{$-$} & 
     \latexrowcompileandinline{$\delta$}& 
-    \latexrowcompileandinline{$\sqrt a$} \\
+    \latexrowcompileandinline{$a^b$}  \\
 	\latexrowcompileandinline{$\times$} &
     \latexrowcompileandinline{$\partial$} &
-    \latexrowcompileandinline{$a^b$} \\
+    \latexrowcompileandinline{$\sqrt a$} \\
 	\latexrowcompileandinline{$\div$} & 
-    \latexrowcompileandinline{$\Omega$} \\
-	\latexrowcompileandinline{$\cdot$} & 
-    \latexrowcompileandinline{$\pi$}\\
-	\latexrowcompileandinline{$\oplus$}\\
-	\latexrowcompileandinline{$\otimes$}
+    \latexrowcompileandinline{$\Omega$} & 
+    \latexrowcompileandinline{$\max, \min$} \\
+	\latexrowcompileandinline{$\cdot$}&
+    \latexrowcompileandinline{$\pi$} &
+    \latexrowcompileandinline{$\cos, \sin$}\\
+	\latexrowcompileandinline{$\oplus$} & 
+	\latexrowcompileandinline{$\otimes$} &
+    \latexrowcompileandinline{$\exp, \log$}
 \end{tabular}
-\vspace{3ex}
 
-La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite buscar símbolos a partir de un dibujo a mano alzada.
-\end{frame}
+\latexinputandcompile{codigos/sum.tex}
 
+\vspace{1ex}
 
-\begin{frame}[fragile]
-    \frametitle{La ecuación más bella del mundo}
-    La ecuación de Euler, popular por contener algunas de las más importantes constantes matemáticas puede escribirse
-    % \latexinlineandcompile{$ e^{i\pi} + 1 = 0 $}
-    \latexinputandcompile{codigos/euler.tex}
+La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite buscar símbolos.
 \end{frame}
 
 \begin{frame}{Subíndices y superíndices}
@@ -117,10 +124,24 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
     \latexinputandcompile{codigos/espaciado.tex}
 \end{frame}
 
-\subsection{Matrices}
+\begin{frame}[fragile]{Fuentes matemáticas}
+    En el formato matemático hay diferentes fuentes
 
-\begin{frame}[fragile]
-\frametitle{Matrices}
+    \begin{tabular}{cl}
+        \latexrowcompileandinline{$a$} \\
+        \latexrowcompileandinline{$\mathrm{a}$} \\
+        \latexrowcompileandinline{$\mathbf{a}$} \\
+        \latexrowcompileandinline{$\mathsf{a}$} \\
+        \latexrowcompileandinline{$\mathbb{R}$} \\
+        \latexrowcompileandinline{$\mathcal{R}$} \\
+        \latexrowcompileandinline{$\mathfrak{R}$} \\
+    \end{tabular}
+\end{frame}
+
+\section{Matrices y diagramas}
+\frame{\sectionpage}
+
+\begin{frame}[fragile]{Matrices}
     Las matrices se introducen siempre en entornos matemáticos. Maple y matlab permiten exportar matrices a \LaTeX. 
     Hay distintos tipos de matrices predeterminadas en el paquete \texttt{amsmath}.
     \begin{enumerate}
@@ -144,8 +165,6 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
     
     \latexinputandcompile{codigos/matrix2.tex}
 \end{frame}
-
-\subsection{Diagramas}
 
 \begin{frame}[fragile]{Diagramas}
     \textbf{El paquete \texttt{tikzcd}} Que depende de la librería \texttt{tikz}. Hablaremos de ella más adelante 
