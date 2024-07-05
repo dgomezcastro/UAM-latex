@@ -1,8 +1,10 @@
+% LTeX: language=es-ES
 
-\section{Etiquetas} 
+\section{Referencias básicas de \LaTeX}
+
 \begin{frame}[fragile]
-\frametitle{Referencias}
-Para establecer una etiqueta a la que poder llamar se emplea
+\frametitle{Etiquetas}
+Algunos entornos están numerados y se pueden etiquetar con
 \begin{latexsource}
 \label{<label>}
 \end{latexsource}
@@ -10,7 +12,12 @@ Es habitual emplear etiquetas de la forma
 \begin{latexsource}
 <label>=thm:euclides, fig:gauss, eq:divergencia
 \end{latexsource}
-No se pueden emplear acentos. 
+No se pueden emplear acentos.
+
+Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
+
+\latexinputandcompile{codigos/label.tex}
+
 \end{frame}
 
 \begin{frame}[fragile]
@@ -42,7 +49,6 @@ No se pueden emplear acentos.
 \end{columns}
 \end{frame}
 
-\section{Referencias básicas de \LaTeX}
 
 \begin{frame}[fragile]
 \frametitle{Referencias: El comando \latexinline{\ref}}
@@ -64,8 +70,11 @@ No se pueden emplear acentos.
 \end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Referencias avanzadas: el paquete \latexinline{\cleveref}}
+\begin{frame}[fragile]{Etiquetas especiales}
+	\latexinputandcompile{codigos/tag.tex}
+\end{frame}
+
+\begin{frame}{Referencias avanzadas: el paquete \latexinline{\cleveref}}
 	Introduciendo este paquete tenemos acceso al comando \latexinline{\Cref}. \\ 
 	
 	Esta función actúa como \latexinline{\ref}, pero incluye automáticamente el tipo de objeto referenciado: Teorema, Figura... \\[-2ex]

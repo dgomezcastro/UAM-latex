@@ -1,7 +1,7 @@
 % LTeX: language=es-ES
 
 \section{Simplemente texto}
-\frame{\sectionpage}
+
 
 \begin{frame}[fragile]{Negrita, cursiva, ... }
     \begin{table} 
@@ -10,6 +10,7 @@
         \latexrowinlineandcompile{Hola} \\
         \latexrowinlineandcompile{\textbf{Hola}} \\
         \latexrowinlineandcompile{\textit{Hola}} \\
+        \latexrowinlineandcompile{\textsl{Hola}} \\
         \latexrowinlineandcompile{\texttt{Hola}} \\
         \latexrowinlineandcompile{\textsc{Hola}} \\
         \latexrowinlineandcompile{\textrm{Hola}} \\
@@ -107,4 +108,23 @@
 
 \begin{frame}[fragile]{Paquetes \texttt{enum} y \texttt{enumerate}}
     A%TODO
+\end{frame}
+
+\begin{frame}[fragile]{Caracteres reservados y cómo escribirlos}
+    \begin{table}
+        \centering
+        \begin{tabular}{llll}
+            \latexinline{$} & modo matemático & \latexinline{\$} & \$ \\
+            \latexinline{%} & comentario & 
+            \latexrowinlineandcompile{\%, \textdollar} \\
+            \latexinline{&} & tabulación &
+            \latexrowinlineandcompile{\&} \\
+            \latexinline{^, _} & super y sub índices & 
+            \latexrowinlineandcompile{\^{}, \_} \\
+            \latexinline{\ } & comienzo de comando &
+            \latexrowinlineandcompile{\textbackslash}\\
+            \latexinline{{}} & inicio y fin de bloque & 
+            \latexrowinlineandcompile{\{ \}}\\ 
+        \end{tabular}
+    \end{table}
 \end{frame}

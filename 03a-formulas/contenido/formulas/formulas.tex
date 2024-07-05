@@ -2,7 +2,7 @@
 
 
 \section{Distintos tipos de fórmulas}
-\frame{\sectionpage}
+
 
 
 \begin{frame}[fragile]
@@ -74,7 +74,7 @@
 \end{frame}
 
 \section{Símbolos}
-\frame{\sectionpage}
+
 
 \begin{frame}[fragile]
 \frametitle{Símbolos útiles}
@@ -126,20 +126,49 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
 
 \begin{frame}[fragile]{Fuentes matemáticas}
     En el formato matemático hay diferentes fuentes
-
+    \begin{table} 
+    \centering
     \begin{tabular}{cl}
         \latexrowcompileandinline{$a$} \\
         \latexrowcompileandinline{$\mathrm{a}$} \\
         \latexrowcompileandinline{$\mathbf{a}$} \\
         \latexrowcompileandinline{$\mathsf{a}$} \\
+        \latexrowcompileandinline{$\vec{a}$}
+    \end{tabular}
+    \end{table}
+    El paquete \texttt{amssymb} añade
+    \begin{table} 
+        \centering
+        \begin{tabular}{cl}
         \latexrowcompileandinline{$\mathbb{R}$} \\
         \latexrowcompileandinline{$\mathcal{R}$} \\
         \latexrowcompileandinline{$\mathfrak{R}$} \\
     \end{tabular}
+    \end{table}
 \end{frame}
 
+\begin{frame}[fragile]{Paréntesis y delimitadores}
+    \begin{table} 
+        \centering
+        \begin{tabular}{cl}
+        \latexrowinlineandcompile{$(x+y)z$} \\
+        \latexrowinlineandcompile{$[x+y]z$} \\
+        \latexrowinlineandcompile{$\{x+y \mid x,y \ge 0\}$} \\
+        \latexrowinlineandcompile{$\langle \rangle$} \\
+        \latexrowinlineandcompile{$\lceil, \rceil, \lfloor, \rfloor$} \\
+        \latexrowinlineandcompile{$\big( \Big( \bigg( \Bigg($} \\
+        \latexrowinlineandcompile{$\left(x^{2^2} + y^{2^2}\right)$} \\
+    \end{tabular}
+    \end{table}
+\end{frame}
+
+% \begin{frame}[fragile]
+%     Es habitual crear comandos para este tipo de letras
+%     \latexinputandpdf{codigos/R}
+% \end{frame}
+
 \section{Matrices y diagramas}
-\frame{\sectionpage}
+
 
 \begin{frame}[fragile]{Matrices}
     Las matrices se introducen siempre en entornos matemáticos. Maple y matlab permiten exportar matrices a \LaTeX. 
