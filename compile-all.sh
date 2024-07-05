@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in {0..8}
+for i in {0..9}
 do
     cd 0$i*
     pdflatex -shell-escape sesion.tex
