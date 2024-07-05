@@ -68,13 +68,21 @@
 \begin{frame}[fragile]
 \frametitle{Símbolos útiles}
 \begin{tabular}{cl  cl cl}
-	$+$ & +  & $\varepsilon$ & \verb|\varepsilon| & $\frac a b$ & \verb|\frac{a}{b}|\\
-	$-$ & -  & $\delta$ & \verb|\delta| & $\sqrt a$ & \verb|\sqrt{a}| \\
-	$\times$ & \verb|\times| & $\partial$ & \verb|\partial| & $a^b$ & \verb|{a}^{b}| \\
-	$\div$ & \verb|\div| & $\Omega$ & \verb|\Omega|\\
-	$\cdot$ & \verb|\cdot| & $\pi$ & \verb|\pi|\\
-	$\oplus$ & \verb|\oplus| &\\
-	$\otimes$ & \verb|\otimes|
+	\latexrowcompileandinline{$+$} & 
+    \latexrowcompileandinline{$\varepsilon$} & 
+    \latexrowcompileandinline{$\frac a b$} \\
+	\latexrowcompileandinline{$-$} & 
+    \latexrowcompileandinline{$\delta$}& 
+    \latexrowcompileandinline{$\sqrt a$} \\
+	\latexrowcompileandinline{$\times$} &
+    \latexrowcompileandinline{$\partial$} &
+    \latexrowcompileandinline{$a^b$} \\
+	\latexrowcompileandinline{$\div$} & 
+    \latexrowcompileandinline{$\Omega$} \\
+	\latexrowcompileandinline{$\cdot$} & 
+    \latexrowcompileandinline{$\pi$}\\
+	\latexrowcompileandinline{$\oplus$}\\
+	\latexrowcompileandinline{$\otimes$}
 \end{tabular}
 \vspace{3ex}
 
@@ -85,84 +93,19 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
 \begin{frame}[fragile]
     \frametitle{La ecuación más bella del mundo}
     La ecuación de Euler, popular por contener algunas de las más importantes constantes matemáticas puede escribirse
-    \begin{columns}
-        \column{.4\textwidth}
-        \begin{block}{Código}
-            \normalfont
-        \begin{latexsource}
-e^{i\pi} + 1 = 0
-        \end{latexsource}
-        \end{block}
-        \column{.4\textwidth}
-        \fbox{
-            $ e^{i\pi} + 1 = 0 $
-        }
-    \end{columns}
-    \begin{columns}
-        \column{.5\textwidth}
-        \begin{block}{Código}
-            \normalfont
-            \begin{latexsource}
-Puedo escribir la ecuación
-de Euler $e^{i \pi} + 1 = 0$
-en línea o presentada
-\[ 
-    e^{i\pi} + 1 = 0 
-\] 
-para que quede mejor
-            \end{latexsource}
-        \end{block}
-        \column{.4\textwidth}
-        \fbox{\begin{minipage}{\textwidth}
-Puedo escribir la ecuación de Euler $e^{i \pi} + 1 = 0$ en línea o presentada
-\[ 
-    e^{i\pi} + 1 = 0 
-\]
-para que quede mejor
-\end{minipage}}
-    \end{columns}
-    
+    % \latexinlineandcompile{$ e^{i\pi} + 1 = 0 $}
+    \latexinputandcompile{codigos/euler.tex}
 \end{frame}
 
 \begin{frame}{Subíndices y superíndices}
 	Los subíndices de sumarios e integrales cambian de formato presentado a en línea
-    \begin{columns} 
-		\column{.45\textwidth}
-		\begin{block}{Código} 
-			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-subindices.tex}
-		\end{block} 
-		\column{.4\textwidth}
-		\begin{figure} 
-			\fbox{
-				\begin{minipage}{\textwidth }
-				\input{codigos/ejemplo-subindices.tex}
-				\end{minipage}
-		}
-		\end{figure} 
-	\end{columns}
-	\vspace{.5cm}
-
+    \latexinputandcompile{codigos/ejemplo-subindices.tex}
 \end{frame} 
 
 \begin{frame}[fragile]{Subíndices y superíndices}
 	Además la función \latexinline{\substack} es muy útil
-	\begin{columns} 
-		\column{.45\textwidth}
-		\begin{block}{Código} 
-			\latexfile[fontsize=\footnotesize]
-			{codigos/ejemplo-subindices-2.tex}
-		\end{block} 
-		\column{.4\textwidth}
-		\begin{figure} 
-			\fbox{
-				\begin{minipage}{\textwidth }
-					\input{codigos/ejemplo-subindices-2.tex}
-				\end{minipage}
-			}
-		\end{figure} 
-	\end{columns}
-    
-	
+    \footnotesize
+	\latexinputandcompile{codigos/ejemplo-subindices-2.tex}
 \end{frame}
 
 \subsection{Matrices}
@@ -178,6 +121,7 @@ para que quede mejor
         \item \texttt{bmatrix} Entre [ ]
     \end{enumerate}
 \end{frame}
+
 
 \begin{frame}[fragile]
     \frametitle{Matrices}

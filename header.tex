@@ -1,3 +1,4 @@
+\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \addto\captionsspanish{\renewcommand{\partname}{Sesión}}
 
@@ -55,52 +56,77 @@
 
 % \usepackage{verbatim}
 \usepackage{minted}
-\newminted[latexsource]{latex}{linenos=false}
+\newminted[latexsource]{latex}{linenos=false,autogobble}
 \newmintinline[latexinline]{latex}{}
 \newmintedfile[latexfile]{latex}{}
 
-\newcommand{\latexinputandcompiledifferentdimensions}[3]
+%%%%
+% This command has problems with output
+%%%%
+% \newenvironment{latexsourceandcompile}
+%  {\VerbatimOut{\jobname.tmp}}
+%  {\endVerbatimOut
+%  \begin{columns}
+%   \column{.4\textwidth}
+%   \begin{block}{Código}
+%     \latexfile{./\jobname.tmp}
+%   \end{block}
+%   \column{0.4\textwidth}
+%   \centering
+%   \fbox{
+%   \begin{minipage}{\textwidth}
+%     \input{\jobname.tmp}
+%   \end{minipage}
+%   }
+% \end{columns}}
+
+\newcommand{\codeandsomething}[4]
 {
   \begin{columns}
     \column{#1\textwidth}
     \begin{block}{Código}
-        \latexfile{#3}
+        #3
     \end{block}
     \column{#2\textwidth}
     \centering
     \fbox{
     \begin{minipage}{\textwidth}
-        \input{#3}
+        #4
     \end{minipage}
     }
   \end{columns}
 }
 
-\newcommand{\latexinputandpdfdifferentdimensions}[3]
+\newcommand{\latexinputandpdf}[1]
 {
-  \begin{columns}
-    \column{#1\textwidth}
-    \begin{block}{Código}
-        \latexfile{#3.tex}
-    \end{block}
-    \column{#2\textwidth}
-    \centering
-    \fbox{
-    \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{#3.pdf}
-    \end{minipage}
-    }
-  \end{columns}
+  \codeandsomething
+  {0.45}{0.45}
+  {\latexfile{#1.tex}}
+  {\includegraphics[width=\textwidth]{#1.pdf}}
 }
-\newcommand{\latexinputandpdf}[1]{\latexinputandpdfdifferentdimensions{0.45}{0.45}{#1}}
-\newcommand{\latexinputandcompile}[1]{\latexinputandcompiledifferentdimensions{0.45}{0.45}{#1}}
+
+\newcommand{\latexinputandcompile}[1]{
+  \codeandsomething
+  {0.45}{0.45}
+  {\latexfile{#1}}
+  {\input{#1}}
+}
+
+\newcommand{\latexinlineandcompile}[1]
+{
+  \codeandsomething
+  {0.45}{0.45}
+  {\latexinline{#1}}
+  {{#1}}
+}
 
 \newcommand{\latexrowinlineandcompile}[1]
 {
-      \latexinline{#1}
-      &  
-      {#1}
-      \\
+  \latexinline{#1} & {#1}
+}
+\newcommand{\latexrowcompileandinline}[1]
+{
+  {#1} & \latexinline{#1}
 }
 
 \usepackage{import}
@@ -128,6 +154,11 @@
 }
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand<>{\emph}[1]{{\only#2{\em}#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \title{Curso de \LaTeX}
 \author{David Gómez-Castro}

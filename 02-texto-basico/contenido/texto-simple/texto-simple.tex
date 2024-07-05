@@ -3,23 +3,29 @@
 \section{Simplemente texto}
 \frame{\sectionpage}
 
-\begin{frame}{Escribimos}
-    % TODO
-\end{frame}
-
 \begin{frame}[fragile]{Negrita, cursiva, ... }
     \begin{table} 
 		\centering
 	\begin{tabular}{l|l}
-        \latexrowinlineandcompile{Hola}
-        \latexrowinlineandcompile{\textbf{Hola}} 
-        \latexrowinlineandcompile{\textit{Hola}} 
-        \latexrowinlineandcompile{\texttt{Hola}} 
-        \latexrowinlineandcompile{\textsc{Hola}} 
+        \latexrowinlineandcompile{Hola} \\
+        \latexrowinlineandcompile{\textbf{Hola}} \\
+        \latexrowinlineandcompile{\textit{Hola}} \\
+        \latexrowinlineandcompile{\texttt{Hola}} \\
+        \latexrowinlineandcompile{\textsc{Hola}} \\
+        \latexrowinlineandcompile{\textrm{Hola}} \\
         \latexrowinlineandcompile{\underline{Hola}}
 	\end{tabular}
 	\end{table} 
-    Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... 
+    Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... \\ 
+
+    Con \latexinline{\emph} podemos resaltar una parte, independientemente del contexto\footnote{\latexinline{\emph} tiene un pequeño problema con \texttt{beamer}. Ver \href{https://tex.stackexchange.com/questions/89425/beamer-does-not-restore-roman-style-for-emph-inside-emph}{link}}
+    \begin{table} 
+		\centering
+	\begin{tabular}{l|l}
+        \latexrowinlineandcompile{Hola, \emph{Pablo.}}\\
+        \latexrowinlineandcompile{\textit{Hola, \emph{Pablo.}}}
+	\end{tabular}
+	\end{table} 
 \end{frame}
 
 \begin{frame}[fragile]{Tamaño de letra}
@@ -32,15 +38,15 @@
     \begin{table} 
     \centering
     \begin{tabular}{l|l}
-        \latexrowinlineandcompile{\Huge Hola}
-        \latexrowinlineandcompile{\huge Hola} 
-        \latexrowinlineandcompile{\LARGE Hola}
-        \latexrowinlineandcompile{\Large Hola}
-        \latexrowinlineandcompile{\large Hola}
-        \latexrowinlineandcompile{\normalsize Hola}
-        \latexrowinlineandcompile{\small Hola} 
-        \latexrowinlineandcompile{\footnotesize Hola}
-        \latexrowinlineandcompile{\scriptsize Hola} 
+        \latexrowinlineandcompile{\Huge Hola}\\
+        \latexrowinlineandcompile{\huge Hola} \\
+        \latexrowinlineandcompile{\LARGE Hola} \\
+        \latexrowinlineandcompile{\Large Hola}\\
+        \latexrowinlineandcompile{\large Hola}\\
+        \latexrowinlineandcompile{\normalsize Hola}\\
+        \latexrowinlineandcompile{\small Hola} \\
+        \latexrowinlineandcompile{\footnotesize Hola}\\
+        \latexrowinlineandcompile{\scriptsize Hola} \\
         \latexrowinlineandcompile{\tiny Hola} 
 	\end{tabular}
     \end{table}
@@ -98,3 +104,7 @@
 \latexinputandpdf{codigos/enumerate}
 
 \end{frame} 
+
+\begin{frame}[Paquetes \texttt{enum} y \texttt{enumerate}]
+    %TODO
+\end{frame}

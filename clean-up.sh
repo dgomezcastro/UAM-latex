@@ -11,4 +11,4 @@ rm ./**/*.vrb
 rm ./**/*.fdb_latexmk
 rm ./**/*.synctex.gz
 rm ./**/*.fls
-# rm -R ./**/_minted-*
+rm -R ./**/_minted-*
