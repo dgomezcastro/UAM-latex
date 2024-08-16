@@ -84,62 +84,12 @@ Tiene los siguientes parámetros:
 
 \subsection{Tablas}
 \begin{frame}[fragile]
-\frametitle{Tablas}
+	\frametitle{Tablas}
 
-Las el entorno \latexinline{table} es equivalente a figura, pero al generar el \latexinline{caption} obtendremos Cuadro (como recomienda la RAE). \\ [2ex]
-
-En contenido de la tabla se introduce de manera similar a una matriz
-\begin{columns}
-	\column{0.4\textwidth}
-	\begin{enumerate}
-		\item<1-> \texttt{<align>}: 
-		\only<1>{
-			\begin{enumerate}[a)]
-				\item \texttt{l}: izquierda 
-				\item \texttt{c}: centrado 
-				\item \texttt{r}: derecha
-		\end{enumerate}}
-		\item<2-> \latexinline{&} \only<2>{Separación entre cuadros en la misma fila}
-		\item <3-> \texttt{|} \only<3>{Si se desea línea vertical entre dos columnas}
-		\item <4-> \latexinline{\hline} \only<4>{Si se desea una línea horizontal.}
-	\end{enumerate}
+	Las el entorno \latexinline{table} es equivalente a figura, pero al generar el \latexinline{caption} obtendremos Cuadro (como recomienda la RAE). \\ [2ex]
 	
-	
-	\column{0.5\textwidth}
-	\begin{block}{Código}
-		\begin{latexsource*}{fontsize=\footnotesize}
-\begin{tabular}{<align>| ... }
-	cuadro1 & cuadro2 & ... \\
-	\hline\\
- 	...
-\end{tabular}
-		\end{latexsource*}
-	\end{block}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Tablas}
-\framesubtitle{Ejemplo}
-	\latexinputandcompile{codigos/table1.tex}
-\end{frame}
-
-\begin{frame}{Uso avanzado de tablas}
-	\url{https://www.overleaf.com/learn/latex/Tables}
-\end{frame}
-
-\begin{frame}{Ejercicio de tablas}
-
-\end{frame}
-
-\begin{frame}{Tablas para vagos}
-	Hay múltiples páginas que permiten convertir tablas de excel en latex
-	\begin{itemize}
-		\item \url{https://www.tablesgenerator.com/}
-		\item \url{https://www.latex-tables.com/}
-		\item \url{https://tableconvert.com/latex-generator} 
-	\end{itemize}
-\end{frame}
+	En contenido habitualmente es un \latexinline{tabular}.
+	\end{frame}
 
 \subsection{Códigos} 
 
