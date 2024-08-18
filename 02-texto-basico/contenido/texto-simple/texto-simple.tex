@@ -29,6 +29,14 @@
 	\end{table} 
 \end{frame}
 
+\begin{frame}{Comillas}
+    \LaTeX utiliza una convención curiosa abrir y cerrar comillas
+    \begin{tabular}{l|l}
+        \latexrowinlineandcompile{Fue ``sin querer''}\\
+        \latexrowinlineandcompile{Fue "sin querer"}\\
+	\end{tabular}
+\end{frame}
+
 \begin{frame}[fragile]{Tamaño de letra}
     \small 
     El tamaño de letra para todo el documento puede ponerse como parámetro opcional de \texttt{documentclass}, p.e.
@@ -66,20 +74,19 @@
             \latexinline{\usepackage{helvet}} & \includegraphics{codigos/helvetica.pdf} \\
         \end{tabular}
         \end{table}
-
-    Añadir codificación de fuente tiene algunas ventajas. Es habitual añadir
-    \begin{latexsource}
-\usepackage[T1]{fontenc}
-    \end{latexsource}
-
     Listas más extensas en 
 
     \url{https://www.overleaf.com/learn/latex/Font_typefaces}
 
     \url{https://tug.org/FontCatalogue/}\\
 
-    Si utilizamos \texttt{XeLaTeX} o \texttt{LuaTeX} como compiladores, podemos usar el paquete \texttt{fontspec}
-    
+    Si utilizamos \texttt{XeLaTeX} o \texttt{LuaTeX} como compiladores, podemos usar el paquete \texttt{fontspec} \\ 
+
+
+    Especificar la codificación de fuente tiene algunas ventajas. Es habitual includir
+    \begin{latexsource}
+\usepackage[T1]{fontenc}
+    \end{latexsource}
 \end{frame}
 
 \begin{frame}{Colores}

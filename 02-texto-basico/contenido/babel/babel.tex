@@ -2,9 +2,9 @@
 \subsection{\LaTeX~en distintos idiomas: el paquete \texttt{babel}}
 \begin{frame}[fragile]
     \frametitle{El paquete \texttt{babel}}
-    Para que \LaTeX\ ponga todos los textos automáticos (``Índice'', ``Capítulo'', ...) 
+    Por defecto, \LaTeX~incorpora textos pensando en usuario anglosajones.
     
-    en castellano deberemos añadir el paquete \texttt{babel}
+    Para adaptarlo a otros idiomas podemos añadir el paquete \texttt{babel}
     \begin{block}{Código}
         \begin{latexsource*}{highlightlines={3}}
 \documentclass{<style>}   
@@ -14,13 +14,15 @@
 \begin{document}
         \end{latexsource*}
     \end{block}
+    Esto adapta múltiples elementos:
+    \begin{enumerate}
+        \item Textos como ``Índice'', ``Capítulo'', \dots 
+        \item Fecha
+        \item Puntuación decimal 
+    \end{enumerate}
 \end{frame}
 
-\begin{frame}[fragile]{Secciones e índice}
+\begin{frame}[fragile]{\texttt{babel}}
     \footnotesize
-	\latexinputandpdf{codigos/ejemplo-secciones-babel}
-\end{frame}
-
-\begin{frame}{Textos multi-lingües}
-
+	\latexinputandpdf{codigos/ejemplo-babel}
 \end{frame}
