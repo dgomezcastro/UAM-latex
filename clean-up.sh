@@ -9,6 +9,6 @@ rm ./**/*.snm
 rm ./**/*.toc
 rm ./**/*.vrb
 rm ./**/*.fdb_latexmk
-rm ./**/*.synctex.gz
+# rm ./**/*.synctex.gz
 rm ./**/*.fls
 rm -R ./**/_minted-*
