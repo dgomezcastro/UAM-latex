@@ -1,0 +1,26 @@
+\section{Cabecera y pie de página: \texttt{fancyhdr}}
+
+\begin{frame}[fragile]
+    \frametitle{El paquete \texttt{fancyhdr}}
+    Una forma sencilla de darle un buen estilo a nuestro archivo es emplear el paquete \texttt{fancyhdr}. Tiene varias opciones, lo más sencillo es emplear un paquete predefinido
+    \begin{block}{Código}
+        \begin{latexsource}
+        \usepackage{fancyhdr}
+        \pagestyle{<style>}
+        \end{latexsource}
+    \end{block}
+    
+    \texttt{<style>}:
+    \scriptsize
+    \begin{tabular}{r|l l }
+        & Encabezado & Pie de página\\
+        \texttt{empty} & Vacío & Vacío\\
+        
+        \texttt{plain} & Vacío & Número de página centrado\\
+        
+        \texttt{headings} & Nombre del capítulo y número de página & Vacío\\
+        
+        \texttt{myheadings} & Número de página y otros & Vacío\\
+        \texttt{fancy} & Capítulo y sección & Número de página
+    \end{tabular}
+\end{frame}
