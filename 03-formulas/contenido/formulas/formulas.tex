@@ -87,7 +87,7 @@
     \latexrowcompileandinline{$a^b$}  \\
 	\latexrowcompileandinline{$\times$} &
     \latexrowcompileandinline{$\partial$} &
-    \latexrowcompileandinline{$\sqrt a$} \\
+    \latexrowcompileandinline{$\sqrt[n] a$} \\
 	\latexrowcompileandinline{$\div$} & 
     \latexrowcompileandinline{$\Omega$} & 
     \latexrowcompileandinline{$\max, \min$} \\
@@ -166,6 +166,22 @@ La web \href{http://detexify.kirelabs.org/classify.html}{Detexify} permite busca
 %     Es habitual crear comandos para este tipo de letras
 %     \latexinputandpdf{codigos/R}
 % \end{frame}
+
+\section{Creación de nuevos operadores}
+\begin{frame}
+	\frametitle{Operadores matemáticos} 
+	
+	Con el paquete \texttt{amsmath} se pueden definir operadores matemáticos, como $\mathrm{div}$ o $\mathrm{rot}$:
+	
+	\begin{center} 
+		\latexinline{\DeclareMathOperator{\rot}{rot}}
+	\end{center} 
+
+    Si queremos que el operador tenga sub-índice debajo entonces
+    \begin{center} 
+		\latexinline{\DeclareMathOperator*{\argmin}{arg\,min}}
+	\end{center} 
+\end{frame}
 
 \section{Matrices y diagramas}
 
