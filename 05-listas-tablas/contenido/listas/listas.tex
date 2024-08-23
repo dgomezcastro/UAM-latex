@@ -1,5 +1,76 @@
 \section{Listas}
 
-\begin{frame}[fragile]{Paquetes \texttt{enum} y \texttt{enumerate}}
-    %TODO
+\begin{frame}[fragile]{Listas básicas}
+    \latexinputandpdf{codigos/ejemplo-basico}
 \end{frame}
+
+\begin{frame}{Cambiando el comportamiento por defecto}
+    El comportamiento por defecto es
+
+    \texttt{enumerate} es números, y para \texttt{itemize} es $\bullet$.
+
+    \bigskip 
+
+    El comportamiento de \texttt{itemize se puede modificar}
+    \latexinline{\renewcommand{\labelitemi}{$\dot$}}
+
+    Además, \latexinline{\item} admite como entrada optativa el texto que queramos poner, p.e. \latexinline{\item[!]}.
+
+    \bigskip 
+
+    Para configurar \texttt{enumerate} es preferible usar uno (y sólo uno) de los paquetes:
+
+    \texttt{enumitem} (más completo, y recomendado) o \texttt{enumerate} (más sencillo).
+\end{frame}
+
+\begin{frame}[fragile]{El paquete \texttt{enumerate}}
+    La documentación en CTAN (4 páginas) es muy clara:
+    \begin{quote}
+        This package gives the enumerate environment an optional argument which determines the style in which the counter is printed.
+
+        An occurrence of one of the tokens A a I i 1 produces the value of the counter printed with (respectively) \latexinline{\Alph \alph \Roman \roman} or \latexinline{\arabic}.
+
+        These letters may be surrounded by any strings involving any other TEX expressions, however the tokens A a I i 1 must be inside a \latexinline{{ }} group if they are not to be taken as special.
+    \end{quote}
+\end{frame}
+
+\begin{frame}[fragile]
+    \footnotesize
+    \latexinputandpdf{codigos/enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Introducción a contadores}
+    En la documentación anterior habla de \latexinline{\Alph \alph \Roman \roman} or \latexinline{\arabic}.
+
+    \bigskip
+
+    Esto son términos de contadores que veremos más adelante. Baste, por ahora, un pequeño ejemplo:
+
+    \latexinputandcompile{codigos/contadores.tex}
+
+\end{frame}
+
+\begin{frame}[fragile]{El paquete \texttt{enumitem}}
+    La documentación de este paquete en \href{https://ctan.org/pkg/enumitem}{CTAN} tiene 23 páginas.
+
+    \bigskip 
+
+    Tiene varias funcionalidades muy completas:
+    \begin{enumerate}
+        \item Control de márgenes y espaciado
+        
+        \item Control de etiquetas muy detallada (aunque algo farragoso). Por ejemplo 
+        
+        \latexinline{\begin{enumerate}[label=\emph{\alph*})]} 
+        
+        \item Permite continuar un la numeración de un \texttt{enumerate} anterior, con la sintaxis 
+        
+        \latexinline{\begin{enumerate}[resume]}.
+    \end{enumerate}
+\end{frame}
+
+
+% \begin{frame}{Listas anidadas}
+%     %TODO
+
+% \end{frame}

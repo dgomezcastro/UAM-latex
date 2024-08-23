@@ -5,30 +5,31 @@
 \begin{frame}
 	\frametitle{Flotantes y su localización} 
 	\small 
-	Los objetos con los que vamos a trabajar: figuras, tablas, etc... se conocen como flotantes. \\ [2ex] 
+	Los objetos con los que vamos a trabajar: figuras, tablas, etc... se conocen como flotantes. \\ [1ex] 
+
+	Cada flotante tiene un entorno \latexinline{figure}, \latexinline{table}, .... \\ [1ex]
 	
-	Por defecto \LaTeX\  los coloca donde menos moleste: en el lugar del texto donde hemos colocado el código, al principio de la página o al final de la página.  \\ [2ex]
-	
-	\pause 
-	
+	Por defecto \LaTeX\  los coloca donde menos moleste: en el lugar del texto donde hemos colocado el código, al principio de la página o al final de la página.  \\ [1ex]
 	Podemos especificar dónde colocarlos mediante parámetros optativos:
 	
-	\latexinline{\begin{figure}[placement specifier]}. \\ [2ex]
+	\latexinline{\begin{figure}[placement specifier]}. \\ [1ex]
 		
 	Las opciones son las siguientes
 	\begin{table}
 		\tiny 
 	\begin{tabular}{l|l}
 	Specifier	& Permission \\
-	h&	Place the float here (approximately at the same point it occurs in the source text)\\
-	t&	Position at the top of the page.\\
-	b&	Position at the bottom of the page. \\
-	p&	Put on a special page for floats only. \\
-	!&	Override internal parameters LaTeX uses for determining ``good'' float positions. \\
-	H&	Places the float at precisely the location in the LaTeX code. Requires the \latexinline{float} package.
+	h&	Situar el flotante aquí (aproximadamente donde aparece en el texto)\\
+	t&	Situar al principio de la página.\\
+	b&	Situar al final de la página. \\
+	p&	Situar en una página que sólo contenga figuras. \\
+	!&	Anular párametros internos de \LaTeX que determinan una ``bunea'' situación para  los elementos flotantes. \\
+	H&	Situar exactamente en este lugar del texto. Requiere el paquete \texttt{float}.
 	\end{tabular}
 	\end{table} 
-	También se admiten cadena \latexinline{htb} significa: inténtalo en su sitio, si no ponlo arriba y, si no, abajo.
+	También se admiten cadena \latexinline{htb} significa: 
+	
+	inténtalo en su sitio, si no ponlo arriba y, si no, abajo.
 \end{frame}
 
 \subsection{Figuras}

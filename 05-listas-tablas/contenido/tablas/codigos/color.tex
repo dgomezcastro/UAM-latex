@@ -1,0 +1,10 @@
+% https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
+\documentclass{standalone}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\begin{document}
+\begin{tabular}{l|c|r}
+  \hline
+  Some & \cellcolor{blue!25}coloured & contents \\
+  \hline
+\end{tabular}
+\end{document}
