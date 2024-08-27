@@ -9,11 +9,12 @@ En contenido de la tabla se introduce de manera similar a una matriz
 	\column{0.4\textwidth}
 	\begin{enumerate}
 		\item<1-> \texttt{<align>}: 
-		\only<1>{
+		\only<1>{ los básicos son
 			\begin{enumerate}[a)]
 				\item \texttt{l}: izquierda 
 				\item \texttt{c}: centrado 
 				\item \texttt{r}: derecha
+				\item \latexinline{p{<width>}}: justificado a un ancho dado
 		\end{enumerate}}
 		\item<2-> \latexinline{&} \only<2>{Separación entre cuadros en la misma fila}
 		\item <3-> \texttt{|} \only<3>{Si se desea línea vertical entre dos columnas}
@@ -35,7 +36,14 @@ En contenido de la tabla se introduce de manera similar a una matriz
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo básico}
+	\small
 	\latexinputandcompile{codigos/tabla-basica.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Más alineaciones}
+	\tiny
+	Hay paquete especiales que añaden funcionalidades
+	\latexinputandpdf{codigos/ancho-columna}
 \end{frame}
 
 \begin{frame}[fragile]{Líneas horizontales parciales \texttt{cline}}
@@ -83,4 +91,15 @@ En contenido de la tabla se introduce de manera similar a una matriz
 
 	\url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
 	
+\end{frame}
+
+\begin{frame}[fragile]{Tablas en ecuaciones}
+	El modo matemático incluye \latexinline{array}.
+
+	\latexinputandcompile{codigos/array.tex}
+
+	\bigskip
+
+	En general, para una función definda a trazos se recomienda utilizar el entorno
+	\latexinline{cases} (si no hay fracciones), o \latexinline{dcases} del paquete \latexinline{mathtools} (si hay fracciones).
 \end{frame}

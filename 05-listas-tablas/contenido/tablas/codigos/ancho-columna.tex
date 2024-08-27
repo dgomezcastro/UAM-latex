@@ -1,0 +1,21 @@
+% https://tex.stackexchange.com/questions/35293/p-m-and-b-columns-in-tables
+
+\documentclass{standalone}
+
+\usepackage{array}
+
+\begin{document} 
+\begin{tabular}{| p{2cm} | m{2cm} | b{2cm} |}
+    \hline
+    \centering header p &
+    \centering header m &   
+    \centering header b \tabularnewline
+    \hline
+    text which is considerably longer than ...  & 
+    text which is considerably longer than ...  & 
+    text which is considerably longer than ... 
+    \tabularnewline
+    \hline
+\end{tabular}
+
+\end{document}
