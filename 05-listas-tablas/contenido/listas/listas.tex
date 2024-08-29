@@ -61,11 +61,15 @@
         
         \item Control de etiquetas muy detallada (aunque algo farragoso). Por ejemplo 
         
-        \latexinline{\begin{enumerate}[label=\emph{\alph*})]} 
+        \latexinline{\begin{enumerate}[label=\emph{\alph*}), ref=\emph{\alpha*}]} 
         
         \item Permite continuar un la numeración de un \texttt{enumerate} anterior, con la sintaxis 
         
         \latexinline{\begin{enumerate}[resume]}.
+
+        \item Permite crear nuevos tipos de listas, con la sintaxis:
+        
+        \latexinline{\newlist{<name>}{<type>}{<max-depth>}}
     \end{enumerate}
 \end{frame}
 

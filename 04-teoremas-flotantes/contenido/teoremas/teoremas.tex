@@ -2,8 +2,7 @@
 
 \section{Creando teoremas}
 \begin{frame}[fragile]
-    \frametitle{Teoremas}
-    \framesubtitle{El paquete \texttt{amsthm}}
+    \frametitle{Teoremas con \texttt{amsthm}}
 %Existen más paquetes como \texttt{ntheorem}.
 A la hora definir un teorema debemos tener en cuenta tres cosas
 \begin{columns}
@@ -48,19 +47,13 @@ Hay tres estilos predefinidos:\\
 
 
 \begin{frame}[fragile]
-    \frametitle{Teoremas}
+    \frametitle{Teoremas con \texttt{amsthm}}
     \framesubtitle{Ejemplo}
-Este es el aspecto de un teorema normal definido con el paquete \texttt{amsthm}.
-\begin{columns}
-	\column{0.5\textwidth}
-	\begin{block}{Código (\texttt{thm1.tex})}
-		\scriptsize
-		\latexfile{codigos/thm1.tex}
-	\end{block}
-	\column{0.4\textwidth}
-	\fbox{\begin{minipage}{\textwidth}
-		\textbf{Teorema 1} (Euclides)~\textbf{.} \textit{No existe un primo mayor que el resto.}
-		\end{minipage}
-	}
-\end{columns}
+	\scriptsize
+	\latexinputandpdf{codigos/thm1}
+\end{frame}
+
+\begin{frame}[fragile]{Más allá de \texttt{amsthm}: \href{https://ctan.org/pkg/ntheorem}{\texttt{ntheorem}}}
+	\scriptsize
+	\latexinputandpdf{codigos/ntheorem}
 \end{frame}
