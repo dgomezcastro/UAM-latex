@@ -29,12 +29,15 @@
 	\end{table} 
 \end{frame}
 
-\begin{frame}{Comillas}
+\begin{frame}[fragile]{Comillas}
     \LaTeX utiliza una convención curiosa abrir y cerrar comillas
+    \begin{table}
+    \centering
     \begin{tabular}{l|l}
         \latexrowinlineandcompile{Fue ``sin querer''}\\
-        \latexrowinlineandcompile{Fue "sin querer"}\\
+        \mintinline{latex}{Fue "sin querer"} & Fue "sin querer"
 	\end{tabular}
+    \end{table}
 \end{frame}
 
 \begin{frame}[fragile]{Tamaño de letra}

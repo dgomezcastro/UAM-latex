@@ -17,6 +17,7 @@ sesion.pdf
 *.cb
 *.cb2
 .*.lb
+sesion-*.pdf
 
 ## Intermediate documents:
 *.dvi
