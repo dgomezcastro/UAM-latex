@@ -1,9 +1,37 @@
-\section{Minipages}
+\section{\texttt{minipages}}
 
-\begin{frame}[fragile]{Minipages}
-    %TODO
+\begin{frame}[fragile]{\texttt{minipages}}
+    \small
+    \latexinputandpdf{codigos/ejemplo-minipages-1}
 \end{frame}
 
+
+\begin{frame}[fragile]{\texttt{minipages}}
+    \scriptsize
+    \latexinputandpdf{codigos/ejemplo-minipages-2}
+
+    \bigskip
+    
+    \normalsize
+    Este entorno tiene más opciones
+    
+    \latexinline{\begin{minipage}[position][height][inner-pos]{width}}    
+\end{frame}
+
+
+\begin{frame}[fragile]{\texttt{minipages}}
+    \scriptsize
+    \latexinputandpdf{codigos/ejemplo-minipages-3}
+
+\end{frame}
+
+
+
 \begin{frame}[fragile]{\latexinline{\captionof}}
-    %TODO
+    No siempre es necesario añadir \texttt{figure} o \texttt{table} para poner un pie de fotografía numerado.
+
+    El paquete \texttt{caption} (y \texttt{capt-of}) añaden esta funcionalidad.
+
+    \scriptsize
+    \latexinputandpdf{codigos/captionof}
 \end{frame}
