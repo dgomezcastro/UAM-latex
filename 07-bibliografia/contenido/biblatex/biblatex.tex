@@ -1,0 +1,59 @@
+\section{\texttt{biblatex}}
+
+\begin{frame}{\texttt{biblatex}}
+	Los archivos \texttt{.bst} son una pequeña tortura, y no permiten hacer modificaciones menores del estilo sin meterse ``en todo el tomate''.
+
+    \bigskip
+
+    \url{https://ctan.org/pkg/biblatex}:
+    \begin{quote}
+        BibLaTeX is a complete reimplementation of the bibliographic facilities provided by LaTeX. Formatting of the bibliography is entirely controlled by LaTeX macros, and a working knowledge of LaTeX should be sufficient to design new bibliography and citation styles.
+    \end{quote}
+
+    \texttt{biblatex} también utiliza archivos \texttt{.bib}, pero nos da más flexibilidad de uso.
+    
+\end{frame}
+
+\begin{frame}{\texttt{biblatex}: ejemplo básico}
+    \footnotesize
+    \latexinputandpdf{codigos/ejemplo-biblatex}
+\end{frame}
+
+\begin{frame}{\texttt{biblatex}: ejemplo con algunas configuraciones}
+    \scriptsize
+    \latexinputandpdf{codigos/ejemplo-biblatex-advanced}
+
+    \bigskip 
+
+    Más estilos en: 
+    \url{https://www.overleaf.com/learn/latex/Biblatex_citation_styles}
+\end{frame}
+
+
+\begin{frame}[fragile]{\texttt{biber}}
+    \small 
+
+    \texttt{biblatex} puede utilizar \texttt{bibtex} para generar la bibliografía.
+    
+    \bigskip 
+    
+    \url{https://ctan.org/pkg/biblatex}:
+    \begin{quote}
+        BibLaTeX uses its own data backend program called “biber” to read and process the bibliographic data. With biber, BibLaTeX has many features rivalling or surpassing other bibliography systems.
+    \end{quote}
+
+    \bigskip 
+
+
+    \url{https://en.wikipedia.org/wiki/Biber_(LaTeX)}
+    
+    \begin{quote}
+        Biber is a bibliography information processing program that works in conjunction with the LaTeX package BibLaTeX and offers full Unicode support.
+    
+        Biber is a widely used replacement for the BibTeX software. Both generate a bibliography in LaTeX, but Biber offers a large superset of BibTeX functionality. It also offers full Unicode support, which is hard to achieve with BibTeX. Given the same data file as input, biber should output a functionally identical .bbl file as BibTeX.
+    \end{quote}
+
+    Se puede elegir uno u otro con 
+    
+    \latexinline{\usepackage[backend=biber]{biblatex}}
+\end{frame}

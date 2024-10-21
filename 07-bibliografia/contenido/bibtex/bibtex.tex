@@ -1,0 +1,125 @@
+\section{\texttt{bibtex}}
+
+\begin{frame}[fragile]{\texttt{bibtex}: formato automático}
+    \url{https://en.wikipedia.org/wiki/BibTeX}:
+    \begin{quote}
+        BibTeX is both a bibliographic flat-file database file format and a software program for processing these files to produce lists of references (citations). The BibTeX file format is a widely used standard with broad support by reference management software.
+    \end{quote}
+
+    Esta herramienta permite guardar la bibliografía en una ``basada de datos'' y elegir el formato por separado.
+
+    
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\texttt{bibtex}: ejemplo} 
+	
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código [ejemplo-bibtex.tex]}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibtex.tex}
+		\end{block}
+		\begin{block}{Código [ejemplo-bibliografia.bib]}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibliografia.bib}
+		\end{block}
+	
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[width=\textwidth]{codigos/ejemplo-bibtex.pdf}
+		}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Cómo funciona \texttt{bibtex} en la terminal}
+    \begin{columns}
+        \footnotesize
+		\column{.45\textwidth}
+		Ejecutando
+        \begin{minted}{bash}
+$ pdflatex ejemplo-bibtex.tex  
+        \end{minted}
+        Recibimos el error 
+        \begin{minted}[breaklines]{bash}
+No file ejemplo-bibtex.aux.
+[...]
+LaTeX Warning: Citation 'einstein' on page 1 undefined on input line 4.
+[...]
+No file ejemplo-bibtex.bbl.
+[...]
+LaTeX Warning: There were undefined references.
+
+        \end{minted}
+		\column{.45\textwidth}
+		\fbox{
+			\includegraphics[width=\textwidth]{codigos/ejemplo-bibtex-1.pdf}
+		}
+	\end{columns}
+
+    \bigskip 
+
+    Este último aviso también ocurre cuando usamos \latexinline{\ref} con una etiqueta errónea.
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{columns}
+        \footnotesize
+		\column{.45\textwidth}
+            Debemos utilizar la herramienta de terminal
+		    \begin{minted}[breaklines]{bash}
+$ bibtex ejemplo-bibtex                     
+            \end{minted}
+            Genera el archivo \texttt{ejemplo-bibtex.bbl}
+
+	
+		\column{.45\textwidth}
+        \begin{block}{Código [ejemplo-bibliografia.bbl]}
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-bibtex.bbl-save}
+		\end{block}
+	\end{columns}
+
+    \begin{columns}
+        \footnotesize
+		\column{.45\textwidth}
+            La siguiente ejecución de \texttt{pdflatex} volverá a dar error, y la última funcionará. Así, ejecutamos 
+            \begin{minted}{bash}
+$ pdflatex ejemplo-bibtex.tex                     
+$ pdflatex ejemplo-bibtex.tex                     
+            \end{minted}
+
+	
+		\column{.45\textwidth}
+		\fbox{
+			\includegraphics[width=\textwidth]{codigos/ejemplo-bibtex-3.pdf}
+		}
+	\end{columns}
+
+    \bigskip
+
+    Como es natural, en nuestra IDE (VSCode, Overleaf, ...) esto ocurre de forma automática. 
+    
+    Algunos editores pueden requerir pasos adicionales.
+\end{frame}
+
+\begin{frame}[fragile]{Los archivos \texttt{.bib}}
+    Hay diferentes tipos de entradas: \latexinline{@article, @book, ...}.
+
+    \bigskip    
+
+    Una lista detallada en 
+
+    \url{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX}
+
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{bibtex}: Estilos}
+    Los estilos incluídos con bibtex se pueden encontrar en:
+
+    \url{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles} 
+
+    \bigskip
+
+    Si queremos hacer un estilo propio, deberemos escribir un archivo \texttt{.bst} e importarlo 
+    
+    (por ejemplo \texttt{./mibibliografia.bst} y \latexinline{\bibliographystyle{mibibliografia}})
+\end{frame}
