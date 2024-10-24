@@ -8,6 +8,15 @@
 
     Esta herramienta permite guardar la bibliografía en una ``basada de datos'' y elegir el formato por separado.
 
+    \bigskip 
+
+    Algunas mejoras importantes:
+    \begin{enumerate}
+        \item Formato automático y fácil de cambiar
+        \item Ordenación automática
+        \item Sólo aparecen las referencias usadas\footnote{aunque se puede especificar que aparezcan todas}
+    \end{enumerate}
+
     
 \end{frame}
 
@@ -30,6 +39,13 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}{Cómo funciona \texttt{bibtex}}
+    \begin{figure}
+        \includegraphics[width=.9\textwidth]{figuras/LaTeXCompanion-Fig12-1}
+        \caption{Tomado de \parencite{mittelbach2004latexcompanion}}
+    \end{figure}
+\end{frame}
+
 \begin{frame}[fragile]{Cómo funciona \texttt{bibtex} en la terminal}
     \begin{columns}
         \footnotesize
@@ -50,8 +66,9 @@ LaTeX Warning: There were undefined references.
 
         \end{minted}
 		\column{.45\textwidth}
+        \centering
 		\fbox{
-			\includegraphics[width=\textwidth]{codigos/ejemplo-bibtex-1.pdf}
+			\includegraphics[width=.4\textwidth]{codigos/ejemplo-bibtex-1.pdf}
 		}
 	\end{columns}
 
@@ -115,7 +132,21 @@ $ pdflatex ejemplo-bibtex.tex
 \begin{frame}[fragile]{\texttt{bibtex}: Estilos}
     Los estilos incluídos con bibtex se pueden encontrar en:
 
+    {\small
     \url{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles} 
+    }
+
+    o 
+    
+    \parencite[p. 791]{mittelbach2004latexcompanion}
+
+    \bigskip
+
+    Estos estilos vienen definidos por archivos \texttt{.bst}, como por ejemplo
+
+    {\small
+    \url{https://www.ctan.org/tex-archive/biblio/bibtex/base/abbrv.bst}
+    }
 
     \bigskip
 

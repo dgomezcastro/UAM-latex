@@ -1,0 +1,68 @@
+\usepackage[
+url=false,
+isbn=false,
+backref=biber,
+maxcitenames=5,
+firstinits=true,
+maxbibnames=100,
+doi=false,
+style=alphabetic,
+citestyle=authoryear,
+uniquename=false,
+block=none]{biblatex}
+\renewbibmacro{in:}{}
+\renewcommand*{\bibfont}{\footnotesize}
+%\bibstyle{siam}
+
+%% Sub-import does not work with addbibresource
+\addbibresource{../bibliography.bib}
+\addbibresource{./bibliography.bib}
+
+%\setbeamertemplate{bibliography item}{}
+\setlength{\labelsep}{\biblabelsep}%
+
+\setbeamertemplate{bibliography item}{%
+	\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
+		or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
+		or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
+	{\setbeamertemplate{bibliography item}[book]}
+	{\ifentrytype{online}
+		{\setbeamertemplate{bibliography item}[online]}
+		{\setbeamertemplate{bibliography item}[article]}}%
+	\usebeamertemplate{bibliography item}}
+
+\defbibenvironment{bibliography}
+{\list{}
+	{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
+		\setlength{\leftmargin}{\labelwidth}%
+		\setlength{\labelsep}{\biblabelsep}%
+		\addtolength{\leftmargin}{\labelsep}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+
+\makeatletter
+
+\newrobustcmd*{\parentexttrack}[1]{%
+	\begingroup
+	\blx@blxinit
+	\blx@setsfcodes
+	\blx@bibopenparen#1\blx@bibcloseparen
+	\endgroup}
+
+\AtEveryCite{%
+	\let\parentext=\parentexttrack%
+	\let\bibopenparen=\bibopenbracket%
+	\let\bibcloseparen=\bibclosebracket}
+
+\makeatother
+
+%\hypersetup{
+	%	colorlinks,
+	%	citecolor=olive,
+	%	linkcolor=black,
+	%	urlcolor=black}
+
+% Color links
+\AtEveryCite{\color{olive}}
