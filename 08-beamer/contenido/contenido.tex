@@ -1,79 +1,69 @@
+% LTeX: language=es-ES
 \setcounter{part}{7}
 \part{Presentaciones en Beamer}
 \label{sesion:5}
-\firstslide
 
-% \frame{\tableofcontents}
+\frame{\partpage}
 
-% \section{Presentaciones en Beamer}
-% 
+\frame{\tableofcontents}
 
-\begin{frame}[fragile]
-    \frametitle{El paquete \texttt{beamer}}
-    El paquete \texttt{beamer} nos permite hacer presentaciones en \LaTeX \ como esta.
-   
+\subimport{./intro/}{intro.tex}
+
+\subimport{./elementos-conocidos}{elementos-conocidos.tex}
+
+
+
+\begin{frame}
+    \latexinline{\alert}
 \end{frame}
 
-%\subsection{La cabecera}
-\begin{frame}[fragile]
-    \frametitle{La cabecera}
-    \framesubtitle{Una cabecera elemental}
-\begin{block}{Código}
-        \latexfile[lastline=11]{codigos/beamer1.tex}
-    \end{block}
-	
-	\vspace{3ex}
 
-	Para ver diferentes estilos y colores visitar \url{https://hartwork.org/beamer-theme-matrix/}
+\subsection{Cosas nuevas}
+
+\begin{frame}{\texttt{block} y teoremas}
+    
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{La cabecera}
-    \framesubtitle{Una cabecera completa}
-    \begin{block}{Código}
-        \latexfile[lastline=15]{codigos/beamer2.tex}
-    \end{block}
+\begin{frame}{Columnas}
+    
 \end{frame}
 
-%\subsection{Las diapositivas}
-
-\begin{frame}[fragile]
-    \frametitle{Las diapositivas}
-    Las diapositivas se introducen en un entorno \texttt{frame}. \only<1->{Algunas cosas que se pueden añadir (editando la cabecera acordemente)}
-    \only<1>{
-        \begin{block}{Código}
-        \latexfile[firstline=13]{codigos/beamer1.tex}
-        \end{block}}
-    \only<2->{
-    \begin{columns}
-        \column{0.3\textwidth}
-            \begin{enumerate}
-                \item<2-> Título
-                \item<3-> Imágenes
-                \item<4-> Teoremas
-            \end{enumerate}
-        \column{0.7\textwidth}
-        \footnotesize
-        \only<2>{
-            \begin{block}{Código}
-                 \latexfile[firstline=21,lastline=23]{codigos/beamer2.tex}
-            \end{block}}
-        \only<3>{
-            \begin{block}{Código}
-                \latexfile[firstline=25,lastline=32]{codigos/beamer2.tex}
-            \end{block}}
-        \only<4>{
-            \begin{block}{Código}
-                \latexfile[firstline=34,lastline=41]{codigos/beamer2.tex}
-            \end{block}}
-    \end{columns}}
+\begin{frame}{Pausas}
+    
 \end{frame}
+
+\begin{frame}{Overlays}
+    only, uncover, item
+\end{frame}
+
+\begin{frame}{Portada}
+    
+\end{frame}
+
+\begin{frame}{\textsc{goto}}
+    
+\end{frame}
+
+\begin{frame}{Índice}
+    
+\end{frame}
+
+\begin{frame}{\texttt{allowframebreaks}}
+    
+\end{frame}
+
 
 \begin{frame}[fragile]{[fragile]}
     %TODO
     Ejemplo: url con \latexinline{_}
 \end{frame}
 
-\begin{frame}[Póster de congreso]
+\begin{frame}[fragile]{\latexinline{\mode}}
+.
+\end{frame}
+
+
+
+\begin{frame}{Póster de congreso}
     % TODO
 \end{frame}

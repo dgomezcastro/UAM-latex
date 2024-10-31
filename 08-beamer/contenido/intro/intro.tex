@@ -1,0 +1,38 @@
+\section{Primeros pasos}
+
+\begin{frame}[fragile]
+    \frametitle{El paquete \texttt{beamer}}
+    El estilo \texttt{beamer} nos permite hacer presentaciones en \LaTeX \ como esta.
+\end{frame}
+
+\begin{frame}{Ejemplo mínimo}
+    \latexinputandpdf{codigos/mwe}
+\end{frame}
+
+\begin{frame}{navigation bar}
+    Primero,\footnote{por decencia} quitamos la barra de navegación añadiendo a la cabecera
+    
+    \begin{center} 
+        \latexinline{\beamertemplatenavigationsymbolsempty}
+    \end{center}
+\end{frame}
+
+%\subsection{La cabecera}
+\begin{frame}[fragile]
+    {Temas}
+    
+    \small
+
+    \latexinputandpdf{codigos/beamer1}
+	
+	\vspace{3ex}
+
+	Para ver diferentes estilos y colores visitar \url{https://hartwork.org/beamer-theme-matrix/}
+\end{frame}
+
+\begin{frame}[fragile]{Diapositivas: entorno \texttt{frame}}
+    \begin{block}{Código}
+        \latexfile{codigos/frame.tex}
+    \end{block}
+    Volveremos sobre \texttt{overlay} más adelante.
+\end{frame}
