@@ -1,1 +1,17 @@
-\input{../sesion.tex}
+% LTeX: language=es-ES
+
+\documentclass[spanish]{beamer}
+
+\usepackage{import}
+
+\subimport{../}{header.tex}
+
+\begin{document}
+
+\subimport{./contenido/}{contenido.tex}
+
+\begin{frame}[allowframebreaks]{Referencias}
+    \printbibliography
+\end{frame}
+
+\end{document}

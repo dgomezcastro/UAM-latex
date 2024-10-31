@@ -2,10 +2,16 @@
 
 \documentclass[spanish]{beamer}
 
-\input{../header.tex}
+\usepackage{import}
+
+\subimport{../}{header.tex}
 
 \begin{document}
 
 \subimport{./contenido/}{contenido.tex}
+
+\begin{frame}[allowframebreaks]{Referencias}
+    \printbibliography
+\end{frame}
 
 \end{document}
