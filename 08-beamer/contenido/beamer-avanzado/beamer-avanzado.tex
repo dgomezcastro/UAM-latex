@@ -2,11 +2,86 @@
 
 \section{\texttt{beamer} avanzado}
 
-\begin{frame}[fragile]{\latexinline{\mode}}
-    .
+\begin{frame}{\texttt{block}}
+    Los teoremas que hemos visto antes aprovechan un entorno de \texttt{beamer} llamado \texttt{block}.
+
+    \latexinputandpdf{codigos/block}
+
+\end{frame}
+
+\begin{frame}{\texttt{block} y temas}
+
+    \latexinputandpdf{codigos/block-Madrid}
+
+    \bigskip
+
+    También está disponible \texttt{alertblock} y \texttt{example}.
+\end{frame}
+
+\begin{frame}[fragile]{Opciones}
+    En la cabecera se puede fijar
+    
+    \latexinline{\setbeamertemplate{blocks}[rounded][shadow=true]}
+
+    \bigskip 
+
+    También se puede fijar los colores de los distintos tipos de bloques
+    \begin{latexsource}
+\setbeamercolor{block title}{bg=cyan, fg=white}
+\setbeamercolor{block body}{bg=cyan!10}
+    \end{latexsource}
 \end{frame}
 
 
-\begin{frame}{Póster de congreso}
-    % TODO
+\begin{frame}[fragile]{Hipervínculos y botones}
+    \footnotesize
+    \begin{columns}
+        \column{0.55\textwidth}
+        \begin{block}{Código}
+            \href{https://tex.stackexchange.com/questions/424650/how-to-jump-to-a-slide-in-a-beamer-presentation}{StackOverflow}
+            \latexfile[firstline=2]{codigos/goto.tex}
+        \end{block}
+        \column{0.25\textwidth}
+        \centering
+        \begin{minipage}{\textwidth}
+            \fbox{\includegraphics[width=\textwidth,page=1]{codigos/goto.pdf}}
+            \fbox{\includegraphics[width=\textwidth,page=2]{codigos/goto.pdf}}        
+            \fbox{\includegraphics[width=\textwidth,page=3]{codigos/goto.pdf}}        
+        \end{minipage}
+      \end{columns}
+      \bigskip
+\end{frame}
+
+\begin{frame}{Formatos opcionales}
+    \latexinline{\documentclass[]{beamer}} admite parámetros opcionales:
+    
+    \begin{itemize}
+        \item \texttt{handout}: sin overlays (pauses).
+        \item \texttt{draft}: sin imágenes (acelera la compilación)
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}[fragile]{\latexinline{\mode}}
+    \latexinline{\documentclass{article}} es capaz de procesar entornos \texttt{frame}. 
+
+    \bigskip 
+
+    Así, podemos crear unas notas a partir de un documento \texttt{beamer}. Si queremos hay partes del código (especialmente la cabecera) que sólo se procesen en \texttt{beamer} o en \texttt{article} podemos incluirlas en un 
+
+    \latexinline{\mode<presentation>} 
+    
+    \latexinline{\mode<draft>}
+    
+    \latexinline{\mode<article>}
+\end{frame}
+
+
+\begin{frame}[fragile]{Póster de congreso}
+    Podemos utilizar \texttt{beamer} para crear poster de congresos. 
+    Más detalles en \href{https://www.overleaf.com/learn/latex/Posters}{link}.
+
+    \bigskip
+
+    La alternativa es utilizar \texttt{tikzposter}.
 \end{frame}

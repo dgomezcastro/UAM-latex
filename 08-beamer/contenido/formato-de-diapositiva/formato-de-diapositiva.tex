@@ -38,28 +38,26 @@
 
     Se puede controlar de manera sencilla cuando aparecen algunos elementos usando \texttt{specifications}
     \begin{itemize}
-        \item \latexinline{\only<>{}} controls when to
-        \item \latexinline{\uncover<>{}} controls when to
-        \item \latexinline{\item<>} controls when an
-        item is shown
+        \item \latexinline{\only<>{}} 
+        reveal content , does NOT
+        occupy space otherwise
+        \item \latexinline{\uncover<>{}} 
+        reveal content, DOES
+        occupy space otherwise
+        \item \latexinline{\visible<>{}}
+        \item \latexinline{\invisible<>{}}
+        \item \latexinline{\item<>} 
      
-        \item \latexinline{\textbf<>{}} controls when to
-        bold text
-        reveal text, occupies NO space otherwise
-        \item \latexinline{\textit<>{}} controls when to
-        italicize text
-        reveal text, DOES
-        occupy space oth-
-        erwise
-        \item \latexinline{\color<>[]{}} controls when to
+        \item \latexinline{\textbf<>{}} 
+        \item \latexinline{\textit<>{}} 
+        \item \latexinline{\color<>[]{}} 
+        controls when to
         change color of
         text
-        \item \latexinline{\alt<>{}{}} reveals first argument when specifi-
-        cation is true, oth-
-        erwise reveals sec-
-        ond argument
-        \item \latexinline{\alert<>{}} controls when to
-        highlight text (default red)
+        \item \latexinline{\alt<>{}{}} 
+        reveals first argument when specification is true, otherwise reveals second argument
+        \item \latexinline{\alert<>{}} 
+        controls when to highlight text (default red)
     \end{itemize}
 \end{frame}
 
@@ -73,6 +71,10 @@
         \item Rangos de diapositivas a partir de la cual sea visible:
         
         \latexinline{<1->}, \latexinline{<1-3>}, \latexinline{<-3>}
+
+        \item overlay incremental 
+        
+        \latexinline{<+->}
     \end{itemize}
 
     \bigskip
@@ -92,28 +94,33 @@
     Más detalles en la documentación de beamer (\href{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf#subsection.9.6}{link}).
 \end{frame}
 
-% \begin{frame}[fragile]
-%     \tiny
-%     \begin{columns}
-%         \column{0.7\textwidth}
-%         \begin{block}{Código}
-%             \latexfile{codigos/overlay.tex}
-%         \end{block}
-%         \column{0.2\textwidth}
-%         \centering
-%         \begin{minipage}{\textwidth}
-%             \fbox{\includegraphics[width=\textwidth,page=1]{codigos/overlay.pdf}}
-%             \fbox{\includegraphics[width=\textwidth,page=2]{codigos/overlay.pdf}}        
-%             \fbox{\includegraphics[width=\textwidth,page=3]{codigos/overlay.pdf}}        
-%             \fbox{\includegraphics[width=\textwidth,page=4]{codigos/overlay.pdf}}        
-%         \end{minipage}
-%       \end{columns}
-% \end{frame}
+\begin{frame}[fragile]
+    \tiny
+    \begin{columns}
+        \column{0.7\textwidth}
+        \begin{block}{Código}
+            \latexfile{codigos/overlay.tex}
+        \end{block}
+        \column{0.2\textwidth}
+        \centering
+        \begin{minipage}{\textwidth}
+            \fbox{\includegraphics[width=\textwidth,page=1]{codigos/overlay.pdf}}
+            \fbox{\includegraphics[width=\textwidth,page=2]{codigos/overlay.pdf}}        
+            \fbox{\includegraphics[width=\textwidth,page=3]{codigos/overlay.pdf}}        
+            \fbox{\includegraphics[width=\textwidth,page=4]{codigos/overlay.pdf}}        
+        \end{minipage}
+      \end{columns}
+\end{frame}
 
-% \begin{frame}{\textsc{goto}}
-    
-% \end{frame}
 
-% \begin{frame}{\texttt{allowframebreaks}}
-%     Es recomendable hacerlo con la bibliografía.
-% \end{frame}
+\begin{frame}{\texttt{allowframebreaks}}
+    Cuando una diapositiva es demasiada larga podemos partir en varias con la opción \texttt{allowframebreaks}.
+
+    \bigskip 
+
+    La división ocurre de manera automática\footnote{igual que los saltos de página en \texttt{article}}, pero podemos forzarlos con \latexinline{\framebreak}.
+
+    \bigskip
+
+    Es recomendable hacerlo con la bibliografía.
+\end{frame}
