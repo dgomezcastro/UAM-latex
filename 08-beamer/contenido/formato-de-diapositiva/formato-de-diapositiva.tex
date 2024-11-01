@@ -1,0 +1,119 @@
+% LTeX: language=es-ES
+
+\section{Dándole formato a una diapositiva}
+
+\begin{frame}[fragile]{\latexinline{\alert}}
+
+    \begin{quote}
+        beamer offers the command
+        \latexinline{\alert}, which is used like \latexinline{\emph} and, by default, typesets its argument in bright red.
+    \end{quote}
+
+\end{frame}
+
+\begin{frame}[fragile]{Columnas}
+    \small
+    \latexinputandpdf{codigos/columns}
+\end{frame}
+
+\begin{frame}[fragile]{Pausas}
+    \small
+    \begin{columns}
+        \column{0.55\textwidth}
+        \begin{block}{Código}
+            \latexfile{codigos/pauses.tex}
+        \end{block}
+        \column{0.25\textwidth}
+        \centering
+        \begin{minipage}{\textwidth}
+            \fbox{\includegraphics[width=\textwidth,page=1]{codigos/pauses.pdf}}
+            \fbox{\includegraphics[width=\textwidth,page=2]{codigos/pauses.pdf}}        
+            \fbox{\includegraphics[width=\textwidth,page=3]{codigos/pauses.pdf}}        
+        \end{minipage}
+      \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Overlays}
+    \latexinline{\pause} Crea elementos llamados \texttt{overlay}, y los ordena consecutivamente. 
+
+    Se puede controlar de manera sencilla cuando aparecen algunos elementos usando \texttt{specifications}
+    \begin{itemize}
+        \item \latexinline{\only<>{}} controls when to
+        \item \latexinline{\uncover<>{}} controls when to
+        \item \latexinline{\item<>} controls when an
+        item is shown
+     
+        \item \latexinline{\textbf<>{}} controls when to
+        bold text
+        reveal text, occupies NO space otherwise
+        \item \latexinline{\textit<>{}} controls when to
+        italicize text
+        reveal text, DOES
+        occupy space oth-
+        erwise
+        \item \latexinline{\color<>[]{}} controls when to
+        change color of
+        text
+        \item \latexinline{\alt<>{}{}} reveals first argument when specifi-
+        cation is true, oth-
+        erwise reveals sec-
+        ond argument
+        \item \latexinline{\alert<>{}} controls when to
+        highlight text (default red)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Overlays}
+    Se puede especificar
+    \begin{itemize}
+        \item Una diapositiva concreta donde se visible: 
+        
+        \latexinline{<1>}
+        
+        \item Rangos de diapositivas a partir de la cual sea visible:
+        
+        \latexinline{<1->}, \latexinline{<1-3>}, \latexinline{<-3>}
+    \end{itemize}
+
+    \bigskip
+
+    \pause 
+
+    \begin{itemize}
+        \item \latexinline{<3-| alert@3>}
+        \begin{quote}
+            Some overlay specification-aware commands cannot handle not only normal overlay specifications, but
+            also so called action specifications. In an action specification, the list of slide numbers and ranges is prefixed
+            by ⟨action⟩@, where ⟨action⟩ is the name of a certain action to be taken on the specified slides
+        \end{quote}
+    
+    \end{itemize}
+
+    Más detalles en la documentación de beamer (\href{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf#subsection.9.6}{link}).
+\end{frame}
+
+% \begin{frame}[fragile]
+%     \tiny
+%     \begin{columns}
+%         \column{0.7\textwidth}
+%         \begin{block}{Código}
+%             \latexfile{codigos/overlay.tex}
+%         \end{block}
+%         \column{0.2\textwidth}
+%         \centering
+%         \begin{minipage}{\textwidth}
+%             \fbox{\includegraphics[width=\textwidth,page=1]{codigos/overlay.pdf}}
+%             \fbox{\includegraphics[width=\textwidth,page=2]{codigos/overlay.pdf}}        
+%             \fbox{\includegraphics[width=\textwidth,page=3]{codigos/overlay.pdf}}        
+%             \fbox{\includegraphics[width=\textwidth,page=4]{codigos/overlay.pdf}}        
+%         \end{minipage}
+%       \end{columns}
+% \end{frame}
+
+% \begin{frame}{\textsc{goto}}
+    
+% \end{frame}
+
+% \begin{frame}{\texttt{allowframebreaks}}
+%     Es recomendable hacerlo con la bibliografía.
+% \end{frame}

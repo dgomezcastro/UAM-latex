@@ -35,5 +35,18 @@
       \end{columns}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Elementos frágiles}
+
+    Algunos elementos como \latexinline{\url} o incluir códigos con \texttt{verbatim} o \texttt{minted} tiene problemas con \texttt{beamer}. 
+
+    \bigskip 
+
+    Para evitar estos problemas podemos marcar la diapositiva como \texttt{fragile} con
+    \begin{center}
+        \latexinline{\begin{frame}[fragile]{<título>}}
+    \end{center}
+    
+    \bigskip
+
+    Hablaremos de esto más adelante.
 \end{frame}
