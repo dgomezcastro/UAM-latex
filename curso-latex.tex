@@ -1,0 +1,28 @@
+% LTeX: language=es-ES
+
+\documentclass[spanish]{beamer}
+
+\usepackage{import}
+
+\subimport{./tex/}{header.tex}
+
+\begin{document} 
+
+\frame{\titlepage}
+
+\begin{frame}{Sesiones} 
+    \begin{enumerate}[align=right, leftmargin=10mm] 
+        \foreach \x in {1,2,...,12} {\item[\ref{part:\x}] \hyperlink{part:\x}{\nameref{part:\x}}}
+    \end{enumerate}
+\end{frame} 
+
+\subimport{./01-primeros-pasos/contenido/}{contenido.tex}
+\subimport{./02-texto-basico/contenido/}{contenido.tex}
+\subimport{./03-formulas/contenido/}{contenido.tex}
+\subimport{./04-teoremas-flotantes/contenido/}{contenido.tex}
+\subimport{./05-listas-tablas/contenido/}{contenido.tex}
+\subimport{./06-formato-pagina/contenido/}{contenido.tex}
+\subimport{./07-bibliografia/contenido/}{contenido.tex}
+\subimport{./08-beamer/contenido/}{contenido.tex}
+
+\end{document}

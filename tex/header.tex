@@ -6,24 +6,19 @@
 \usefonttheme{professionalfonts}
 
 \usepackage[spanish]{babel}
-\addto\captionsspanish{\renewcommand{\partname}{Sesión}}
 
-\newcommand{\firstslide}{
-    \frame{\partpage}
-}
 \AtBeginSection[]%
 {
   \frame{\sectionpage}
 }
 
+
 \usepackage{graphicx}
-\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{listings}
 \usepackage[all]{xy}
 
 \usepackage{tikz}
-
-\mode<presentation>    
 
 % Estilo de diapositiva
 \usetheme{Madrid}
@@ -171,6 +166,63 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subimport{./}{bibliography.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LECTURES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addto\captionsspanish{\renewcommand{\partname}{Sesión}}
+\renewcommand{\thepart}{\Roman{part}}
+
+\AtBeginPart{
+  \label{part:\arabic{part}}
+  \setcounter{section}{0}
+}
+
+% \newcommand{\lecturename}{Sesión}
+
+% \AtBeginLecture{
+%   \begin{frame}
+%     \centering
+
+%     {\LARGE \lecturename~\Roman{lecture}}
+
+%     \bigskip 
+
+%     \bigskip
+    
+%     {\LARGE \color{green!40!black} \insertlecture}
+
+%   \end{frame}
+% }
+
+
+% \crefname{part}{sesión}{sesiones}
+% \Crefname{part}{Sesión}{Sesiones}
+
+
+%% Fix section counters in toc parts
+% % Patch vertical separation between sections in toc
+% \makeatletter
+% \patchcmd{\beamer@sectionintoc}
+%   {\vfill}
+%   {\vskip\itemsep}
+%   {}
+%   {}
+% \makeatother  
+
+% Define a new style of section in toc to look like itemize
+\defbeamertemplate{section in toc}{sectionasitem}{%
+\leavevmode%
+\usebeamerfont*{itemize item}%
+\raise1.25pt\hbox{\usebeamercolor[fg]{structure}\quad$\bullet$}
+{\usebeamercolor*[fg]{normal text}\inserttocsection}%
+}
+\setbeamertemplate{section in toc}[sectionasitem]
+
+\setbeamertemplate{itemize items}[circle]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \title{Curso de \LaTeX}

@@ -19,6 +19,7 @@ sesion.pdf
 *.cb2
 .*.lb
 sesion-*.pdf
+curso-latex.pdf
 
 ## Intermediate documents:
 *.dvi
