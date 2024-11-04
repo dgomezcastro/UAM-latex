@@ -1,0 +1,111 @@
+\section{Dibujo libre} 
+
+\begin{frame}
+\frametitle{El paquete Ti$k$z}
+El paquete \texttt{tikz} nos permite general dibujos 
+	\begin{columns} 
+		\column{.5\textwidth}
+		\begin{block}{Código} 
+			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz.tex}
+		\end{block} 
+		\column{.4\textwidth}
+		\begin{figure} 
+			\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-tikz.pdf}}
+			\caption{Resultado de compilar}
+		\end{figure} 
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dibujo libre}
+Existen diferentes tipos de líneas y figuras, las opciones son ilimitadas
+\begin{columns} 
+	\column{.5\textwidth}
+	\begin{block}{Código} 
+		\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz-2.tex}
+	\end{block} 
+	\column{.4\textwidth}
+		\fbox{\input{codigos/ejemplo-tikz-2.tex}}
+\end{columns}
+
+\vspace{3ex} 
+
+Bellos ejemplos se pueden encontrar en \url{http://www.texample.net/tikz/examples/}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Representación de grafos} 
+	\begin{block}{Código} 
+		\latexfile[fontsize=\tiny]{codigos/ejemplo-tikz-graph.tex}
+	\end{block} 
+
+	\begin{figure} 
+		\fbox{\includegraphics[height=.2\textheight]{codigos/ejemplo-tikz-graph.pdf}}
+		\caption{Resultado de compilar}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Diagramas de flujo}
+\includegraphics[width=\textwidth]{imagenes/18-PONE-flow}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Desvaríos excesivos}
+	\includegraphics[width=.9\textwidth]{codigos/poincare.pdf}
+\end{frame}
+
+\section{Representación de funciones} 
+
+\begin{frame}
+	\frametitle{Representación de curvas} 
+		\begin{block}{Código} 
+			\latexfile[fontsize=\tiny]{codigos/ejemplo-tikz-curva.tex}
+		\end{block} 
+		\begin{figure} 
+			\centering
+			\fbox{\includegraphics[width=.35\textwidth]{codigos/ejemplo-tikz-curva.pdf}}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Representación de funciones: \texttt{pgfplots}} 
+	\begin{columns} 
+	\column{.55\textwidth}
+	\begin{block}{Código} 
+		\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz-curva-2.tex}
+	\end{block} 
+	\column{.4\textwidth}
+	\begin{figure} 
+		\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-tikz-curva-2.pdf}}
+		\caption{Resultado de compilar}
+	\end{figure} 
+	\end{columns}
+
+	\vspace{3ex} 
+	
+	Una buena lista de ejemplos del manual:
+	\url{http://pgfplots.sourceforge.net/gallery.html}
+\end{frame}
+
+
+\section{Representación de datos} 
+
+\begin{frame}
+	\frametitle{{Representación de datos}}
+	\begin{columns} 
+		\column{.55\textwidth}
+		\begin{block}{Código} 
+			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-pgfplots-pointwise-data.tex}
+		\end{block} 
+	
+		\begin{block}{Código [data.csv]} 
+			\latexfile[fontsize=\tiny]{codigos/data.csv}
+		\end{block} 
+		\column{.4\textwidth}
+		\begin{figure} 
+			\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-pgfplots-pointwise-data.pdf}}
+			\caption{Resultado de compilar}
+		\end{figure} 
+	\end{columns}
+\end{frame}
