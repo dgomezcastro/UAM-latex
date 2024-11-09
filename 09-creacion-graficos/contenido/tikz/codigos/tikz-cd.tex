@@ -1,0 +1,21 @@
+\documentclass[varwidth]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+\[
+    \begin{tikzcd}[column sep=tiny]
+        & \pi_1(U_1) \ar[dr] \ar[drr, "j_1", bend left=20]
+        &
+        &[1.5em] \\
+        \pi_1(U_1\cap U_2) \ar[ur, "i_1"] \ar[dr, "i_2"']
+        &
+        & \pi_1(U_1) \ast_{ \pi_1(U_1\cap U_2)} \pi_1(U_2) \ar[r, dashed, "\simeq"]
+        & \pi_1(X) \\
+        & \pi_1(U_2) \ar[ur]\ar[urr, "j_2"', bend right=20]
+        &
+        &
+    \end{tikzcd}
+\]
+\end{document}

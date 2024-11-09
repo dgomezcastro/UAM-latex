@@ -1,0 +1,24 @@
+\documentclass[varwidth,margin=1.5cm]{standalone}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{annotate-equations}
+
+\begin{document}
+
+\begin{equation*}
+    i \tikzmarknode{hbar}{\mathstrut\hbar} 
+    \frac{\partial}{\partial t} 
+    \eqnmarkbox[blue]{Psi1}{\Psi(x, t)} 
+    = \eqnmark[red]{Hhat}{\hat{H}} 
+    \eqnmarkbox[blue]{Psi2}{\Psi(x, t)}
+\end{equation*}
+
+\annotate[yshift=3em]{above}{hbar}
+{$\hbar = \frac{h}{2\pi}$, reduced Planck constant}
+\annotate[yshift=1em]{above}{Hhat}
+{Hamilton operator}
+\annotatetwo[yshift=-1em]{below}{Psi1}{Psi2}
+{Wave function}
+
+\end{document}

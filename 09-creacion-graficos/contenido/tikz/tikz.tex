@@ -1,8 +1,8 @@
-\section{Dibujo libre} 
+\section{Dibujo básico} 
 
 \begin{frame}
 \frametitle{El paquete Ti$k$z}
-El paquete \texttt{tikz} nos permite general dibujos 
+	El paquete \texttt{tikz} nos permite general dibujos 
 	\begin{columns} 
 		\column{.5\textwidth}
 		\begin{block}{Código} 
@@ -16,25 +16,23 @@ El paquete \texttt{tikz} nos permite general dibujos
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Dibujo libre}
-Existen diferentes tipos de líneas y figuras, las opciones son ilimitadas
-\begin{columns} 
-	\column{.5\textwidth}
-	\begin{block}{Código} 
-		\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz-2.tex}
-	\end{block} 
-	\column{.4\textwidth}
-		\fbox{\input{codigos/ejemplo-tikz-2.tex}}
-\end{columns}
+\begin{frame}{Dibujo libre}
+	Existen diferentes tipos de líneas y figuras, las opciones son ilimitadas
+	\begin{columns} 
+		\column{.5\textwidth}
+		\begin{block}{Código} 
+			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz-2.tex}
+		\end{block} 
+		\column{.4\textwidth}
+			\fbox{\input{codigos/ejemplo-tikz-2.tex}}
+	\end{columns}
 
-\vspace{3ex} 
+	\vspace{3ex} 
 
-Bellos ejemplos se pueden encontrar en \url{http://www.texample.net/tikz/examples/}
+	Bellos ejemplos se pueden encontrar en \url{http://www.texample.net/tikz/examples/}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Representación de grafos} 
+\begin{frame}{Representación de grafos} 
 	\begin{block}{Código} 
 		\latexfile[fontsize=\tiny]{codigos/ejemplo-tikz-graph.tex}
 	\end{block} 
@@ -45,20 +43,26 @@ Bellos ejemplos se pueden encontrar en \url{http://www.texample.net/tikz/example
 	\end{figure} 
 \end{frame}
 
-\begin{frame}
-\frametitle{Diagramas de flujo}
-\includegraphics[width=\textwidth]{imagenes/18-PONE-flow}
+\begin{frame}{Diagrama de flujo}
+	\centering
+	\includegraphics[height=.8\textheight]{codigos/diagram.pdf}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Desvaríos excesivos}
-	\includegraphics[width=.9\textwidth]{codigos/poincare.pdf}
+\begin{frame}{Diagrama de flujo}
+	\tiny
+	\begin{block}{Código} 
+		\begin{columns}[t] 
+		\column{.45\textwidth}
+			\latexfile[lastline=15]{codigos/diagram.tex}
+			\column{.45\textwidth}
+			\latexfile[firstline=16]{codigos/diagram.tex}
+
+		\end{columns}
+	\end{block} 
 \end{frame}
 
-\section{Representación de funciones} 
 
-\begin{frame}
-	\frametitle{Representación de curvas} 
+\begin{frame}{Representación de curvas} 
 		\begin{block}{Código} 
 			\latexfile[fontsize=\tiny]{codigos/ejemplo-tikz-curva.tex}
 		\end{block} 
@@ -68,44 +72,63 @@ Bellos ejemplos se pueden encontrar en \url{http://www.texample.net/tikz/example
 		\end{figure}
 \end{frame}
 
-\begin{frame}
-\frametitle{Representación de funciones: \texttt{pgfplots}} 
-	\begin{columns} 
-	\column{.55\textwidth}
-	\begin{block}{Código} 
-		\latexfile[fontsize=\footnotesize]{codigos/ejemplo-tikz-curva-2.tex}
-	\end{block} 
-	\column{.4\textwidth}
-	\begin{figure} 
-		\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-tikz-curva-2.pdf}}
-		\caption{Resultado de compilar}
-	\end{figure} 
-	\end{columns}
+\begin{frame}{Desvaríos excesivos}
+	\href{https://texample.net/tikz/examples/poincare/}
+	{\includegraphics[width=.9\textwidth]{codigos/poincare.pdf}}
+\end{frame}
 
-	\vspace{3ex} 
-	
-	Una buena lista de ejemplos del manual:
-	\url{http://pgfplots.sourceforge.net/gallery.html}
+\begin{frame}{Desvaríos II}
+	\centering
+	\href{https://texample.net/tikz/examples/totoro/}
+	{\includegraphics[height=.8\textheight]{imagenes/totoro.png}}
+\end{frame}
+
+\section{Algunos paquete útiles}
+
+\begin{frame}{\texttt{pgfplots}: representación de funciones} 
+	\latexinputandpdf{codigos/ejemplo-tikz-curva-2}
 \end{frame}
 
 
-\section{Representación de datos} 
-
-\begin{frame}
-	\frametitle{{Representación de datos}}
+\begin{frame}{\texttt{pgfplots}: {Representación de datos}}
 	\begin{columns} 
 		\column{.55\textwidth}
 		\begin{block}{Código} 
 			\latexfile[fontsize=\footnotesize]{codigos/ejemplo-pgfplots-pointwise-data.tex}
 		\end{block} 
-	
+		\vspace{-2ex}
 		\begin{block}{Código [data.csv]} 
 			\latexfile[fontsize=\tiny]{codigos/data.csv}
 		\end{block} 
 		\column{.4\textwidth}
 		\begin{figure} 
 			\fbox{\includegraphics[width=\textwidth]{codigos/ejemplo-pgfplots-pointwise-data.pdf}}
-			\caption{Resultado de compilar}
 		\end{figure} 
 	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{pgfplots}}
+	Un manual razonablemente completo:
+	\url{https://www.overleaf.com/learn/latex/Pgfplots_package}
+	
+	\bigskip
+
+	Una buena lista de ejemplos del manual:
+	\url{http://pgfplots.sourceforge.net/gallery.html}
+
+\end{frame}
+
+\begin{frame}[fragile]{\href{https://ctan.org/pkg/tikz-cd}{\texttt{tikz-cd}}}
+	\tiny
+	\latexinputandpdf{codigos/tikz-cd}
+\end{frame}
+
+\begin{frame}[fragile]{\href{https://ctan.org/pkg/annotate-equations}{\texttt{annotate-equations}}}
+	\tiny
+	\latexinputandpdf{codigos/tikz-annotate}
+\end{frame}
+
+\begin{frame}[fragile]{\href{https://ctan.org/pkg/tikzducks}{\texttt{ducks}}}
+	\small
+	\latexinputandpdf{codigos/tikz-ducks}
 \end{frame}
