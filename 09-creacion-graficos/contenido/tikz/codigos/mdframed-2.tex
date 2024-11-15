@@ -1,0 +1,25 @@
+\documentclass[varwidth]
+    {standalone}
+
+\usepackage{mdframed,xcolor}
+
+\newmdtheoremenv[%
+    outerlinewidth = 2 ,%
+    roundcorner = 10pt ,%
+    leftmargin = 5 ,%
+    rightmargin = 5 ,%
+    backgroundcolor = yellow!40 ,%
+    outerlinecolor = blue!70!black ,%
+    innertopmargin= \topskip,%
+    splittopskip= \topskip,%
+]{theorem}{Teorema}[section]
+
+\begin{document}
+    \section{Geometría}
+    \begin{theorem}[Pitágoras]
+        Dado un triángulo rectángulo, el área de un triángulo de lado la hipotenusa es igual a la suma de los triángulos de lado cada uno de los catetos, es decir
+        \[
+            a^2 = b^2 + c^2.
+        \]
+    \end{theorem}
+\end{document}

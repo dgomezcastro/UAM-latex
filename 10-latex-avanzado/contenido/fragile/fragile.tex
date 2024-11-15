@@ -1,0 +1,81 @@
+% LTeX: language=es-ES
+\section{Frágiles y robustos}
+
+\begin{frame}[fragile]{Comandos frágiles y robustos, expansión y ejecución}
+
+    \href{https://tex.stackexchange.com/questions/4736/what-is-the-difference-between-fragile-and-robust-commands-when-and-why-do-we-n}{StackOverflow}
+
+\end{frame}
+
+% The key concept here is that, when TeX handles its input, it is doing two distinct things, called expanding and executing stuff. Normally, these activities are interleaved: TeX takes a token (ie, an elementary piece of input), expands it, then executes it (if possible). Then it does so with the next token. But in certain circumstances, most notably when writing to a file, TeX only expands things without executing them (the result will most probably be (re-expanded and) executed later when TeX reads the file back). Some macros, for proper operation, rely on something being properly executed before the next token is expanded. Those are called "fragile", since they work only in the normal (interleaved) mode, but not in expansion-only contexts (such as "moving arguments" which often means writing to a file).
+
+% That's the general picture. Now let's give a "few" more details. Feel free to skip to "what to do in practice" :)
+
+% Expansion vs execution
+
+% The distinction between expansion and execution is somewhat arbitrary, but as a rule of thumb:
+
+% expansion changes only the input stream, ie "what TeX is going to read next";
+% execution is everything else.
+% For example, macros are expandable (TeX is going to read their replacement text next), \input is expandable (TeX is going to read the given file next), etc. \def is not expandable (it changes the meaning of the defined macro), \kern is not expandable (it changes the content of the current paragraph or page), etc.
+
+% How things can go wrong
+
+% Now, consider a macro \foo:
+
+% \newcommand\foo[1]{\def\arg{#1}\ifx\arg\empty T\else F\fi}
+% In normal context, \foo{} gives T and foo{stuff} gives F.) In normal context, TeX will try to expand \def (which does nothing) then execute it (which removes \arg{#1} from the input stream and defines \arg) then expand the next token \ifx (which removes \arg\empty and possibly everything up to, but not including, the matching \else from the input stream), etc.
+
+% In expansion-only context, TeX will try to expand \def (does nothing), then expand whatever comes next ie the \arg. At this point, anything could happen. Maybe \arg is not defined and you get a (confusing) error message. Maybe it is defined to something like abc, so \foo{} will expand to \def abc{} F. You'll not get an error when writing this to the file, but it will crash when read back. Perhaps \argis defined to \abc, then \foo{} will expand to \def\abc{} F. Then you get no error message either when writing nor at readback, but not only you get F while you're expecting T, but also \abc is redefined, which can have all kinds of consequences if this is an important macro (and good luck for tracking the bug down).
+
+% How protection works
+
+% Edited to add (not in the original question, but someone asked in a comment): so how does \protect works? Well, in normal context \protect expands to \relax which does nothing. When a LaTeX (not TeX) command is about to process one of its arguments in expansion-only mode, it changes \protect to mean something based on \noexpand, which avoids expansion of the next token, thus protecting it from being expanded-but-not-executed. (See 11.4 in source2e.pdf for full details.)
+
+% For example, with \foo as above, if you try \section{\foo{}} chaos ensues as explained above. Now if you do \section{\protect\foo{}} then when LaTeX prints the section title it's in normal (interleaved) mode, \protect expands to \relax, then \foo{} expands-and-executes normally and you get a big T in your document. Before LaTeX writes your section title to the .aux file for the table of contents, it changes \protect to \noexpand\protect\noexpand, so \protect\foo expands to \noexpand\protect\noexpand\foo and \protect\foo is written to the aux file. When that line of the aux file is moved to the toc file, LaTeX defines \protect to \noexpand, so just \foo gets written to the toc file. When the toc file is finally read in normal mode, then and only then \foo is expanded-and-executed and you get a T in your document again.
+
+% You can play with the following document, looking at the contents of the .aux and .toc files without and with \protect. Notes: (1) you want to run pdflatex manually on the file, as opposed to latexmk or your IDE which might do multiple runs at once, and (2) you will need to remove the toc file to recover after trying the non-\protected version.
+
+% \documentclass{article}
+% \newcommand\foo[1]{\def\arg{#1}\ifx\arg\empty T\else F\fi}
+% \begin{document}
+% \tableofcontents
+% \section{\foo{}} % first run writes garbage to the aux file, second crashes
+% %\section{\protect\foo{}} % this is fine
+% \end{document}
+% Fun fact: the unprotected version fails in a different way (as explained above) if we replace every occurrence of \arg with \lol in the definition of \foo.
+
+% Which macros are fragile
+
+% This was the easy (read: TeXnical, but well-defined) part of your question. Now, the hard part: when to use \protect? Well it depends. You cannot know whether a macro is fragile or not without looking at is implementation. For example, the \foo macro above could use an expandable trick to test for emptyness and would not be fragile. Also, some macros are "self-\protecting" (those defined with \DeclareRobustCommand for example). As Joseph mentioned, \( is fragile unless you (or another package) loaded fixltx2e. (As a rule of thumb, most mathmode macros are fragile.) Also, you cannot know whether a particular macro tries to expand-only its arguments, but you can at least be sure all moving arguments will be expanded-only at some point.
+
+% What to do in practice
+
+% So, my advice is: when you see a weird error happening in or near a moving argument (ie a piece of text that's moved to another part of the document, like a footnote (to the bottom of the page), a section title (to the table of contents), etc), try \protecting every macro in it. It solves 99% of the problems.
+
+% (This can make you a hero when applied to a colleague's article, due today and "mysteriously" crashing: look at their document for a few seconds before you see a math formula inside a \section title, say "add a \protect here", then go back to work and let them call you a wizard. Cheap trick, but works.)
+
+\begin{frame}[fragile]%{\texttt{fragile} en \texttt{beamer}}
+    \footnotesize
+    La \href{https://ctan.org/pkg/beamer}{documentación de \texttt{beamer}}
+    \begin{quote}
+        fragile tells beamer that the frame contents is “fragile.” This means that the
+        frame contains text that is not “interpreted as usual.” For example, this applies to verbatim text,
+        which is, obviously, interpreted somewhat differently from normal text.
+        If a frame contains fragile text, different internal mechanisms are used to typeset the frame to
+        ensure that inside the frame the character codes can be reset. The price of switching to another
+        internal mechanism is that either you cannot use overlays or an external file needs to be written
+        and read back (which is not always desirable).
+    \end{quote}
+    ...
+    \begin{quote}
+        If you wish to use a \latexinline{{verbatim}} environment in a frame, you have to add the option \latexinline{[fragile]} to the
+        \latexinline{{frame}} environment. The \latexinline{\end{frame}} must be alone on a single line (except for any leading whitespace).
+        Using this option will cause the frame contents to be written to an external file and then read back. See the
+        description of the \latexinline{{frame}} environment for more details.
+        You must also use the \latexinline{[fragile]} option for frames that include any “fragile” text, which is any text
+        that is not “interpreted the way text is usually interpreted by TEX.” For example, if you use a package that
+        (locally) redefined the meaning of, say, the character \&, you must use this option.
+    \end{quote}
+
+\end{frame}

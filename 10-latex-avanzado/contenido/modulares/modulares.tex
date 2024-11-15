@@ -1,0 +1,102 @@
+\section{Descomponer el documento en ficheros}
+\begin{frame}[fragile]{\texttt{input}}
+	\small
+	Escribir un libro completo en un único archivo no es cómodo. 
+	
+	Por eso \LaTeX\ permite escribir modularmente. 
+	
+	Podemos escribir en diferentes archivos \texttt{.tex}, y luego juntarlos en un principal.
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{block}{Código [\texttt{modular.tex}]}
+			\latexfile[highlightlines={3-4}]{codigos/modular.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{modulo1.tex}]}
+			\latexfile{codigos/modulo1.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{modulo2.tex}]}
+			\latexfile{codigos/modulo2.tex}
+		\end{block}
+		\column{.4\textwidth}
+		\begin{figure}
+			\centering 
+			\fbox{\includegraphics[]{codigos/modular.pdf}}
+			\caption{Resultado de compilar \texttt{modular.tex}}
+		\end{figure} 
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{include}}
+	\url{https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include} (1405 upvotes)
+
+	\bigskip 
+
+	\latexinline{\input{filename}} imports the commands from \texttt{filename.tex} into the target file; it's equivalent to typing all the commands from \texttt{filename.tex} right into the current file where the \latexinline{\input} line is.
+
+	\bigskip 
+
+	\latexinline{\include{filename}} essentially does a \latexinline{\clearpage} before and after \latexinline{\input{filename}}, together with some magic to switch to another \texttt{.aux} file, and omits the inclusion at all if you have an \latexinline{\includeonly} without the filename in the argument. This is primarily useful when you have a big project on a slow computer; changing one of the include targets won't force you to regenerate the outputs of all the rest.
+	
+	\latexinline{\include{filename}} gets you the speed bonus, but it also can't be nested, can't appear in the preamble, and forces page breaks around the included text.
+\end{frame} 
+
+\begin{frame}[fragile]{\latexinline{\input} anidados}
+	\latexinline{\input} translada copia-y-pega el archivo indicado.
+	
+	Los \texttt{path} deben darse siempre con respecto al archivo que compila.
+
+	\begin{columns}
+	\column{0.45\textwidth}
+		\begin{itemize}
+			\item \texttt{main.tex}
+			\item folder1
+			\begin{itemize}
+				\item \texttt{file1.tex}
+				\item folder2
+				\begin{itemize}
+					\item \texttt{file2.tex}
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+	\column{0.45\textwidth}
+		\footnotesize
+		\begin{block}{Código [\texttt{main.tex}]}
+			\latexfile{codigos/modular-3/main.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{file1.tex}]}
+			\latexfile{codigos/modular-3/folder1/file1.tex}
+		\end{block}
+		\begin{block}{Código [\texttt{file2.tex}]}
+			\latexfile{codigos/modular-3/folder1/folder2/file2.tex}
+		\end{block}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{El paquete \texttt{import}}
+	Este paquete nos permite utilizar \texttt{paths} relativos
+	\begin{columns}
+		\column{0.45\textwidth}
+			\begin{itemize}
+				\item \texttt{main.tex}
+				\item folder1
+				\begin{itemize}
+					\item \texttt{file1.tex}
+					\item folder2
+					\begin{itemize}
+						\item \texttt{file2.tex}
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+		\column{0.45\textwidth}
+			\footnotesize
+			\begin{block}{Código [\texttt{main.tex}]}
+				\latexfile{codigos/import/main.tex}
+			\end{block}
+			\begin{block}{Código [\texttt{file1.tex}]}
+				\latexfile{codigos/import/folder1/file1.tex}
+			\end{block}
+			\begin{block}{Código [\texttt{file2.tex}]}
+				\latexfile{codigos/import/folder1/folder2/file2.tex}
+			\end{block}
+		\end{columns}
+\end{frame}

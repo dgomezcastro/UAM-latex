@@ -1,0 +1,74 @@
+% LTeX: language=es-ES
+
+\section{Comandos y entornos}
+
+\begin{frame}{Creando comandos: \latexinline{\newcommand}\footnotemark[1]} 
+	\small
+	\latexinputandpdf{codigos/comando-sin-arg}
+
+	\footnotetext[1]{Nota histórica: \latexinline{\newcommand} es un \texttt{overlay} para \LaTeX{} del comando \latexinline{\def} de \TeX{}. Más detalles en \href{https://tex.stackexchange.com/questions/655/what-is-the-difference-between-def-and-newcommand}{link}.}
+\end{frame}
+
+\begin{frame}{\latexinline{\newcommand}} 
+	\small
+	\latexinputandpdf{codigos/comando-arg}
+\end{frame}
+
+\begin{frame}{\latexinline{\newcommand}} 
+	\footnotesize
+	\latexinputandpdf{codigos/comando-opcionales}
+\end{frame}
+
+\begin{frame}[fragile]{\latexinline{\renewcommand}}
+	Si una comando ya está definido, puede eliminarse y volverse a definir con
+	
+	\latexinline{\renewcommand{\cmd}{defn}}
+
+	\href{https://latexref.xyz/_005cnewcommand-_0026-_005crenewcommand.html}{Link para más detalles.}
+\end{frame}
+
+\begin{frame}{\latexinline{\newenvironment}}
+
+	\small
+
+	\latexinline{\newenvironment{name}[numarg][optarg_default]{begin_def}{end_def}}
+
+	donde
+	\begin{itemize}
+		\item \texttt{name} is the name of this user-defined argument;
+		\item \texttt{numarg} is the number of arguments, from 1 to 9, this environment accepts. If \texttt{[numarg]} is omitted then the environment does not accept any arguments—such as the boxed environment defined in the next example;
+		\item \latexinline{optarg_default} makes the first argument optional and provides a default value—i.e., it is the value used if an optional argument value is not provided;
+		\item \latexinline{begin_def} is LaTeX code executed when the environment starts (opens), i.e., when you write \latexinline{\begin{name}}. 
+		Within this code you can use arguments accepted by the environment—note that the optional argument is \texttt{\#1} and the remaining arguments are accessed using \texttt{\#2} to \texttt{\#numarg};
+		\item \latexinline{end_def} is LaTeX code executed when the environment ends (closes); i.e., when you write \latexinline{\end{name}}. You cannot use any of the arguments within this code section.
+	\end{itemize}    
+
+\end{frame} 
+
+\begin{frame}{\latexinline{\newenvironment}}
+	\tiny 
+	\latexinputandpdf{codigos/entornos-1}
+\end{frame}
+
+\begin{frame}{\latexinline{\newenvironment}}
+	\tiny
+	\latexinputandpdf{codigos/entornos-2}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks,t]
+	{Teorema personalizado con \texttt{mdframed}}
+	\tiny
+	\latexfile[lastline=30]{codigos/mdframed-thm-no-optional.tex} 
+	\begin{columns}
+		\column{.35\textwidth}
+		\latexfile[firstline=31]{codigos/mdframed-thm-no-optional.tex}
+		
+		\bigskip 
+		\bigskip 
+		
+		A este documento le falta la posibilidad de poner nombre a los teoremas. Volveremos sobre esto.
+
+		\column{.55\textwidth}
+		\includegraphics[width=\textwidth]{codigos/mdframed-thm-no-optional.pdf}
+	\end{columns}
+\end{frame}

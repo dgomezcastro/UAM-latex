@@ -1,0 +1,25 @@
+%https://www.overleaf.com/learn/latex/Environments
+\documentclass[varwidth]{standalone}
+\newenvironment{boxed}[2][This is a box]
+    {\begin{center}
+    Argument 1 (\#1)=#1\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    Argument 2 (\#2)=#2\\[2ex]
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\begin{document}
+
+\begin{boxed}{Some preliminary text}
+This text is \textit{inside} the environment.
+\end{boxed}
+
+\begin{boxed}[This is not the default value]{Some more preliminary text}
+    This text is still \textit{inside} the environment.
+\end{boxed}
+
+\end{document}

@@ -1,0 +1,29 @@
+% LTeX: language=es-ES
+
+\section{Contadores}
+
+\begin{frame}[fragile]{Contadores}
+    \footnotesize
+	\latexinputandpdf{codigos/mover}
+\end{frame}
+
+\begin{frame}[fragile]{Contadores}
+    \footnotesize
+	\latexinputandpdf{codigos/representar}
+\end{frame}
+
+\begin{frame}{\texttt{numberwithin}}
+    Se puede forzar a un contador a depender de otros. Por ejemplo
+    
+    \latexinline{\numberwithin{equation}{section}}
+
+    hace que las ecuaciones de la sección $n$ se numeren como ($n.1$), ($n.2$), ...
+
+    \bigskip 
+
+    \pause 
+
+    Esencialmente lo que se hace es reiniciar el contador de ecuaciones cuando se cambia de sección y hacer
+
+    \latexinline{\renewcommand{\theequation}{\thesection.\arabic{equation}}}
+\end{frame}

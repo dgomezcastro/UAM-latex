@@ -1,0 +1,107 @@
+% LTeX: language=es-ES
+
+\section{Control de flujo}
+
+\begin{frame}[fragile]{Condicionales nativos}
+	\url{https://en.wikibooks.org/wiki/TeX/if}
+	\begin{quote}
+		The \latexinline{\if} command denotes the start of an if-then-else control structure. The forms <token-1> and <token-2> must expand to tokens. <token-1> and <token-2> can be either a character or a control sequence. If <token-1> and <token-2> both expand to the same character code then <tex-code-1> is processed; otherwise it is ignored. If the \latexinline{\else} section is included and <token-1> and <token-2> expand to different character codes, then <tex-code-2> is processed; otherwise it is ignored. 
+	\end{quote}
+\end{frame}
+
+\begin{frame}[fragile]
+	\footnotesize
+	\latexinputandpdf{codigos/if}
+\end{frame}
+
+\begin{frame}[fragile]{\latexinline{\ifx}}
+	\latexinline{\if} ``expande'' (es decir, evalúa) los tokens antes de compararlos. 
+
+	\bigskip 
+
+	Un comando similar es \latexinline{\ifx}. La diferencia es complicada: \href{https://tex.stackexchange.com/questions/127502/difference-between-if-and-ifx}{StackOverflow}.
+
+	\bigskip 
+
+	Un ejemplo habitual de uso es
+
+	\latexinline{\ifx\mycmd\undefined}
+\end{frame}
+
+\begin{frame}[fragile,t]{\latexinline{\ifthenelse}}
+	\small
+
+	El paquete \href{https://ctan.org/pkg/ifthen}{\texttt{ifthen}}\
+	(mantenido por el equipo de {\LaTeX}) 
+	
+	nos pertmite un \texttt{if} más ``moderno'':
+
+	\latexinline{\ifthenelse{<expression>}{<true code>}{<false code>}}
+
+	\bigskip
+
+	Las condiciones utilizan
+	\begin{table} 
+		\centering
+	\begin{tabular}{cl|cl}
+		\latexinline{==} & equality &
+		\latexinline{!=} & inequality \\ 
+		\latexinline{<} & less than &
+		\latexinline{>} & greater than \\ 
+		\latexinline{&&} & AND &
+		\latexinline{||} & OR \\
+		\latexinline{!} & NOT
+	\end{tabular}
+	\end{table}
+
+	\footnotesize
+	\begin{columns}[] 
+	\column{0.45\textwidth}
+		Podemos utilizar contadores
+		\begin{latexsource}
+\newcounter{value}
+\setcounter{value}{10}
+
+\ifthenelse{\value{value}>5}
+{\color{green}Large value}
+{\color{red}Small value}
+	\end{latexsource}
+
+	\column{0.45\textwidth}
+
+		E incluso se introduce valores \texttt{bool}
+		\begin{latexsource}
+\newboolean{draft}
+\setboolean{draft}{True}
+\ifthenelse{\boolean{draft}}
+{Draft version}
+{}
+		\end{latexsource}
+	\end{columns}
+
+	\bigskip 
+
+	\href{https://latexum.com/conditional-expressions-in-latex-a-guide-to-robust-usage/}{Fuente de los ejemplos}
+
+	Ver también \url{https://ctan.org/pkg/xifthen}
+\end{frame}
+
+\begin{frame}[fragile]{Bucles}
+	El comando \latexinline{\foreach} nos permite hace bucles \texttt{for} 
+	
+	\latexinlineandcompile{\foreach \x in {1,2,3,0}{\x,}}
+
+	\bigskip 
+
+	Admite notaciones de rango como \latexinline{\{1,2,...,6\}}	
+
+	\bigskip 
+
+	El paquete \href{https://ctan.org/pkg/forloop}{\texttt{forloop}} añade el comando 
+
+	\latexinline{\forloop{counter}{startValue}{condition}{body}}
+
+	\bigskip 
+
+	Ver también el paquete \href{https://ctan.org/pkg/multido}{\texttt{multido}}.
+\end{frame}

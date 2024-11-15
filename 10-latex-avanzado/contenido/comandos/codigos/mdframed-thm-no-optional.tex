@@ -1,0 +1,37 @@
+% Adaptado de 
+%https://tex.stackexchange.com/questions/227901/difficult-mdframed-example
+\documentclass[]
+    {article}
+\usepackage{amsmath}
+\usepackage[framemethod=TikZ]{mdframed}
+%% the following is common for all examples in mdframed manual
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+%%% upto here
+\newcounter{theo}[section]
+\newenvironment{theo}[1][]{%
+    \stepcounter{theo}%
+    \mdfsetup{%
+        frametitle={
+            %
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=blue!20]{\strut Teorema~\thetheo};
+        }
+    }%
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=blue!20,%
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr-\ht\strutbox\relax,
+    }
+    \begin{mdframed}[]\relax%
+}
+{
+    \end{mdframed}
+}
+
+\begin{document}
+    \noindent Texto antes del teorema
+
+    \begin{theo}
+        Contenido del teorema
+    \end{theo}
+\end{document}
