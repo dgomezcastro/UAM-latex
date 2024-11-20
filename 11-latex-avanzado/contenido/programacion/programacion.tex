@@ -17,6 +17,8 @@
 \begin{frame}[fragile]{\latexinline{\ifx}}
 	\latexinline{\if} ``expande'' (es decir, evalúa) los tokens antes de compararlos. 
 
+	Detalles sobre expansión en \href{https://www.overleaf.com/learn/latex/Articles/How_does_%5Cexpandafter_work%3A_An_introduction_to_TeX_tokens}{este link}.
+
 	\bigskip 
 
 	Un comando similar es \latexinline{\ifx}. La diferencia es complicada: \href{https://tex.stackexchange.com/questions/127502/difference-between-if-and-ifx}{StackOverflow}.
@@ -26,6 +28,7 @@
 	Un ejemplo habitual de uso es
 
 	\latexinline{\ifx\mycmd\undefined}
+
 \end{frame}
 
 \begin{frame}[fragile,t]{\latexinline{\ifthenelse}}
@@ -55,7 +58,7 @@
 	\end{table}
 
 	\footnotesize
-	\begin{columns}[] 
+	\begin{columns}[T] 
 	\column{0.45\textwidth}
 		Podemos utilizar contadores
 		\begin{latexsource}
@@ -105,3 +108,16 @@
 
 	Ver también el paquete \href{https://ctan.org/pkg/multido}{\texttt{multido}}.
 \end{frame}
+
+% \begin{frame}[fragile]{Ejemplo diabólico, la función de Ackermann}
+% 	\[ 
+% 		A(m,n) = 
+% 		\begin{dcases}
+% 			n+1 & \text{si } m = 0, \\
+% 			A(m-1,1) & \text{si } m > 0 \text{ y } n = 0, \\
+% 			A(m-1, A(m, n-1)) & \text{si } m > 0 \text{ y } n > 0.
+% 		\end{dcases}
+% 	\] 
+
+% 	\url{https://tex.stackexchange.com/questions/584504/ackermann-macro}
+% \end{frame}

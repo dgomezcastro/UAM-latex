@@ -1,8 +1,27 @@
 % LTeX: language=es-ES
 
-\section{Contadores}
+\section{Números y contadores}
+
+\begin{frame}[fragile]{Operaciones con números}
+    \latexinline{\numexp} permite operar con enteros. 
+    \latexinputandcompile{codigos/numeros.tex}
+
+    \bigskip 
+
+    Se envuelve en \latexinline{\the} y \latexinline{\relax} por razones internas de \LaTeX\footnote{Expansión de tokens que discutiremos más adelante}.
+
+    Se pueden operar también dimensiones, y otros tipos de números. 
+    
+    \bigskip
+
+    Ver: 
+
+    \url{https://tex.stackexchange.com/questions/245635/formal-syntax-rules-of-dimexpr-numexpr-glueexpr}
+\end{frame}
 
 \begin{frame}[fragile]{Contadores}
+    Los contadores son enteros con funcionalidades adicionales
+
     \footnotesize
 	\latexinputandpdf{codigos/mover}
 \end{frame}
