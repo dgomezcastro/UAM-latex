@@ -1,0 +1,61 @@
+\section{Creando \texttt{class} y \texttt{package}}
+
+\begin{frame}{Mi propia \texttt{documentclass}}
+    \small
+
+    Para crear una \texttt{documentclass} basta crear un archivo llamado \latexinline{<nombre>.cls} e indicar que es una clase. Por ejemplo
+    \begin{block}{Código (\texttt{otroarticulo.cls})}
+        \latexfile{codigos/otroarticulo.cls}
+    \end{block}
+    
+    \begin{columns}
+        \column{0.6\textwidth}
+        \begin{block}{Código (\texttt{main.tex})}
+            \latexfile{codigos/main.tex}
+        \end{block}
+        \column{0.25\textwidth}
+        \centering
+        \fbox{
+        \begin{minipage}{\textwidth}
+            \includegraphics[width=.8\textwidth]{codigos/main.pdf}
+        \end{minipage}
+        }
+        \texttt{main.pdf}
+      \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    Los archivos \texttt{.cls} suelen ser bastante complejos. 
+    
+    Por ejemplo, puede encontrarse \texttt{article.cls} escribiendo en terminal: 
+
+    \begin{minted}{sh}
+kpsewhich article.cls
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{¿Qué puedo hacer en una \texttt{class}?}
+    En un \texttt{.csl} podemos:
+    \begin{itemize}
+        \item Basarnos en clases existentes usando \latexinline{\LoadClass}
+        \item Incluir paquetes usando \latexinline{\RequirePackage} 
+        \item Crear opciones para el paquete con \latexinline{\DeclareOption}
+    \end{itemize} 
+
+    Muchos ejemplos en 
+    
+    \url{https://www.overleaf.com/learn/latex/Writing_your_own_class}
+\end{frame}
+
+\begin{frame}[fragile]{Creando un \texttt{package}}
+    Los paquetes se guardan en archivos \texttt{<nombre>.sty}. 
+    \begin{block}{Código (\texttt{examplepackage.sty})}
+    \small
+    \begin{latexsource}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{examplepackage}[2014/08/24 Example LaTeX package]
+    \end{latexsource}
+    \end{block}
+
+    Leer más: \url{https://www.overleaf.com/learn/latex/Writing_your_own_package}
+\end{frame}
