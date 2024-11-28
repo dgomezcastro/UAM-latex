@@ -7,7 +7,9 @@
 
     \bigskip
 
-    \latexinline{\title, \author, \date} admiten un parámetro opcional.
+    \latexinline{\title, \author, \date} admiten un parámetro opcional. 
+
+    Este parámetro configura el título a mostrar en diferentes lugares \\(en particular el pie de página)
 \end{frame}
 
 \begin{frame}[fragile]{Teoremas}
@@ -18,6 +20,10 @@
 \begin{frame}{Secciones}
     \tiny
     \latexinputandpdf{codigos/section}
+
+    Si queremos que \latexinline{\sectionpage} (y otros elementos) funcionen bien en castellano, debemos pasar la opción \texttt{spanish} al \latexinline{\documentclass}:
+
+    \latexinline{\documentclass[spanish]{beamer}}
 \end{frame}
 
 \begin{frame}[fragile]{Figuras}
