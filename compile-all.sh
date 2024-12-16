@@ -6,7 +6,7 @@ do
     cd 0$i*
     pdflatex -shell-escape -interaction=batchmode sesion-0$i.tex
     pdflatex -shell-escape -interaction=batchmode sesion-0$i.tex
-    biber sesion-0$i 
+    biber --input-directory ../tex sesion-0$i 
     pdflatex -shell-escape -interaction=batchmode sesion-0$i.tex
     cd ..
 done
@@ -17,9 +17,14 @@ do
     cd $i*
     pdflatex -shell-escape -interaction=batchmode sesion-$i.tex
     pdflatex -shell-escape -interaction=batchmode sesion-$i.tex
-    biber sesion-$i 
+    biber --input-directory ../tex sesion-$i 
     pdflatex -shell-escape -interaction=batchmode sesion-$i.tex
     cd ..
-done 
+done
+
+pdflatex -shell-escape -interaction=batchmode curso-latex.tex
+pdflatex -shell-escape -interaction=batchmode curso-latex.tex
+biber --input-directory ../tex sesion-$i 
+pdflatex -shell-escape -interaction=batchmode curso-latex.tex
 
 ./clean-up.sh

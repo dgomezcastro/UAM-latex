@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage{datatool}
+\usepackage{eurosym}
+
+\begin{document}
+
+\DTLloaddb{datos}{datos.csv}
+
+\DTLforeach*
+[\equal{\Price}{100}]% condition
+{datos} % database
+{\Title=título,\Price=precio} % assignments
+{\Title{} (\Price \euro), } % body
+
+\end{document}

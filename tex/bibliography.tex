@@ -3,7 +3,7 @@
 \usepackage[
 url=false,
 isbn=false,
-backref=biber,
+backend=biber,
 maxcitenames=5,
 giveninits=true,
 maxbibnames=100,
@@ -17,8 +17,8 @@ block=none]{biblatex}
 %\bibstyle{siam}
 
 %% Sub-import does not work with addbibresource
-\addbibresource{../bibliography.bib}
-\addbibresource{./bibliography.bib}
+\addbibresource{bibliography.bib}
+\addbibresource{../tex/bibliography.bib}
 
 %\setbeamertemplate{bibliography item}{}
 \setlength{\labelsep}{\biblabelsep}%
