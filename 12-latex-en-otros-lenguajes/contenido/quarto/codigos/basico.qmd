@@ -1,0 +1,5 @@
+---
+title: "Quarto Basics"
+---
+
+My first document says $a^2 = 1$ so $a=\pm 1$

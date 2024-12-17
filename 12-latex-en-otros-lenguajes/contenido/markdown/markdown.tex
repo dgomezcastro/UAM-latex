@@ -1,6 +1,7 @@
 \section{Markdown}
 
-\begin{frame}[fragile]{Markdown}
+\begin{frame}[fragile]{Markdown: archivos \texttt{.md}}
+    \small
     \url{https://en.wikipedia.org/wiki/Markdown}
     \begin{quote}
         Markdown is a lightweight markup language for creating formatted text using a plain-text editor. John Gruber created Markdown in 2004 as an easy-to-read markup language.
@@ -15,8 +16,63 @@
         Thus, “Markdown” is two things: (1) a plain text formatting syntax; and (2) a software tool, written in Perl, that converts the plain text formatting to HTML. See the \href{https://daringfireball.net/projects/markdown/syntax}{Syntax} page for details pertaining to Markdown’s formatting syntax. You can try it out, right now, using \href{https://daringfireball.net/projects/markdown/dingus}{the online Dingus}.
     \end{quote}
 
-    \bigskip 
+    \bigskip
 
-    Ejemplo de uso:
+    Por ejemplo, los \texttt{README.md} en \url{github.com}: \href{https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions}{link}.
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{markdown}}
+    \small
+
+    Markdown utiliza algunas notaciones sencillas
+    \begin{enumerate}
+        \item
+              \mintinline{markdown}|# 〈título〉| índica el inicio de la sección 〈título〉. Similar para subsección y sub-subsección.
+
+        \item
+              \mintinline{markdown}|-| al comienzo de línea indica que se trata de una lista no numerada, y  \mint{markdown}|1.| de lista numerada.
+
+        \item
+              \mintinline{markdown}|*〈texto〉*| indica texto en cursiva, \mintinline{markdown}|**| indica negrita, y \mintinline{markdown}|***| indica negrita y cursiva
+
+        \item
+              \mintinline{markdown}|[Duck Duck Go](https://duckduckgo.com)| crea un link
+
+        \item
+              \mintinline{markdown}|![〈texto〉](〈dirección〉)|
+              inserta la imagen o video en 〈dirección〉utilizando 〈texto〉como texto alternativo.
+
+        \item
+              \mintinline{markdown}|$a=1$| es una ecuación en línea, y \mintinline{markdown}|$$a=1$$| una ecuación presentada
+    \end{enumerate}
+    \bigskip
+
+    Más ejemplos en:
+    \url{https://www.markdownguide.org/basic-syntax/}
+
+    Probar en:
     \url{https://upmath.me/}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{pandoc}: de \texttt{.md} a \texttt{.tex}}
+    \small
+
+    \url{https://pandoc.org/}
+    \begin{quote}
+        you need to convert files from one markup format into another, pandoc is your swiss-army knife.
+    \end{quote}
+    \begin{block}{Archivo \texttt{ejemplo.md}}
+        \inputminted{markdown}{codigos/ejemplo.md}
+    \end{block}
+    Mediante
+
+    \mintinline{sh}|$ pandoc ejemplo.md -o ejemplo.tex|
+
+        obtenemos
+        \begin{block}{Archivo \texttt{ejemplo.tex}}
+            \inputminted{latex}{codigos/ejemplo.tex}
+        \end{block}
+
+        Podemos hacer el \texttt{.tex} tenga cabecera indicando
+        \mintinline{sh}|$ pandoc ejemplo.md --standalone -o ejemplo_standalone.tex|
 \end{frame}

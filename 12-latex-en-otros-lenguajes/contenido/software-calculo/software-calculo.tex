@@ -1,21 +1,24 @@
-\section{LaTeX y software científico}
+\section{LaTeX en software científico}
 
-\begin{frame}[fragile]{MATLAB}
-    \url{https://www.mathworks.com/help/symbolic/sym.latex.html}
+\begin{frame}[fragile]{\texttt{jupyter}: libretas para \texttt{julia}, \texttt{python}, \texttt{R} (\texttt{.ipynb})}
+    \texttt{jupyter} admite celdas de código y celdas de texto \texttt{markdown}.
+
+    \bigskip
+
+    En ellas, se puede incluir \LaTeX{} (\href{https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html}{documentación})
+
+    \bigskip
+
+    La herramienta \texttt{nbconvert} permite convertir \texttt{.ipynb} en \texttt{.tex} y \texttt{.html} (con MathJax)
 \end{frame}
 
-\begin{frame}{Mathematica}
 
-\end{frame}
-
-\begin{frame}{Maple}
-
-\end{frame}
-
-\begin{frame}{Sage}
-
-\end{frame}
-
-\begin{frame}[fragile]{Julia}
-    \url{https://github.com/JuliaStrings/LaTeXStrings.jl}
+\begin{frame}[fragile]{Otros programas}
+    \begin{itemize}
+        \item \href{https://www.mathworks.com/help/symbolic/sym.latex.html}{MATLAB}
+        \item \href{https://doc.sagemath.org/html/en/tutorial/latex.html}{Sage}
+        \item \href{https://reference.wolfram.com/language/workflow/GenerateTeXWithTheWolframLanguage.html}{Mathematica}
+        \item \href{https://maplesoft.com/support/help/maple/view.aspx?path=updates%2fMaple2021%2fLaTeX}{Maple}
+        \item Julia: soporta caracteres unicode. Además \href{https://github.com/JuliaStrings/LaTeXStrings.jl}{LaTeXString.jl}
+    \end{itemize}
 \end{frame}

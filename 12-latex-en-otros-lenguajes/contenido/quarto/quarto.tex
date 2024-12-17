@@ -1,7 +1,50 @@
 \section{quarto}
 
-\begin{frame}[fragile]{quarto}
-    ...
+\begin{frame}[fragile]{\texttt{quarto}}
+    The wikipedia article (still in draft)
+    \begin{quote}
+        Quarto is a free and open-source scientific and technical publishing system developed by Posit PBC, the developer of RStudio and Tidyverse.
+
+        Quarto converts a Quarto document into HTML, PDF, or other document formats, using Pandoc as the core alongside other software such as Jupyter.
+    \end{quote}
+
+    La sintaxis de \texttt{quarto} es una extensión de \texttt{markdown}.
+
+    Los archivos utilizan la extensión \texttt{.qmd}
+\end{frame}
+
+\begin{frame}[fragile]{Primer ejemplo}
+    \small
+
+    \begin{block}{Archivo \texttt{basico.qmd}}
+        \inputminted{markdown}{codigos/basico.qmd}
+    \end{block}
+
+    Compilando por terminal
+    \mint{sh}|$ quarto render basico.qmd|
+
+    crea \texttt{basico.html} muy básico
+
+    \bigskip
+
+    Podemos especificar cómo queremos que lo exporte:
+
+    \begin{itemize}
+        \item
+              \LaTeX: \mint{sh}|quarto render basico.qmd --to latex| genera \texttt{basico.tex}
+        \item
+              \texttt{Reveal.Js}: \mint{sh}|quarto render basico.qmd --to revealjs -o basico_revealjs.html|
+              genera \texttt{basico\_revealjs.html}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Más sobre \texttt{quarto}}
+    Algunos comentarios:
+    \begin{itemize}
+        \item Hay muchísimas opciones de configuración, en las que no entraremos: \url{https://quarto.org/}
+        \item
+              Es recomendable usar \texttt{quarto} con un IDE como \texttt{Visual Studio Code}, por las extensiones.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo}
