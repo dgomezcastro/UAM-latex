@@ -4,143 +4,145 @@
 
 
 \begin{frame}[fragile]{Negrita, cursiva, ... }
-    \begin{table} 
-		\centering
-	\begin{tabular}{l|l}
-        \latexrowinlineandcompile{Hola} \\
-        \latexrowinlineandcompile{\textbf{Hola}} \\
-        \latexrowinlineandcompile{\textit{Hola}} \\
-        \latexrowinlineandcompile{\textsl{Hola}} \\
-        \latexrowinlineandcompile{\texttt{Hola}} \\
-        \latexrowinlineandcompile{\textsc{Hola}} \\
-        \latexrowinlineandcompile{\textrm{Hola}} \\
-        \latexrowinlineandcompile{\underline{Hola}}
-	\end{tabular}
-	\end{table} 
-    Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... \\ 
+    \begin{table}
+        \centering
+        \begin{tabular}{l|l}
+            \latexrowinlineandcompile{Hola}          \\
+            \latexrowinlineandcompile{\textbf{Hola}} \\
+            \latexrowinlineandcompile{\textit{Hola}} \\
+            \latexrowinlineandcompile{\textsl{Hola}} \\
+            \latexrowinlineandcompile{\texttt{Hola}} \\
+            \latexrowinlineandcompile{\textsc{Hola}} \\
+            \latexrowinlineandcompile{\textrm{Hola}} \\
+            \latexrowinlineandcompile{\underline{Hola}}
+        \end{tabular}
+    \end{table}
+    Otros paquetes incluyen más funcionalidades: \texttt{ulem}, \texttt{sout} permiten tachar texto, ... \\
 
     Con \latexinline{\emph} podemos resaltar una parte, independientemente del contexto\footnote{\latexinline{\emph} tiene un pequeño problema con \texttt{beamer}. Ver \href{https://tex.stackexchange.com/questions/89425/beamer-does-not-restore-roman-style-for-emph-inside-emph}{link}}
-    \begin{table} 
-		\centering
-	\begin{tabular}{l|l}
-        \latexrowinlineandcompile{Hola, \emph{Pablo.}}\\
-        \latexrowinlineandcompile{\textit{Hola, \emph{Pablo.}}}
-	\end{tabular}
-	\end{table} 
+    \begin{table}
+        \centering
+        \begin{tabular}{l|l}
+            \latexrowinlineandcompile{Hola, \emph{Pablo.}} \\
+            \latexrowinlineandcompile{\textit{Hola, \emph{Pablo.}}}
+        \end{tabular}
+    \end{table}
 \end{frame}
 
 \begin{frame}[fragile]{Comillas}
     \LaTeX utiliza una convención curiosa abrir y cerrar comillas
     \begin{table}
-    \centering
-    \begin{tabular}{l|l}
-        \latexrowinlineandcompile{Fue ``sin querer''}\\
-        \mintinline{latex}{Fue "sin querer"} & Fue "sin querer"
-	\end{tabular}
+        \centering
+        \begin{tabular}{l|l}
+            \latexrowinlineandcompile{Fue ``sin querer''}           \\
+            \mintinline{latex}{Fue "sin querer"} & Fue "sin querer"
+        \end{tabular}
     \end{table}
 \end{frame}
 
 \begin{frame}[fragile]{Tamaño de letra}
-    \small 
+    \small
     El tamaño de letra para todo el documento puede ponerse como parámetro opcional de \texttt{documentclass}, p.e.
     \begin{latexsource}
-\documentclass[8pt]{article}    
+        \documentclass[8pt]{article}
     \end{latexsource}
     El tamaño del texto puede cambiar localmente
-    \begin{table} 
-    \centering
-    \begin{tabular}{l|l}
-        \latexrowinlineandcompile{\Huge Hola}\\
-        \latexrowinlineandcompile{\huge Hola} \\
-        \latexrowinlineandcompile{\LARGE Hola} \\
-        \latexrowinlineandcompile{\Large Hola}\\
-        \latexrowinlineandcompile{\large Hola}\\
-        \latexrowinlineandcompile{\normalsize Hola}\\
-        \latexrowinlineandcompile{\small Hola} \\
-        \latexrowinlineandcompile{\footnotesize Hola}\\
-        \latexrowinlineandcompile{\scriptsize Hola} \\
-        \latexrowinlineandcompile{\tiny Hola} 
-	\end{tabular}
+    \begin{table}
+        \centering
+        \begin{tabular}{l|l}
+            \latexrowinlineandcompile{\Huge Hola}         \\
+            \latexrowinlineandcompile{\huge Hola}         \\
+            \latexrowinlineandcompile{\LARGE Hola}        \\
+            \latexrowinlineandcompile{\Large Hola}        \\
+            \latexrowinlineandcompile{\large Hola}        \\
+            \latexrowinlineandcompile{\normalsize Hola}   \\
+            \latexrowinlineandcompile{\small Hola}        \\
+            \latexrowinlineandcompile{\footnotesize Hola} \\
+            \latexrowinlineandcompile{\scriptsize Hola}   \\
+            \latexrowinlineandcompile{\tiny Hola}
+        \end{tabular}
     \end{table}
     Más sobre fuentes:
 
     \url{https://en.wikibooks.org/wiki/LaTeX/Fonts}
+
+    \href{https://youtu.be/qbCniw-BcW0?si=C6y3bPyJ8wD0-qfo}{From Hot Metal to HTML: The Story of Typography - Dylan Beattie - NDC Porto 2023}
 \end{frame}
 
 \begin{frame}[fragile]{Fuente}
     El documentos \texttt{article} y \texttt{book} latex utiliza la fuente \texttt{Computer Modern}. Otras fuentes están disponibles
-    \begin{table} 
+    \begin{table}
         \centering
         \begin{tabular}{l|l}
-            \latexinline{\usepackage{lmodern}} & \includegraphics{codigos/lmodern.pdf} \\
-            \latexinline{\usepackage{mathptmx}} & \includegraphics{codigos/times.pdf} \\
-            \latexinline{\usepackage{helvet}} & \includegraphics{codigos/helvetica.pdf} \\
+            \latexinline{\usepackage{lmodern}}  & \includegraphics{codigos/lmodern.pdf}   \\
+            \latexinline{\usepackage{mathptmx}} & \includegraphics{codigos/times.pdf}     \\
+            \latexinline{\usepackage{helvet}}   & \includegraphics{codigos/helvetica.pdf} \\
         \end{tabular}
-        \end{table}
-    Listas más extensas en 
+    \end{table}
+    Listas más extensas en
 
     \url{https://www.overleaf.com/learn/latex/Font_typefaces}
 
     \url{https://tug.org/FontCatalogue/}\\
 
-    Si utilizamos \texttt{XeLaTeX} o \texttt{LuaTeX} como compiladores, podemos usar el paquete \texttt{fontspec} \\ 
+    Si utilizamos \texttt{XeLaTeX} o \texttt{LuaTeX} como compiladores, podemos usar el paquete \texttt{fontspec} \\
 
 
     Especificar la codificación de fuente tiene algunas ventajas. Es habitual includir
     \begin{latexsource}
-\usepackage[T1]{fontenc}
+        \usepackage[T1]{fontenc}
     \end{latexsource}
 \end{frame}
 
 \begin{frame}{Colores}
     El paquete \texttt{xcolor} nos permite utilizar diferentes colores, p.e.
-    \begin{table} 
+    \begin{table}
         \centering
         \begin{tabular}{l|l}
             \latexinline{\color{blue} Hola} & {\color{blue} Hola} \\
         \end{tabular}
-        \end{table}
+    \end{table}
 
-    Lo habitual es querer colorear sólo algunas palabras. 
-    
+    Lo habitual es querer colorear sólo algunas palabras.
+
     Para ello podemos ponerlo encapsularlo:
-    \latexinline{{\color{blue} Hola}} 
+    \latexinline{{\color{blue} Hola}}
 
     o volver al color ``normal'': \latexinline{\color{blue} Hola \normalcolor}
 
-    \bigskip 
+    \bigskip
 
-    Hay una extensa familia de espacios de nombres, y comando asociados. 
+    Hay una extensa familia de espacios de nombres, y comando asociados.
 
     \url{https://en.wikibooks.org/wiki/LaTeX/Colors}
 \end{frame}
 
 \begin{frame}[fragile]{Saltos de líneas}
     \tiny
-    \latexinputandpdf{codigos/skip}    
+    \latexinputandpdf{codigos/skip}
 \end{frame}
 
 \begin{frame}[fragile]{Listas (volveremos sobre esto en detalle)}
 
-\latexinputandpdf{codigos/enumerate}
+    \latexinputandpdf{codigos/enumerate}
 
-\end{frame} 
+\end{frame}
 
 \begin{frame}[fragile]{Caracteres reservados y cómo escribirlos}
     \begin{table}
         \centering
         \begin{tabular}{llll}
-            \latexinline{$} & modo matemático & \latexinline{\$, \textdollar} & \$ \\
+            \latexinline{$}    & modo matemático        & \latexinline{\$, \textdollar} & \$ \\
             \latexinline{%} & comentario & 
-            \latexrowinlineandcompile{\%} \\
-            \latexinline{&} & tabulación &
-            \latexrowinlineandcompile{\&} \\
-            \latexinline{^, _} & super y sub índices & 
-            \latexrowinlineandcompile{\^{}, \_} \\
-            \latexinline{\ } & comienzo de comando &
-            \latexrowinlineandcompile{\textbackslash}\\
-            \latexinline{{}} & inicio y fin de bloque & 
-            \latexrowinlineandcompile{\{ \}}\\ 
+            \latexrowinlineandcompile{\%}                                                    \\
+            \latexinline{      & }                      & tabulación                    &
+            \latexrowinlineandcompile{\&}                                                    \\
+            \latexinline{^, _} & super y sub índices    &
+            \latexrowinlineandcompile{\^{}, \_}                                              \\
+            \latexinline{\ }   & comienzo de comando    &
+            \latexrowinlineandcompile{\textbackslash}                                        \\
+            \latexinline{{}}   & inicio y fin de bloque &
+            \latexrowinlineandcompile{\{ \}}                                                 \\
         \end{tabular}
     \end{table}
 \end{frame}
