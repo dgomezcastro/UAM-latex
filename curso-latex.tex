@@ -6,18 +6,18 @@
 
 \subimport{./tex/}{header.tex}
 
-\begin{document} 
+\begin{document}
 
 
 {
-    \setbeamertemplate{footline}{}
-    
-    \frame{\titlepage}
-    \begin{frame}{Sesiones} 
-        \begin{enumerate}[align=right, leftmargin=10mm] 
-            \foreach \x in {1,2,...,12} {\item[\ref{part:\x}] \hyperlink{part:\x}{\nameref{part:\x}}}
-        \end{enumerate}
-    \end{frame} 
+\setbeamertemplate{footline}{}
+
+\frame{\titlepage}
+\begin{frame}{Sesiones}
+    \begin{enumerate}[align=right, leftmargin=10mm]
+        \foreach \x in {1,2,...,12} {\item[\ref{part:\x}] \hyperlink{part:\x}{\nameref{part:\x}}}
+    \end{enumerate}
+\end{frame}
 }
 \subimport{./01-primeros-pasos/contenido/}{contenido.tex}
 \subimport{./02-texto-basico/contenido/}{contenido.tex}
@@ -27,5 +27,9 @@
 \subimport{./06-formato-pagina/contenido/}{contenido.tex}
 \subimport{./07-bibliografia/contenido/}{contenido.tex}
 \subimport{./08-beamer/contenido/}{contenido.tex}
+\subimport{./09-creacion-graficos/contenido/}{contenido.tex}
+\subimport{./10-latex-avanzado/contenido/}{contenido.tex}
+\subimport{./11-latex-avanzado/contenido/}{contenido.tex}
+\subimport{./12-latex-en-otros-lenguajes/contenido/}{contenido.tex}
 
 \end{document}
