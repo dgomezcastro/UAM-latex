@@ -30,16 +30,16 @@
 \setbeamertemplate{footline}{
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle~(\partname~\thepart)
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
-  \end{beamercolorbox}}%
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle~(\partname~\thepart)
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
   \vskip0pt%
 }
 \makeatother
@@ -59,7 +59,7 @@
 \useinnertheme{circles}
 
 % \usepackage{verbatim}
-\usepackage{minted}
+\usepackage{minted2} % not maintained. however minted in version 3 has breaking changes
 \newminted[latexsource]{latex}{linenos=false,autogobble,breaklines}
 \newmintinline[latexinline]{latex}{breaklines}
 \newmintedfile[latexfile]{latex}{breaklines}
@@ -89,14 +89,14 @@
   \begin{columns}
     \column{#1\textwidth}
     \begin{block}{Código}
-        #3
+      #3
     \end{block}
     \column{#2\textwidth}
     \centering
     \fbox{
-    \begin{minipage}{\textwidth}
+      \begin{minipage}{\textwidth}
         #4
-    \end{minipage}
+      \end{minipage}
     }
   \end{columns}
 }
@@ -134,30 +134,34 @@
 }
 
 \usepackage{import}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The following is patch to make import and minted behave together
 %% https://github.com/gpoore/minted/issues/251
+%% This "hacky" part requires staying in minted2 instead of minted for
+%% compatibility with import.
+%% I am suscribed to this issue and will update is possible 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 
 \makeatletter
 % fix for first kind
 \xpatchcmd\inputminted
-  {#3}
-  {\import@path #3}
-  {}{\fail}
+{#3}
+{\import@path #3}
+{}{\fail}
 
 % fix for second kind
 \xpretocmd\minted@pygmentize
-  {\restore@IfFileExists} % direct \let\IfFileExists\im@@IfFileExists works too
-  {}{\fail}
+{\restore@IfFileExists} % direct \let\IfFileExists\im@@IfFileExists works too
+{}{\fail}
 \def\restore@IfFileExists{%
   \ifx\IfFileExists\@iffileonpath
     \let\IfFileExists\im@@IfFileExists
   \fi
 }
 \makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand<>{\emph}[1]{{\only#2{\em}#1}}
@@ -190,7 +194,7 @@
 %     \bigskip 
 
 %     \bigskip
-    
+
 %     {\LARGE \color{green!40!black} \insertlecture}
 
 %   \end{frame}
@@ -213,10 +217,10 @@
 
 % Define a new style of section in toc to look like itemize
 \defbeamertemplate{section in toc}{sectionasitem}{%
-\leavevmode%
-\usebeamerfont*{itemize item}%
-\raise1.25pt\hbox{\usebeamercolor[fg]{structure}\quad$\bullet$}
-{\usebeamercolor*[fg]{normal text}\inserttocsection}%
+  \leavevmode%
+  \usebeamerfont*{itemize item}%
+  \raise1.25pt\hbox{\usebeamercolor[fg]{structure}\quad$\bullet$}
+  {\usebeamercolor*[fg]{normal text}\inserttocsection}%
 }
 \setbeamertemplate{section in toc}[sectionasitem]
 
