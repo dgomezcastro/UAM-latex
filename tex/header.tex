@@ -59,7 +59,7 @@
 \useinnertheme{circles}
 
 % \usepackage{verbatim}
-\usepackage{minted2} % not maintained. however minted in version 3 has breaking changes
+\usepackage{minted} % not maintained. however minted in version 3 has breaking changes
 \newminted[latexsource]{latex}{linenos=false,autogobble,breaklines}
 \newmintinline[latexinline]{latex}{breaklines}
 \newmintedfile[latexfile]{latex}{breaklines}
@@ -138,28 +138,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The following is patch to make import and minted behave together
 %% https://github.com/gpoore/minted/issues/251
-%% This "hacky" part requires staying in minted2 instead of minted for
-%% compatibility with import.
 %% I am suscribed to this issue and will update is possible 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 
 \makeatletter
-% fix for first kind
+% \xpatchcmd and friends cannot be used directly in \IfPackageAtLeastTF args
+\IfPackageAtLeastTF{minted}{2024-05-10}{%
+  \@tempswatrue
+}{%
+  \@tempswafalse
+}
+
+\if@tempswa
+% patch for minted v3.7.0 (2025-05-14)
+\ifx\RobustInputMintedProcess\RobustInputMintedProcess@highlight
+  \xpatchcmd\RobustInputMintedProcess@highlight
+  {#3}
+  {\import@path #3}
+  {}{\PatchFailed}
+  \let\RobustInputMintedProcess\RobustInputMintedProcess@highlight
+\fi
+\else
+% patch for minted v2.x
 \xpatchcmd\inputminted
 {#3}
 {\import@path #3}
-{}{\fail}
+{}{\PatchFailed}
 
-% fix for second kind
 \xpretocmd\minted@pygmentize
-{\restore@IfFileExists} % direct \let\IfFileExists\im@@IfFileExists works too
-{}{\fail}
-\def\restore@IfFileExists{%
-  \ifx\IfFileExists\@iffileonpath
+{%
+\ifx\IfFileExists\@iffileonpath
     \let\IfFileExists\im@@IfFileExists
   \fi
-}
+  }
+  {}{\PatchFailed}
+\fi
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
