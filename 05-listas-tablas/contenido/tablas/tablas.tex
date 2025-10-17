@@ -1,38 +1,38 @@
 \section{Tablas}
 \begin{frame}[fragile]
-\frametitle{Tablas}
+	\frametitle{Tablas}
 
-Las el entorno \latexinline{table} es equivalente a figura, pero al generar el \latexinline{caption} obtendremos Cuadro (como recomienda la RAE). \\ [2ex]
+	Las el entorno \latexinline{table} es equivalente a figura, pero al generar el \latexinline{caption} obtendremos Cuadro (como recomienda la RAE). \\ [2ex]
 
-En contenido de la tabla se introduce de manera similar a una matriz
-\begin{columns}
-	\column{0.4\textwidth}
-	\begin{enumerate}
-		\item<1-> \texttt{<align>}: 
-		\only<1>{ los básicos son
-			\begin{enumerate}
-				\item \texttt{l}: izquierda 
-				\item \texttt{c}: centrado 
-				\item \texttt{r}: derecha
-				\item \latexinline{p{<width>}}: justificado a un ancho dado
-		\end{enumerate}}
-		\item<2-> \latexinline{&} \only<2>{Separación entre cuadros en la misma fila}
-		\item <3-> \texttt{|} \only<3>{Si se desea línea vertical entre dos columnas}
-		\item <4-> \latexinline{\hline} \only<4>{Si se desea una línea horizontal.}
-	\end{enumerate}
-	
-	
-	\column{0.5\textwidth}
-	\begin{block}{Código}
-		\begin{latexsource*}{fontsize=\footnotesize}
-\begin{tabular}{<align>| ... }
-	cuadro1 & cuadro2 & ... \\
-	\hline\\
-		...
-\end{tabular}
-		\end{latexsource*}
-	\end{block}
-\end{columns}
+	En contenido de la tabla se introduce de manera similar a una matriz
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{enumerate}
+			\item<1-> \texttt{<align>}:
+			      \only<1>{ los básicos son
+				      \begin{enumerate}
+					      \item \texttt{l}: izquierda
+					      \item \texttt{c}: centrado
+					      \item \texttt{r}: derecha
+					      \item \latexinline{p{<width>}}: justificado a un ancho dado
+				      \end{enumerate}}
+			\item<2-> \latexinline{&} \only<2>{Separación entre cuadros en la misma fila}
+			\item <3-> \texttt{|} \only<3>{Si se desea línea vertical entre dos columnas}
+			\item <4-> \latexinline{\hline} \only<4>{Si se desea una línea horizontal.}
+		\end{enumerate}
+
+
+		\column{0.5\textwidth}
+		\begin{block}{Código}
+			\begin{latexsource*}{fontsize=\footnotesize}
+				\begin{tabular}{<align>| ... }
+					cuadro1 & cuadro2 & ... \\
+					\hline                  \\
+					...
+				\end{tabular}
+			\end{latexsource*}
+		\end{block}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo básico}
@@ -47,7 +47,7 @@ En contenido de la tabla se introduce de manera similar a una matriz
 \end{frame}
 
 \begin{frame}[fragile]{Líneas horizontales parciales \texttt{cline}}
-	\latexinputandcompile{codigos/cline.tex}	
+	\latexinputandcompile{codigos/cline.tex}
 \end{frame}
 
 \begin{frame}[fragile]{Combinando columnas \texttt{multicolumn}}
@@ -56,7 +56,7 @@ En contenido de la tabla se introduce de manera similar a una matriz
 \end{frame}
 
 \begin{frame}[fragile]{Combinando filas \texttt{multirow}}
-	\footnotesize 
+	\footnotesize
 	Esto requiere cargar el paquete \texttt{multirow}.
 	\latexinputandpdf{codigos/multirow}
 \end{frame}
@@ -69,7 +69,7 @@ En contenido de la tabla se introduce de manera similar a una matriz
 	\tiny
 	\begin{block}{Código}
 		\latexfile{codigos/multirow-and-multicol.tex}
-    \end{block}
+	\end{block}
 \end{frame}
 
 \begin{frame}{Algunos comentario más sobre tablas}
@@ -81,7 +81,7 @@ En contenido de la tabla se introduce de manera similar a una matriz
 	\begin{itemize}
 		\item \url{https://www.tablesgenerator.com/}
 		\item \url{https://www.latex-tables.com/}
-		\item \url{https://tableconvert.com/latex-generator} 
+		\item \url{https://tableconvert.com/latex-generator}
 	\end{itemize}
 \end{frame}
 
@@ -90,7 +90,7 @@ En contenido de la tabla se introduce de manera similar a una matriz
 	El paquete \texttt{booktabs} ofrece una alternativa a las tablas convencionales, que algunos autores valoran positivamente:
 
 	\url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
-	
+
 \end{frame}
 
 \begin{frame}[fragile]{Tablas en ecuaciones}
@@ -100,6 +100,6 @@ En contenido de la tabla se introduce de manera similar a una matriz
 
 	\bigskip
 
-	En general, para una función definda a trazos se recomienda utilizar el entorno
+	En general, para una función definida a trazos se recomienda utilizar el entorno
 	\latexinline{cases} (si no hay fracciones), o \latexinline{dcases} del paquete \latexinline{mathtools} (si hay fracciones).
 \end{frame}

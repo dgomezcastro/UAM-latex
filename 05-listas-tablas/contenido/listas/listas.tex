@@ -9,14 +9,14 @@
 
     \texttt{enumerate} es números, y para \texttt{itemize} es $\bullet$.
 
-    \bigskip 
+    \bigskip
 
     El comportamiento de \texttt{itemize se puede modificar}
-    \latexinline{\renewcommand{\labelitemi}{$\dot$}}
+    \latexinline{\renewcommand{\labelitemi}{$\cdot$}}
 
     Además, \latexinline{\item} admite como entrada optativa el texto que queramos poner, p.e. \latexinline{\item[!]}.
 
-    \bigskip 
+    \bigskip
 
     Para configurar \texttt{enumerate} es preferible usar uno (y sólo uno) de los paquetes:
 
@@ -51,26 +51,26 @@
 \end{frame}
 
 \begin{frame}[fragile]{El paquete \texttt{enumitem}}
-    La documentación de este paquete en \href{https://ctan.org/pkg/enumitem}{CTAN} tiene 23 páginas.
+La documentación de este paquete en \href{https://ctan.org/pkg/enumitem}{CTAN} tiene 23 páginas.
 
-    \bigskip 
+\bigskip
 
-    Tiene varias funcionalidades muy completas:
-    \begin{enumerate}
-        \item Control de márgenes y espaciado
-        
-        \item Control de etiquetas muy detallada (aunque algo farragoso). Por ejemplo 
-        
-        \latexinline{\begin{enumerate}[label=\emph{\alph*}), ref=\emph{\alpha*}]} 
-        
-        \item Permite continuar un la numeración de un \texttt{enumerate} anterior, con la sintaxis 
-        
-        \latexinline{\begin{enumerate}[resume]}.
+Tiene varias funcionalidades muy completas:
+\begin{enumerate}
+\item Control de márgenes y espaciado
 
-        \item Permite crear nuevos tipos de listas, con la sintaxis:
-        
-        \latexinline{\newlist{<name>}{<type>}{<max-depth>}}
-    \end{enumerate}
+\item Control de etiquetas muy detallada (aunque algo farragoso). Por ejemplo
+
+\latexinline{\begin{enumerate}[label=\emph{\alph*}), ref=\emph{\alpha*}]}
+
+\item Permite continuar un la numeración de un \texttt{enumerate} anterior, con la sintaxis
+
+\latexinline{\begin{enumerate}[resume]}.
+
+    \item Permite crear nuevos tipos de listas, con la sintaxis:
+
+          \latexinline{\newlist{<name>}{<type>}{<max-depth>}}
+\end{enumerate}
 \end{frame}
 
 
