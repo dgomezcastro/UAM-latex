@@ -1,0 +1,29 @@
+% LTeX: language=es
+\section{Macros internos}
+
+\begin{frame}{Comando que almacenan contenido}
+    Pensemos un segundo en cómo funciona \latexinline{\author{}}.
+
+    \bigskip
+    \begin{itemize}
+        \item \latexinline{\author{David Gómez}} almacena el autor del documento.
+
+        \item \latexinline{\maketitle} utiliza esa información en para crear el título.
+
+        \item Con \latexinline{\insertauthor} puedo mostrar el autor del documento.
+    \end{itemize}
+
+    Esto se hace con \emph{internal macros} (macros internos)
+\end{frame}
+
+\begin{frame}{\emph{Internal macros}}
+    Los comandos internos se caracterizan por utilizar la @ al principio del nombre. Para poder utilizar este caracter deberemos convertilo en letra usando \latexinline{\makeatletter} (en inglés @ se lee \emph{at}).
+
+    \medskip
+
+    El siguiente ejemplo crea un comando para fijar una variable (a veces llamado \emph{setter}), y otro para usarla (a veces llamado \emph{getter}).
+    \small
+    \latexinput{codigos/title}
+\end{frame}
+
+

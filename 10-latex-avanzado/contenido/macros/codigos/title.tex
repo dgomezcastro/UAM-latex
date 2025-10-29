@@ -1,0 +1,12 @@
+\documentclass{article}
+
+\makeatletter
+\newcommand\@mytitle{} 
+\newcommand{\mytitle}[1]{\gdef\@mytitle{#1}}
+\newcommand{\printmytitle}{\@mytitle}
+\makeatother
+
+\begin{document}
+\mytitle{A Custom Stored Title}
+Here it is: \printmytitle
+\end{document}
