@@ -11,7 +11,7 @@ do
     cd ..
 done
 
-for i in {10..12}
+for i in {10..13}
 do
     echo $i
     cd $i*
