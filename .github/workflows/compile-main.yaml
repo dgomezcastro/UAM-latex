@@ -16,3 +16,9 @@ jobs:
         with:
           name: PDF
           path: curso-latex.pdf
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          # overwrite_files: true
+          files: curso-latex.pdf
