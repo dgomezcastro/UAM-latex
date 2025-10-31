@@ -1,5 +1,4 @@
-# Curso de LaTeX en la Universidad Autónoma de Madrid
-# _Composición de textos científicos con editores de libre distribución (LaTeX)_
+# Curso de LaTeX en la Universidad Autónoma de Madrid <br /> _Composición de textos científicos con editores de libre distribución (LaTeX)_
 
 ## [Versión actual del pdf](https://github.com/dgomezcastro/UAM-latex/releases/latest/download/curso-latex.pdf)
 
