@@ -6,11 +6,13 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v4
+      - uses: xu-cheng/texlive-action@v3
         with:
-          root_file: curso-latex.tex
-          latexmk_shell_escape: true
+          run: |
+            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
+            biber --input-directory tex curso-latex
+            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
+            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
