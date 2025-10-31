@@ -3,20 +3,20 @@
 \section{Referencias básicas de \LaTeX}
 
 \begin{frame}[fragile]
-\frametitle{Etiquetas}
-Algunos entornos están numerados y se pueden etiquetar con
-\begin{latexsource}
-\label{<label>}
-\end{latexsource}
-Es habitual emplear etiquetas de la forma
-\begin{latexsource}
-<label>=thm:euclides, fig:gauss, eq:divergencia
-\end{latexsource}
-No se pueden emplear acentos.
+	\frametitle{Etiquetas}
+	Algunos entornos están numerados y se pueden etiquetar con
+	\begin{latexsource}
+		\label{<label>}
+	\end{latexsource}
+	Es habitual emplear etiquetas de la forma
+	\begin{latexsource}
+		<label>=thm:euclides, fig:gauss, eq:divergencia
+	\end{latexsource}
+	No se pueden emplear acentos.
 
-Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
+	Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
 
-\latexinputandcompile{codigos/label.tex}
+	\latexinputandcompile{codigos/label.tex}
 
 \end{frame}
 
@@ -26,12 +26,12 @@ Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
 \begin{columns}
 \column{.4\textwidth}
 \begin{block}{Código}
-	\scriptsize
-	\begin{latexsource}
-		\begin{<thm>} \label{<label>}
+\scriptsize
+\begin{latexsource}
+\begin{<thm>} \label{<label>}
 
-		\end{<thm>}    
-	\end{latexsource}
+\end{<thm>}
+\end{latexsource}
 \end{block}
 \column{.4\textwidth}
 \begin{block}{Código}
@@ -39,11 +39,11 @@ Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
 	\begin{latexsource}
 		\begin{figure}
 
-		\includegraphics{<path>}
-		\caption{<caption>}
-		\label{<label>}
+			\includegraphics{<path>}
+			\caption{<caption>}
+			\label{<label>}
 
-		\end{figure}   
+		\end{figure}
 	\end{latexsource}
 \end{block}
 \end{columns}
@@ -51,33 +51,51 @@ Se citan con \latexinline{\ref} (o \latexinline{\eqref} de \texttt{amsmath})
 
 
 \begin{frame}[fragile]
-\frametitle{Referencias: El comando \latexinline{\ref}}
+	\frametitle{Referencias: El comando \latexinline{\ref}}
 	\small
 	Podemos llamar al número de una etiqueta mediante  \latexinline{\ref{<label>}}. \\
 
-\begin{columns}
-\column{.45\textwidth}
-	% \visible<2>
-	{
-	\begin{block}{Ejemplo}
-		\tiny
-		\latexfile{codigos/ref2.tex}
-	\end{block}}
-	\column{.5\textwidth}
+	\begin{columns}
+		\column{.45\textwidth}
+		% \visible<2>
+		{
+			\begin{block}{Ejemplo}
+				\tiny
+				\latexfile{codigos/ref2.tex}
+			\end{block}}
+		\column{.5\textwidth}
 		\fbox{
-		\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ref2.pdf}
-	}
-\end{columns}
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ref2.pdf}
+		}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Etiquetas especiales para ecuaciones con \latexinline{\tag}}
 	\latexinputandcompile{codigos/tag.tex}
 \end{frame}
 
-\begin{frame}{Más sobre referencias}
-	Más adelante haremos una sesión sobre referencias cruzadas.\\ 
-
+\begin{frame}{Hipervínculos}
 	Si queremos que nuestras referencias tengan hipervínculos, utilizaremos el paquete \texttt{hyperref} del que hablaremos más adelante.\\
 
 	El paquete \texttt{hyperref} incluye algunos comando útiles como \latexinline{\url} y \latexinline{\href}.
+\end{frame}
+
+\section{El paquete \texttt{cleveref}}
+\begin{frame}{Referencias avanzadas: el paquete \latexinline{\cleveref}}
+	Introduciendo este paquete tenemos acceso al comando \latexinline{\Cref}. \\
+
+	Esta función actúa como \latexinline{\ref}, pero incluye automáticamente el tipo de objeto referenciado: Teorema, Figura... \\[-2ex]
+	\pause
+	\begin{columns}
+		\column{.45\textwidth}
+		\begin{block}{Código}
+			\tiny
+			\latexfile{codigos/ref3.tex}
+		\end{block}
+		\column{.5\textwidth}
+		\fbox{
+			\includegraphics[trim=4cm 15cm 4cm 3cm,clip,   scale=.4]{codigos/ref3.pdf}
+		}
+	\end{columns}
+
 \end{frame}
