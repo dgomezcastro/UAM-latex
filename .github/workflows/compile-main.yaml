@@ -1,19 +1,23 @@
 name: Build LaTeX document
-on: [push]
+on: 
+  push: 
+    branches: 
+      - main 
+  pull_request:
+    branches:
+      - main
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - uses: xu-cheng/texlive-action@v3
+      - name: Compile LaTeX
+        uses: xu-cheng/texlive-action@v3
         with:
           run: |
-            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
-            biber --input-directory tex curso-latex
-            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
-            pdflatex -shell-escape -interaction=batchmode curso-latex.tex
-      - name: Upload PDF file
+            ./compilation/compile.sh
+      - name: Upload PDF file as artifact
         uses: actions/upload-artifact@v4
         with:
           name: PDF
